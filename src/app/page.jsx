@@ -305,7 +305,7 @@ export default function Home() {
               <div class="gostrol-card__period">
                 <img
                   class="gostrol-card__texture"
-                  src="assets/icons/programTexture.svg"
+                  src="/icons/programTexture.svg"
                   alt="programTexture"
                 />
                 <div class="gostrol-card__date">
@@ -331,7 +331,7 @@ export default function Home() {
               <div class="gostrol-card__period">
                 <img
                   class="gostrol-card__texture"
-                  src="assets/icons/programTexture.svg"
+                  src="/icons/programTexture.svg"
                   alt="programTexture"
                 />
                 <div class="gostrol-card__date">
@@ -357,7 +357,7 @@ export default function Home() {
               <div class="gostrol-card__period">
                 <img
                   class="gostrol-card__texture"
-                  src="assets/icons/programTexture.svg"
+                  src="/icons/programTexture.svg"
                   alt="programTexture"
                 />
                 <div class="gostrol-card__date">
@@ -383,7 +383,7 @@ export default function Home() {
               <div class="gostrol-card__period">
                 <img
                   class="gostrol-card__texture"
-                  src="assets/icons/programTexture.svg"
+                  src="/icons/programTexture.svg"
                   alt="programTexture"
                 />
                 <div class="gostrol-card__date">

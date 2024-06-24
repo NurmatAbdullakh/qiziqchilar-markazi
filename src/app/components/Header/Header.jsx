@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const Header = () => {
     return (
         <header class="header">
@@ -6,30 +8,30 @@ const Header = () => {
                     <img src="/icons/burger.svg" alt="burger" />
                 </div>
 
-                <div class="header__logo">
+                <Link href="/" class="header__logo">
                     <img src="/images/Logo.png" alt="logo" />
-                </div>
+                </Link>
                 <div class="header__menu menu">
                     <nav class="menu">
 
                         <ul class="menu__list">
                             <li class="menu__item">
-                                <a href="./pages/abuot-center/about-center.html" class="menu__link">Markaz</a>
+                                <Link href="/center" class="menu__link">Markaz</Link>
                             </li>
                             <li class="menu__item">
-                                <a href="./pages/stand-upper/stand-upper.html" class="menu__link">So`z ustalari</a>
+                                <Link href="/standuppers" class="menu__link">So`z ustalari</Link>
                             </li>
                             <li class="menu__item">
-                                <a href="./pages/gostrolls/gostrolls.html" class="menu__link">Gastroll</a>
+                                <Link href="/events" class="menu__link">Gastroll</Link>
                             </li>
                             <li class="menu__item">
-                                <a href="./pages/program/program.html" class="menu__link">Dasturlar</a>
+                                <Link href="/events" class="menu__link">Dasturlar</Link>
                             </li>
                             <li class="menu__item">
-                                <a href="./pages/news/news.html" class="menu__link">Yangiliklar</a>
+                                <Link href="/news" class="menu__link">Yangiliklar</Link>
                             </li>
                             <li class="menu__item">
-                                <a href="./pages/mediateka/mediateka.html" class="menu__link">Mediateka</a>
+                                <Link href="/mediateka" class="menu__link">Mediateka</Link>
                             </li>
                         </ul>
                     </nav>
@@ -40,12 +42,11 @@ const Header = () => {
                         <div class="lang">UZ</div>
                         <img src="/icons/arrowDown.svg" alt="arrow-down" />
                         <div />
-                        <a href="./pages/contacts/contacts.html">
+                        <Link href="/contacts">
                             <button class="header__button">
-
                                 Bog‘lanish
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

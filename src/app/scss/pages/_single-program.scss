@@ -1,0 +1,262 @@
+.single-program{
+	background: white;
+	.hero__with-title{
+		margin-bottom: 64px;
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
+	}
+
+	
+	.page-layout {
+		display: grid;
+		grid-template-columns: 1fr 280px;
+		gap: 20px;
+		@media (max-width:768px){
+			grid-template-columns: 1fr ;
+	
+		}
+			// .page-layout__right
+			&__left {
+	
+			}
+			&__right {
+				@media (max-width:768px){
+					grid-template-columns: 1fr ;
+					grid-row: 1/2;
+				}
+			}
+	
+			// .page-layout__types
+	
+			&__types {
+			}
+	}
+
+	.types-menu {
+		border-radius: 16px;
+		border: 4px solid rgba(255, 255, 255, 0.50);
+		background: #F7F7F7;
+		box-shadow: 0px 213px 59px 0px rgba(0, 0, 0, 0.00), 0px 136px 54px 0px rgba(0, 0, 0, 0.01), 0px 77px 46px 0px rgba(0, 0, 0, 0.02), 0px -34px 34px 0px rgba(0, 0, 0, 0.03), 0px 9px 19px 0px rgba(0, 0, 0, 0.04);
+		padding: 12px;
+			// .types-menu__title
+	
+			&__title {
+				font-family: "Inter";
+				font-size: 22px;
+				font-weight: 600;
+				@media (max-width:768px) {
+					font-size: 18px;
+					margin-bottom: 8px;
+					
+				}
+			}
+	
+			// .types-menu__list
+	
+			&__list {
+			}
+	
+			// .types-menu__item
+	
+			&__item {
+				min-height: 50px;
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				&.active{
+					.types-menu__icon{
+						path{
+							fill:#F59C2F;
+						}
+
+					}
+
+					.types-menu__label{
+						color: #080810;
+
+					}
+
+				}
+			}
+	
+			// .types-menu__icon
+	
+			&__icon {
+			}
+	
+			// .types-menu__label
+	
+			&__label {
+				font-family: "Inter";
+				font-size: 18px;
+				font-weight: 500;
+				color: #6B6B70;
+			}
+	}
+	.data {
+		margin-bottom: 64px;
+				@media (max-width: 768px) {
+					margin-bottom: 40px;
+				}
+	
+			// .data__banner
+	
+			&__banner {
+				position: relative;
+				overflow: hidden;
+				border-radius: 20px;
+				min-height: 496px;
+				margin-bottom: 24px;
+				@media (max-width: 768px) {
+					margin-bottom: 12px;
+					min-height: 234px;
+				}
+				img{
+					object-position: top;
+					object-fit: cover;
+				}
+	
+			}
+	
+			// .data__row
+	
+			&__row {
+				
+			}
+	
+			// .data__title
+	
+			&__title {
+				font-family: "Inter";
+				font-size: 32px;
+				font-weight: 700;
+				line-height: 130%; 
+				margin-bottom: 16px;
+				@media (max-width: 768px) {
+					font-size: 24px;
+				}
+			}
+	
+			// .data__text
+	
+			&__text {
+				font-family: "Inter";
+				font-size: 20px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 150%; 
+				color: #080810;
+				p:not(:last-child){
+					margin-bottom: 24px;
+					@media (max-width: 768px) {
+						margin-bottom: 12px;
+					}
+	
+				}
+				@media (max-width: 768px) {
+					font-size: 16px;
+					
+				}
+			}
+			.row {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 44px;
+				@media (max-width: 768px) {
+					flex-direction: column;
+					gap: 12px;
+					margin-bottom: 12px;
+					align-items: start;
+				}
+					// .row__right
+			
+					&__right {
+						
+					}
+			
+					// .row__title
+			
+					&__title {
+					}
+			
+					// .row__date
+			
+					&__date {
+						display: flex;
+						align-items: center;
+						gap: 6px;
+			
+					}
+					&__icon{
+						svg{
+							width: 26px;
+							height: 26px;
+						}
+						
+					}
+			
+					// .row__time	
+			
+					&__time {
+						color: #6B6B70;
+						@extend %xl-500;
+					}
+			
+					// .row__left
+			
+					&__left {
+					}
+			}
+		}
+}
+	
+	.period {
+		display: flex;
+		justify-content: space-evenly;
+		border: 1px solid var(--greys-grey-bg, #F1F1F2);
+		backdrop-filter: blur(6px);
+		align-self: stretch;
+		display: flex;
+		align-items: center;
+		border-radius: 12px;
+		flex-basis: 240px;
+		@media (max-width: 768px) {
+			flex-basis: 100px;
+		}
+	
+			// .period__date
+	
+			&__date {
+			}
+	
+			// .period__day
+	
+			&__day {
+				text-align: center;
+				font-family: "Inter";
+				font-size: 36px;
+				font-weight: 700;
+				margin-bottom: 8px;
+			}
+	
+			// .period__month
+	
+			&__month {
+				text-align: center;
+				@extend %md-500;
+				color: #9C9C9F;
+			}
+	
+			// .period__line
+	
+			&__line {
+				border-radius: 25px;
+				background: var(--Greys-Grey-3, #E1E1E2);
+				width: 24px;
+				height: 6px;
+				flex-shrink: 0;
+			}
+	}
+
