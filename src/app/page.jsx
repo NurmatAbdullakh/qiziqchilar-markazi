@@ -1,5 +1,6 @@
 "use client";
 import { Text } from "@chakra-ui/react";
+import HeroSlider from "./components/HeroSlider/HeroSlider";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
             <div class="hero__title">G’ayrat Axmedov</div>
             <div class="hero__subtitle">yakkaxon konserti</div>
             <button class="hero__button">Bog‘lanish</button>
+            <HeroSlider />
           </div>
         </div>
       </section>

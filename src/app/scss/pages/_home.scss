@@ -1,6 +1,7 @@
 
 // hero
 .hero {
+    overflow: hidden;
     position: relative;
     margin-bottom: 64px;
     @media (max-width: 768px) {
