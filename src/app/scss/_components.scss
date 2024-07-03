@@ -197,7 +197,6 @@
              @extend %xxl-500;
             color: white;
             margin-bottom: 16px;
-            color: #080810;
 		}
 
 		// .program-card__date
@@ -336,6 +335,11 @@
 		&__address-text {
                   color: var(--Greys-Grey-0, #6B6B70);
                   @extend %sm-500;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 1; 
 		}
 }
 .tabs {

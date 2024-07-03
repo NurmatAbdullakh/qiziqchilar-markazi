@@ -89,7 +89,7 @@
     }
 		// .jockers__item
         &__items {
-            display: flex;
+           display: flex;
            overflow: hidden;
            justify-content: space-between;
            overflow: auto;
@@ -166,8 +166,11 @@
             }
 		}
         &__item {
-            flex: 1 1 228px;
-        }
+            flex: 0 0 calc(25% - 26px); 
+            @media (max-width: 992px) {
+                flex: 0 0 281px;
+            }
+		}
 
 }
 
@@ -246,8 +249,17 @@
 		}
 
 		// .locations__tabs
-        .tabs__tab-list{
 
+        &__tabs {
+            overflow: hidden;
+        }
+		// .locations__items
+
+        &__items {  
+            padding-bottom: 30px;
+        }
+
+        .tabs__tab-list{
             background: white;
         }
 		&__tabs {
@@ -279,6 +291,7 @@
             }
         }
         &__item{
+            overflow: hidden;
             &:not(:last-child){
                 margin-bottom: 8px;
             }

@@ -4,8 +4,11 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useGetAllByUrlQuery } from '../../../api/api.service';
 
 export default function HeroSlider() {
+    const { data: sliders } = useGetAllByUrlQuery('sliders')
+
     const swiperRef = useRef(null);
     const [buttonState, setButtonState] = useState("next");
     const handlePrev = useCallback(() => {
