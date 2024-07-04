@@ -379,11 +379,6 @@
             text-align: center;
             line-height: 130%;
             margin-bottom: 8px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1; 
 		}
 
 		// .team-card__subtitle
@@ -425,7 +420,7 @@
     
             .team-card__title {
                 font-size: 32px;
-                text-align-last: left;
+                text-align: left;
             }
     
             // .team-card__subtitle

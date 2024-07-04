@@ -1,10 +1,13 @@
 "use client";
 import { useGetAllByUrlQuery } from "../../api/api.service";
+import { getItems } from "../../utils/getItems";
+import Team from "./_components/Team/Team";
 
 const Center = () => {
-    const { data: staffs } = useGetAllByUrlQuery('xodimlars')
     const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
+    const centerData = aboutData?.data?.data?.attributes
 
+    console.log(centerData);
 
     return (
         <main class="main about-center">
@@ -26,41 +29,28 @@ const Center = () => {
                     </div>
                     <div class="about-us__line"></div>
                     <div class="about-us__text">
-                        <p class="text">
-                            Margʻilon shahrida Madaniyat va turizm vazirligi tizimida davlat muassasasi shaklida
-                            Yusufjon qiziq Shakarjonov nomidagi
-                            respublika askiya va qiziqchilik sanʼati markazi tashkil etiladi.
-                        </p>
-                        <p class="text">
-                            Bu haqda Shavkat Mirziyoyev alohida qarorni imzoladi.
-                        </p>
-                        <p class="text">
-                            Markazning moddiy-texnika bazasini mustahkamlash va ijodkorlari ijtimoiy sharoitini
-                            yaxshilash maqsadida Fargʻona
-                            viloyati hokimligi Markazni saqlash va uning faoliyatini qoʻllab-quvvatlash uchun mahalliy
-                            byudjetdan 2023 yilda 2,3
-                            milliard soʻm, 2024 yildan boshlab esa Markaz talabnomasi asosida zarur mablagʻlar ajratadi.
-                        </p>
+                        <p>{centerData?.description_uz}</p>
                     </div>
+
                     <div class="about-us__boxes">
                         <div class="about-us__box box">
                             <img class="box__img" src="/icons/box/icon.svg" alt="" />
-                            <h3 class="box__title">55</h3>
+                            <h3 class="box__title">{centerData?.number_of_employees}</h3>
                             <p class="box__text"> Xodimlar</p>
                         </div>
                         <div class="about-us__box box">
                             <img class="box__img" src="/icons/box/icon 1.svg" alt="" />
-                            <h3 class="box__title">18</h3>
+                            <h3 class="box__title">{centerData?.number_of_comic}</h3>
                             <p class="box__text"> Qiziqchilar</p>
                         </div>
                         <div class="about-us__box box">
                             <img class="box__img" src="/icons/box/icon 2.svg" alt="" />
-                            <h3 class="box__title">174</h3>
+                            <h3 class="box__title">{centerData?.number_of_tours}</h3>
                             <p class="box__text">Gastrollar</p>
                         </div>
                         <div class="about-us__box box">
                             <img class="box__img" src="/icons/box/icon 3.svg" alt="" />
-                            <h3 class="box__title">344</h3>
+                            <h3 class="box__title">{centerData?.number_of_programs}</h3>
                             <p class="box__text">Dasturlar</p>
                         </div>
                     </div>
@@ -108,111 +98,7 @@ const Center = () => {
                     </div>
                 </div>
             </section>
-            <section class="team">
-                <div class="team__container container">
-                    <div class="team__title section-title">
-                        <div class="section-title__title">Bizning jamoa</div>
-                        <div class="section-title__divider"></div>
-                    </div>
-                    <div class="team__tabs tabs big">
-                        <div class="tabs__tab-list">
-                            <div class="tabs__tab-item active">
-                                <div class="tabs__tab-title">
-                                    <div class="tabs__tab-title-text">
-                                        Rahbariyat
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tabs__tab-item">
-                                <div class="tabs__tab-title">
-                                    <div class="tabs__tab-title-text">
-                                        Xodimlar
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tabs__tab-item">
-                                <div class="tabs__tab-title-text">
-                                    San’at maktabi direktorlari
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team__items">
-                        <div class="team__item team-card big">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image.jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                            <div class="team-card__desc">
-                                Markazning moddiy-texnika bazasini mustahkamlash va ijodkorlari ijtimoiy sharoitini
-                                yaxshilash maqsadida Fargʻona
-                                viloyati hokimligi Markazni saqlash va uning faoliyatini qoʻllab-quvvatlash uchun
-                                mahalliy byudjetdan 2023 yilda 2,3
-                                milliard soʻm, 2024 yildan boshlab esa Markaz talabnomasi asosida zarur mablagʻlar
-                                ajratadi.
-                            </div>
-                            <button class="team-card__btn secondary-button">Batafsil</button>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (1).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (2).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (3).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (4).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image.jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (1).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (2).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                        <div class="team__item team-card">
-                            <div class="team-card__img">
-                                <img class="bg" src="/images/team/Image (3).jpg" alt="team" />
-                            </div>
-                            <div class="team-card__title">Maxorat maktablari</div>
-                            <div class="team-card__subtitle">Maxorat maktablari</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Team />
             <section class="school">
                 <div class="school__container container">
                     <div class="school__title section-title">

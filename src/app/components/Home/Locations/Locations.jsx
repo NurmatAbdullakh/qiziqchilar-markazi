@@ -8,8 +8,6 @@ const Locations = () => {
 
     const { data: schools } = useGetAllByUrlQuery('mahorat-maktablaris')
 
-
-
     const tabs = [
         {
             id: 0,

@@ -16,6 +16,7 @@
 
     }
     .header__burger{
+        cursor: pointer;
         @media (min-width: 992px) {
             display: none;
 

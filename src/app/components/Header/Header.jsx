@@ -1,10 +1,15 @@
+"use client"
+import { useDisclosure } from "@chakra-ui/react"
 import Link from "next/link"
+import BurgerMenu from "../BurgerMenu/BurgerMenu"
 
 const Header = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     return (
         <header class="header">
             <div class="header__container container" >
-                <div class="header__burger">
+                <div class="header__burger" onClick={onOpen}>
                     <img src="/icons/burger.svg" alt="burger" />
                 </div>
 
@@ -50,6 +55,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            <BurgerMenu isOpen={isOpen} onClose={onClose} />
         </header>
     )
 }

@@ -5,6 +5,7 @@ export const getImageUrl = (
   return (
     baseUrl + item?.image?.data?.attributes?.url ||
     item?.rasm?.data?.attributes?.url ||
+    item?.profil_rasmi?.data?.attributes?.url ||
     ""
   );
 };
