@@ -6,23 +6,9 @@ import Programs from "./components/Home/Programs/Programs";
 import Audios from "./components/Home/Audios/Audios";
 import Gallery from "./components/Home/Gallery/Gallery";
 import Retro from "./components/Home/Retro/Retro";
+import Locations from "./components/Home/Locations/Locations";
 
 export default function Home() {
-  // const { data: schools } = useGetAllByUrlQuery('mahorat-maktablaris')
-  // const { data: staffs } = useGetAllByUrlQuery('xodimlars')
-  // const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
-
-  // console.log({
-  //   audios,
-  //   programs,
-  //   schools,
-  //   photos,
-  //   sliders,
-  //   standUppers,
-  //   videos,
-  //   staffs,
-  //   aboutData
-  // });
 
   return (
     <main class="main">
@@ -47,67 +33,7 @@ export default function Home() {
       <StandUppers />
       <Programs />
       <Gostrols />
-
-      <section class="locations">
-        <div class="locations__container container">
-          <div class="locations__title section-title">
-            <div class="section-title__title">Manzillar</div>
-            <div class="section-title__divider"></div>
-          </div>
-
-          <div class="locations__map">
-            <img
-              class="locations__map-image bg"
-              src="/images/map.jpg"
-            />
-
-            <div class="locations__tabs tabs">
-              <div class="tabs__tab-list">
-                <div class="tabs__tab-item active">
-                  <div class="tabs__tab-title">Maxorat maktablari</div>
-                </div>
-                <div class="tabs__tab-item">
-                  <div class="tabs__tab-title">Tadbirlar</div>
-                </div>
-                <div class="tabs__tab-item">
-                  <div class="tabs__tab-title">Gostrollar</div>
-                </div>
-              </div>
-              <div class="tabs__tab-panel">
-                <div class="locations__items">
-                  <div class="locations__item location active">
-                    <div class="location__title">
-                      <img
-                        class="location__icon"
-                        src="/icons/schoolIcon.svg"
-                      />
-                      <div class="location__text">Farg’ona Maxorat maktabi</div>
-                    </div>
-                    <div class="location__subtitle">
-                      Farg’ona viloyati, Farg’ona shaxar, Yuksalish ko’chasi
-                      11uy
-                    </div>
-                  </div>
-                  <div class="locations__item location">
-                    <div class="location__title">
-                      <img
-                        class="location__icon"
-                        src="/icons/schoolIcon.svg"
-                      />
-                      <div class="location__text">Farg’ona Maxorat maktabi</div>
-                    </div>
-                    <div class="location__subtitle">
-                      Farg’ona viloyati, Farg’ona shaxar, Yuksalish ko’chasi
-                      11uy
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Locations />
       <Retro />
       <Gallery />
       <Audios />

@@ -1,4 +1,11 @@
-const News = () => {
+"use client";
+import { useGetAllByUrlQuery } from "../../api/api.service";
+
+const Center = () => {
+    const { data: staffs } = useGetAllByUrlQuery('xodimlars')
+    const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
+
+
     return (
         <main class="main about-center">
             <section class="hero__with-title hero__with-title">
@@ -336,4 +343,4 @@ const News = () => {
     )
 }
 
-export default News;
+export default Center;

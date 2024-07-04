@@ -23,7 +23,7 @@ const Retro = () => {
                             class="section-title__all-text"
                             href="./pages/retro/retro.html"
                         >
-                            Barcha askiyalar
+                            Barcha videolar
                         </a>
                         <img
                             class="section-title__all-icon"
