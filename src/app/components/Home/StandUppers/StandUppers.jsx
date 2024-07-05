@@ -1,6 +1,7 @@
 import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import StandUpperCard from "../../Cards/StandUpperCard/StandUpperCard"
 import { getItems } from "../.././../../utils/getItems"
+import Link from "next/link"
 
 
 const StandUppers = () => {
@@ -14,13 +15,13 @@ const StandUppers = () => {
                 <div class="jockers__title section-title">
                     <div class="section-title__title">So`z ustalari</div>
                     <div class="section-title__divider"></div>
-                    <div class="section-title__all">
-                        <a
+                    <Link href={"/standuppers"} class="section-title__all">
+                        <div
                             class="section-title__all-text"
                             href="./pages/stand-upper/stand-upper.html"
                         >
                             Barcha so`z ustalari
-                        </a>
+                        </div>
                         <img
                             class="section-title__all-icon"
                             src="/icons/arrowRight.svg"
@@ -31,7 +32,7 @@ const StandUppers = () => {
                             src="/icons/smallArrowRight.svg"
                             alt="arrow-right"
                         />
-                    </div>
+                    </Link>
                 </div>
                 <div class="jockers__items">
                     {

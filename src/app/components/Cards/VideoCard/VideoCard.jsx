@@ -1,6 +1,8 @@
+import Link from "next/link"
+
 const VideoCard = ({ item }) => {
     return (
-        <div class="retro__item video-card">
+        <Link href={`/video/${item?.id}`} class="retro__item video-card">
             <div class="video-card__image">
                 <img
                     class="video-card__bg bg"
@@ -26,7 +28,7 @@ const VideoCard = ({ item }) => {
                     {item?.title_uz}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

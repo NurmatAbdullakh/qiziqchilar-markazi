@@ -1,10 +1,11 @@
+import Link from "next/link"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const StandUpperCard = ({ item }) => {
-    console.log(item.Kasbi);
+
     return (
         <div class="jockers__item jocker-card">
-            <a href="./pages/single-stand-upper/single-stand-upper.html">
+            <Link href={`/standuppers/${item?.id}`}>
                 <img
                     class="jocker-card__image bg"
                     src={getImageUrl(item) || "/images/jockers/Image (1).jpg"}
@@ -19,7 +20,7 @@ const StandUpperCard = ({ item }) => {
                     src="/icons/jocker-card-texture.svg"
                     alt="texture"
                 />
-            </a>
+            </Link>
         </div>
     )
 }

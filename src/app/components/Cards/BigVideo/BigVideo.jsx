@@ -1,6 +1,8 @@
+import Link from "next/link"
+
 const BigVideo = ({ item }) => {
     return (
-        <div class="retro__left big-video">
+        <Link href={`/video/${item?.id}`} class="retro__left big-video">
             <img
                 class="big-video__image bg"
                 src="/images/big-video.jpg"
@@ -23,7 +25,7 @@ const BigVideo = ({ item }) => {
                     {item?.title_uz}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

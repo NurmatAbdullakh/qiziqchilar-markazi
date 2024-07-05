@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 
 const AudioCard = ({ item }) => {
     return (
-        <div class="audio__item audio-card">
+        <Link href={`/audio/${item?.id}`} class="audio__item audio-card">
             <img
                 class="audio-card__texture"
                 src="/icons/audio-texture.svg"
@@ -43,7 +44,7 @@ const AudioCard = ({ item }) => {
                     {item.title_uz}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

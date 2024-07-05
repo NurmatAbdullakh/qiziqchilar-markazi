@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 
 
@@ -21,7 +22,7 @@ const ProgramCard = ({ item, index }) => {
     }
 
     return (
-        <div class="program__item program-card">
+        <Link href={`/program/${item?.id}`} class="program__item program-card">
             <img
                 src={getImageUrl(item)}
                 class="program-card__image bg"
@@ -42,7 +43,7 @@ const ProgramCard = ({ item, index }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 export default ProgramCard

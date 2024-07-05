@@ -1,7 +1,9 @@
+import Link from "next/link"
+
 const GostrolCard = ({ item }) => {
 
     return (
-        <div class="gostrol__item gostrol-card">
+        <Link href={`/tour/${item.id}`} class="gostrol__item gostrol-card">
             <div class="gostrol-card__period">
                 <img
                     class="gostrol-card__texture"
@@ -26,7 +28,7 @@ const GostrolCard = ({ item }) => {
                     {item.Joylashuv_manzili}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
