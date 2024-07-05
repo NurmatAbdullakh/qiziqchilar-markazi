@@ -3,14 +3,22 @@ import { getImageUrl } from "../../../../utils/getImageUrl";
 
 const ProgramCard = ({ item, index }) => {
     const coverImage = (index) => {
-        const images = [
-            '/images/covers/Image.png',
-            '/images/covers/Image (3).png',
-            '/images/covers/Image (2).png',
-            '/images/covers/Image (1).png'
-        ];
-        return index === undefined || index === null ? images[0] : images[index % 4];
-    };
+        if (!index) {
+            '/images/covers/Image.png'
+        }
+        if (!(index % 4)) {
+            return '/images/covers/Image.png';
+        }
+        if (!(index % 3)) {
+            return '/images/covers/Image (1).png';
+        }
+        if (!(index % 2)) {
+            return '/images/covers/Image (2).png';
+        }
+        if (!(index % 1)) {
+            return '/images/covers/Image (3).png';
+        }
+    }
 
     return (
         <div class="program__item program-card">
