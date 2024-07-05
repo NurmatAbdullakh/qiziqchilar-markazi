@@ -1,13 +1,15 @@
 "use client";
+import { useState } from "react";
 import { useGetAllByUrlQuery } from "../../api/api.service";
 import { getItems } from "../../utils/getItems";
 import Team from "./_components/Team/Team";
+import TeamModal from "./_components/TeamModal/TeamModal";
 
 const Center = () => {
     const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
+    const [selectedEmployee, setSelectedEmployee] = useState(null)
     const centerData = aboutData?.data?.data?.attributes
 
-    console.log(centerData);
 
     return (
         <main class="main about-center">
@@ -98,7 +100,7 @@ const Center = () => {
                     </div>
                 </div>
             </section>
-            <Team />
+            <Team onClick={setSelectedEmployee} />
             <section class="school">
                 <div class="school__container container">
                     <div class="school__title section-title">
@@ -139,46 +141,9 @@ const Center = () => {
                     </div>
                 </div>
             </section>
-            <sectio class="modal">
-                <div class="modal__content ">
-                    <div class="modal__body team-modal">
-                        <div class="team-modal__header">
-                            <div class="team-modal__title">Hududiy boshqarmalar</div>
-                            <img class="team-modal__close-btn" src="/icons/close.svg" />
-                        </div>
-                        <div class="team-modal__work">
-                            <div class="team-modal__work-time">
-                                <div class="team-modal__days">Dushanba - Juma</div>
-                                <div class="team-modal__dot"></div>
-                                <div class="team-modal__time">09:00 - 18:00</div>
-                            </div>
-                            <div class="team-modal__work-place">
-                                Toshkent shahar boshqarmasi
-                            </div>
-                        </div>
-                        <div class="team-modal__location">
-                            <img class="team-modal__location-icon" src="/icons/location.svg" />
-                            <div class="team-modal__location-text">Toshkent shahar, Olmazor tumani, Universitet ko‘chasi
-                                4</div>
-                        </div>
-                        <div class="team-modal__phone">
-                            <img class="team-modal__phone-icon" src="/icons/phone.svg" />
-                            <div class="team-modal__phone-text">+998 71 200-70-07</div>
-                        </div>
-                        <div class="team-modal__employe">
-                            <div class="team-modal__image">
-                                <img class="bg" src="/images/team/Image (1).jpg" alt="" />
-                            </div>
-                            <div class="team-modal__present">
-                                <div class="team-modal__name">Ahmadjon Sanaqulov Erkinovich</div>
-                                <div class="team-modal__subname">Askiya Markazi Direktori</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </sectio>
+            {selectedEmployee && <TeamModal onClose={() => setSelectedEmployee(null)} selectedEmployee={selectedEmployee} />}
 
-            <sectio class="modal">
+            {/* <sectio class="modal">
                 <div class="modal__content ">
                     <div class="modal__body location-modal">
                         <div class="location-modal__header">
@@ -222,7 +187,7 @@ const Center = () => {
                         </div>
                     </div>
                 </div>
-            </sectio>
+            </sectio> */}
         </main>
 
 

@@ -35,8 +35,8 @@ const Programs = () => {
           </div>
         </div>
         <div class="program__items">
-          {items?.map((item) => {
-            return <ProgramCard item={item} />
+          {items?.slice(0, 4)?.map((item, index) => {
+            return <ProgramCard key={item?.id} item={item} index={index} />
           })}
         </div>
       </div>

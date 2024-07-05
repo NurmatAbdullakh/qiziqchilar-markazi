@@ -5,9 +5,12 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useGetAllByUrlQuery } from '../../../api/api.service';
+import { getItems } from '../../../utils/getItems';
 
 export default function HeroSlider() {
     const { data: sliders } = useGetAllByUrlQuery('sliders')
+    const items = getItems(sliders)
+    console.log(items);
 
     const swiperRef = useRef(null);
     const [buttonState, setButtonState] = useState("next");
@@ -22,6 +25,8 @@ export default function HeroSlider() {
         setButtonState("next");
         swiperRef.current?.swiper.slideNext();
     }, []);
+
+
 
     return (
         <>

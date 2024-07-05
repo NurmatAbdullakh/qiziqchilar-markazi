@@ -1,6 +1,16 @@
 import { getImageUrl } from "../../../../utils/getImageUrl";
 
-const ProgramCard = ({ item }) => {
+
+const ProgramCard = ({ item, index }) => {
+    const coverImage = (index) => {
+        const images = [
+            '/images/covers/Image.png',
+            '/images/covers/Image (3).png',
+            '/images/covers/Image (2).png',
+            '/images/covers/Image (1).png'
+        ];
+        return index === undefined || index === null ? images[0] : images[index % 4];
+    };
 
     return (
         <div class="program__item program-card">
@@ -9,7 +19,7 @@ const ProgramCard = ({ item }) => {
                 class="program-card__image bg"
             />
             <img
-                src="/images/covers/Image (1).png"
+                src={coverImage(index)}
                 class="program-card__cover bg"
             />
             <div class="program-card__info">

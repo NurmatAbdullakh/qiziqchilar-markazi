@@ -1,9 +1,8 @@
 import { useState } from "react"
 import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getItems } from "../../../../utils/getItems"
-import { getImageUrl } from "../../../../utils/getImageUrl"
 
-const Team = () => {
+const Team = ({ onClick }) => {
     const [activeTab, setActiveTab] = useState(0)
     const { data: staffs } = useGetAllByUrlQuery('xodimlars')
     const items = getItems(staffs)
@@ -61,7 +60,7 @@ const Team = () => {
                 </div>
                 <div class="team__items">
                     {bigCardData && (
-                        <div class="team__item team-card big">
+                        <div onClick={() => onClick(bigCardData)} class="team__item team-card big">
                             <div class="team-card__img">
                                 <img class="bg" src={"https://admin.askiyachilar.uz" + bigCardData?.profil_rasmi?.data?.attributes?.url} alt="team" />
                             </div>
@@ -80,7 +79,7 @@ const Team = () => {
                     )}
                     {
                         tabs[activeTab]?.items?.slice(1)?.map((item, index) => (
-                            <div class="team__item team-card" key={index}>
+                            <div onClick={() => onClick(item)} class="team__item team-card" key={index}>
                                 <div class="team-card__img">
                                     <img class="bg" src={"https://admin.askiyachilar.uz" + item?.profil_rasmi?.data?.attributes?.url} alt="team" />
                                 </div>

@@ -21,22 +21,22 @@ const Header = () => {
 
                         <ul class="menu__list">
                             <li class="menu__item">
-                                <Link href="/center" class="menu__link">Markaz</Link>
+                                <Link scroll={false} href="/center" class="menu__link">Markaz</Link>
                             </li>
                             <li class="menu__item">
-                                <Link href="/standuppers" class="menu__link">So`z ustalari</Link>
+                                <Link scroll={false} href="/standuppers" class="menu__link">So`z ustalari</Link>
                             </li>
                             <li class="menu__item">
-                                <Link href="/events" class="menu__link">Gastroll</Link>
+                                <Link scroll={false} href="/events" class="menu__link">Gastroll</Link>
                             </li>
                             <li class="menu__item">
-                                <Link href="/events" class="menu__link">Dasturlar</Link>
+                                <Link scroll={false} href="/events" class="menu__link">Dasturlar</Link>
                             </li>
                             <li class="menu__item">
-                                <Link href="/news" class="menu__link">Yangiliklar</Link>
+                                <Link scroll={false} href="/news" class="menu__link">Yangiliklar</Link>
                             </li>
                             <li class="menu__item">
-                                <Link href="/mediateka" class="menu__link">Mediateka</Link>
+                                <Link scroll={false} href="/mediateka" class="menu__link">Mediateka</Link>
                             </li>
                         </ul>
                     </nav>

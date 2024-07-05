@@ -31,7 +31,7 @@ const Audios = () => {
                     </div>
                 </div>
                 <SimpleGrid columns={[1, 2, 4]} spacing='20px' >
-                    {items?.map((item) => {
+                    {items?.slice(0, 4)?.map((item) => {
                         return <AudioCard item={item} />
                     })}
                 </SimpleGrid>

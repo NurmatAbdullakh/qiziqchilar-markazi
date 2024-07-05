@@ -1,3 +1,6 @@
+"use client"
+import Link from "next/link"
+
 const Footer = () => {
     return (
         <footer class="footer">
@@ -12,7 +15,7 @@ const Footer = () => {
                         <nav class="menu">
                             <ul class="menu__list">
                                 <li class="menu__item label">
-                                    <a href="#" class="menu__link">Markaz</a>
+                                    <Link href="/center" class="menu__link">Markaz</Link>
                                 </li>
                                 <li class="menu__item">
                                     <a href="#" class="menu__link">Askiyachilar</a>
