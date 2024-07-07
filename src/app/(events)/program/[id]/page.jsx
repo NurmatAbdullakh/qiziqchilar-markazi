@@ -1,4 +1,17 @@
+"use client"
+
+import { useParams } from "next/navigation"
+import { useGetOneByUrlQuery } from "../../../../api/api.service"
+import { getItem } from "../../../../utils/getItem"
+import { getImageUrl } from "../../../../utils/getImageUrl"
+
 const SingleProgram = () => {
+
+    const { id } = useParams()
+    const { data } = useGetOneByUrlQuery('dasturlars', id)
+    const item = getItem(data)
+
+    console.log(item);
     return (
         <main className="main single-program">
             <section className="hero__with-title hero__with-title">
@@ -13,63 +26,34 @@ const SingleProgram = () => {
                 <div className="data__container container page-layout">
                     <div className="page-layout__left">
                         <div className="data__banner">
-                            <img className="bg" src="/images/data-banner.jpg" alt="banner" />
+                            <img className="bg" src={getImageUrl(item)} alt="banner" />
                         </div>
                         <div className="data__row row">
                             <div className="row__right">
-                                <div className="row__title data__title">Marg’ilon darvishona</div>
+                                <div className="row__title data__title">{item?.nomi_uz}</div>
                                 <div className="row__date">
                                     <img className="row__icon" src="/icons/data-calendar.svg" alt="" />
-                                    <div className="row__time">08.03.24 23:23</div>
+                                    <div className="row__time">{item?.publishedAt?.slice(0, 10)}</div>
                                 </div>
 
                             </div>
                             <div className="row__left period">
                                 <div className="period__period">
                                     <div className="period__date">
-                                        <div className="period__day">25</div>
-                                        <div className="period__month">May</div>
+                                        <div className="period__day">{item?.boshlanish_vaqti?.slice(8, 10)}</div>
+                                        <div className="period__month">{item?.boshlanish_vaqti?.slice(5, 7)}</div>
                                     </div>
                                     <div className="period__line"></div>
                                     <div className="period__date">
-                                        <div className="period__day">09</div>
-                                        <div className="period__month">Avgust</div>
+                                        <div className="period__day">{item?.tugash_vaqti?.slice(8, 10)}</div>
+                                        <div className="period__month"> {item?.tugash_vaqti?.slice(5, 7)}</div>
                                     </div>
-                                </div>
-                                <div className="period__location">
-                                    <img className="period__location-icon" src="/icons/data-location.svg"
-                                        alt="location" />
-                                    <div className="period__location-text">100011, O'zbekiston, Shahar: Toshkent,
-                                        Tuman: Yunusobod, Navoiy shoh ko'chasi, 2</div>
                                 </div>
                             </div>
 
                         </div>
                         <div className="data__text">
-                            <p>
-                                Rossiya poytaxtining “Vnukovo-2” aeroportida davlatimiz rahbarini Rossiya Federatsiyasi
-                                Hukumati Raisining o‘rinbosari –
-                                sanoat va savdo vaziri Denis Manturov va boshqa rasmiy shaxslar kutib oldi.
-                            </p>
-                            <p>
-                                Oliy martabali mehmon sharafiga O‘zbekiston va Rossiya davlat bayroqlari ko‘tarildi,
-                                faxriy qorovul saf tortdi.
-                                Tantanali kutib olish marosimi bo‘ldi.
-                            </p>
-                            <p>
-                                Tashrif dasturiga muvofiq, 6 oktyabr kuni ikki mamlakat yetakchilari tor va
-                                kengaytirilgan tarkibda muzokara
-                                o‘tkazadilar. O‘zbekiston bilan Rossiya o‘rtasidagi keng qamrovli strategik sheriklik va
-                                ittifoqchilik munosabatlarini
-                                yanada mustahkamlash masalalari muhokama qilinadi.
-                            </p>
-                            <p>
-                                Siyosiy, savdo-iqtisodiy, investitsiyaviy, transport-kommunikatsiyaviy,
-                                madaniy-gumanitar va boshqa ustuvor
-                                yo‘nalishlarda har tomonlama hamkorlikning holati va istiqbollarini ko‘rib chiqish
-                                rejalashtirilgan. Mintaqaviy va
-                                xalqaro kun tartibidagi dolzarb masalalar yuzasidan fikr almashiladi.
-                            </p>
+                            {item?.description_uz}
                         </div>
                     </div>
                     <div className="page-layout__right">

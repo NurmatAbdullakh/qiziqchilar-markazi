@@ -3,10 +3,11 @@ export const getImageUrl = (
   baseUrl = "https://admin.askiyachilar.uz"
 ) => {
   return (
-    baseUrl + item?.image?.data?.attributes?.url ||
-    item?.rasm?.data?.attributes?.url ||
-    item?.profil_rasmi?.data?.attributes?.url ||
-    item?.cover_rasmi?.data?.attributes?.url ||
-    ""
+    baseUrl +
+    (item?.image?.data?.attributes?.url ||
+      item?.rasm?.data?.attributes?.url ||
+      item?.profil_rasmi?.data?.attributes?.url ||
+      item?.cover_rasmi?.data?.attributes?.url ||
+      "")
   );
 };

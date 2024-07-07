@@ -1,12 +1,12 @@
 "use client";
-import React, { useCallback, useRef, useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Box, Img, Text } from '@chakra-ui/react';
+import { useCallback, useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useGetAllByUrlQuery } from '../../../api/api.service';
-import { getItems } from '../../../utils/getItems';
 import { getImageUrl } from '../../../utils/getImageUrl';
-import { Box, Img, Text } from '@chakra-ui/react';
+import { getItems } from '../../../utils/getItems';
 
 export default function HeroSlider({ onChange }) {
     const { data: sliders } = useGetAllByUrlQuery('sliders')
