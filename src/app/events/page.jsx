@@ -5,6 +5,7 @@ import TabSearchParams from "../components/TabSearchParams/TabSearchParams";
 import { SimpleGrid } from "@chakra-ui/react";
 import GostrolCards from "./_components/GostrolCards";
 
+
 const Events = () => {
     const searchParams = useSearchParams()
     const isProgram = searchParams.get("type") === "dasturlar"
