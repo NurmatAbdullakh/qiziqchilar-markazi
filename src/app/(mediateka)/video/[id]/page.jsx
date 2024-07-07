@@ -7,10 +7,9 @@ import {
 
 const SingleVideo = () => {
     const { id } = useParams()
-    const { data } = useGetOneByUrlQuery('audiolars', id)
+    const { data } = useGetOneByUrlQuery('videolars', id)
     const item = data?.data
 
-    console.log(item);
     return (
         <main className="main single-video">
             <section className="hero__with-title hero__with-title">
@@ -46,7 +45,7 @@ const SingleVideo = () => {
 
                             <div className="big-video__info">
                                 <div className="big-video__date">
-                                    {item?.publishedAt?.slice(0, 10)}
+                                    {item?.video_tegi}
                                 </div>
                                 <div className="big-video__title">
                                     Askiya – yashirin fikr sehri, hozirjavob xalqimizning noyob xazinasi

@@ -11,7 +11,6 @@ const SingleProgram = () => {
     const { data } = useGetOneByUrlQuery('dasturlars', id)
     const item = getItem(data)
 
-    console.log(item);
     return (
         <main className="main single-program">
             <section className="hero__with-title hero__with-title">

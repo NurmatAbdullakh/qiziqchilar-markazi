@@ -13,7 +13,6 @@ const SingleTour = () => {
     const { data } = useGetOneByUrlQuery('gastrollars', id)
     const item = getItem(data)
 
-    console.log(item);
     return (
         <main className="main single-gostrol">
             <section className="hero__with-title hero__with-title">

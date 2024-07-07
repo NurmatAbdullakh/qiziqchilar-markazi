@@ -13,7 +13,6 @@ const SingleStandupper = () => {
     const { data } = useGetOneByUrlQuery('soz-ustalaris', id)
     const item = getItem(data)
 
-    console.log(item);
 
     return (
 

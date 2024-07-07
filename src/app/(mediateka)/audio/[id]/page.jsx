@@ -10,7 +10,6 @@ const SingleAudio = () => {
     const { data } = useGetOneByUrlQuery('audiolars', id)
     const item = data?.data
 
-    console.log(item);
     return (
         <main className="main single-audio">
             <section className="hero__with-title hero__with-title">
