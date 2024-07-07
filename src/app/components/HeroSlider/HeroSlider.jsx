@@ -1,36 +1,34 @@
 "use client";
-import React, { useCallback, useRef, useState } from 'react';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-
+import React, { useCallback, useRef, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useGetAllByUrlQuery } from '../../../api/api.service';
 import { getItems } from '../../../utils/getItems';
+import { getImageUrl } from '../../../utils/getImageUrl';
+import { Box, Img, Text } from '@chakra-ui/react';
 
-export default function HeroSlider() {
+export default function HeroSlider({ onChange }) {
     const { data: sliders } = useGetAllByUrlQuery('sliders')
     const items = getItems(sliders)
-    console.log(items);
 
     const swiperRef = useRef(null);
-    const [buttonState, setButtonState] = useState("next");
+
     const handlePrev = useCallback(() => {
         if (!swiperRef.current) return;
-        setButtonState("prev");
         swiperRef.current?.swiper.slidePrev();
     }, []);
 
     const handleNext = useCallback(() => {
         if (!swiperRef.current) return;
-        setButtonState("next");
         swiperRef.current?.swiper.slideNext();
     }, []);
-
 
 
     return (
         <>
             <Swiper
+                onSlideChange={() => onChange(items?.[swiperRef.current.swiper.activeIndex])}
                 ref={swiperRef}
                 pagination={{
                     clickable: true,
@@ -55,18 +53,29 @@ export default function HeroSlider() {
                 }}
                 loop
             >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
-                <button className='main-button' onClick={handlePrev}>prev</button>
-                <button onClick={handleNext}>next</button>
-            </Swiper>
+                {
+                    items?.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <Box boxSize={'full'}>
+                                <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src={getImageUrl(item)} alt="slider" />
+                                <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src={"/images/overlay.png"} className='overlay' transform={"rotate(180deg)"} alt="overlay" />
+                                <Box pos={"absolute"} bottom={0} left={0} p={4}>
+                                    <Text className='title' color={"white"} mb={2} fontWeight={700} fontSize={"md"}>{item.title_uz}</Text>
+                                    <Text className='subtitle' textAlign={"left"} color={"#9C9C9F"} fontWeight={500} fontSize={"md"}>{item.updatedAt?.slice(0, 10)}</Text>
+                                </Box>
+                            </Box>
+                        </SwiperSlide>
+                    ))
+                }
+                <div className="swiper__buttons">
+                    <button className='main-button' onClick={handlePrev}>
+                        <img src="/icons/navArrowLeft.svg" alt="left" />
+                    </button>
+                    <button onClick={handleNext}>
+                        <img src="/icons/navArrowRight.svg" alt="right" />
+                    </button>
+                </div>
+            </Swiper >
         </>
     );
 }

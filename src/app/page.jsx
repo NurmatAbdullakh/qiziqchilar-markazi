@@ -6,30 +6,16 @@ import Programs from "./components/Home/Programs/Programs";
 import Audios from "./components/Home/Audios/Audios";
 import Gallery from "./components/Home/Gallery/Gallery";
 import Retro from "./components/Home/Retro/Retro";
+import Hero from "./components/Hero/Hero";
 import Locations from "./components/Home/Locations/Locations";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
 
   return (
     <main className="main">
-      <section className="hero">
-        <img className="hero__bg bg" src="/images/hero.jpg" alt="banner" />
-        <img
-          className="hero__overlay bg"
-          src="/images/Overlay.png"
-          alt=""
-        />
-        <div className="hero__container container">
-          <div className="hero__box">
-            <div className="hero__adress">Samarqand Madaniyat saroyi</div>
-            <div className="hero__title">G’ayrat Axmedov</div>
-            <div className="hero__subtitle">yakkaxon konserti</div>
-            <button className="hero__button">Bog‘lanish</button>
-            <HeroSlider />
-          </div>
-        </div>
-      </section>
-
+      <Hero />
       <StandUppers />
       <Programs />
       <Gostrols />
@@ -42,10 +28,10 @@ export default function Home() {
           <div className="news__title section-title ">
             <div className="section-title__title">Yangiliklar</div>
             <div className="section-title__divider"></div>
-            <div className="section-title__all">
-              <a className="section-title__all-text" href="./pages/news/news.html">
+            <Link href="/news" className="section-title__all">
+              <div className="section-title__all-text">
                 Barcha yangiliklar
-              </a>
+              </div>
               <img
                 className="section-title__all-icon"
                 src="/icons/arrowRight.svg"
@@ -56,7 +42,7 @@ export default function Home() {
                 src="/icons/smallArrowRight.svg"
                 alt="arrow-right"
               />
-            </div>
+            </Link>
           </div>
           <div className="news__layout">
             <div className="news__left ">

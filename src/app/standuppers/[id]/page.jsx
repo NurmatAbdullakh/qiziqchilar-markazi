@@ -45,79 +45,22 @@ const SingleStandupper = () => {
                         <div className="section-title__divider"></div>
                     </div>
                     <div className="career__items">
+                        {item?.faoliyati?.map((item, index) => (
 
-                        <div className="career__item">
-                            <div className="career__info">
-                                <div className="career__box">
-                                    Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
-                                    pyesasi,
-                                    N. Abdurahmonov rejissyorligi
-                                    asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
+                            <div className="career__item">
+                                <div className="career__info">
+                                    <div className="career__box">
+                                        <div className="career__title">{item?.description_uz}</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="career__stepper stepper">
-                                <div className="stepper__line"></div>
-                                <div className="stepper__circle"></div>
-                            </div>
-                            <div className="career__year">1985-yil</div>
-
-
-                        </div>
-                        <div className="career__item">
-                            <div className="career__info">
-                                <div className="career__box">
-                                    Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
-                                    pyesasi,
-                                    N. Abdurahmonov rejissyorligi
-                                    asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
+                                <div className="career__stepper stepper">
+                                    <div className="stepper__line"></div>
+                                    <div className="stepper__circle"></div>
                                 </div>
+                                <div className="career__year">{item?.Xodisa_yili?.slice(0, 4)}-yil</div>
                             </div>
-                            <div className="career__stepper stepper">
-                                <div className="stepper__line"></div>
-                                <div className="stepper__circle"></div>
-                            </div>
-                            <div className="career__year">1985-yil</div>
-
-
-                        </div>
-                        <div className="career__item">
-                            <div className="career__info">
-                                <div className="career__box">
-                                    Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
-                                    pyesasi,
-                                    N. Abdurahmonov rejissyorligi
-                                    asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
-                                </div>
-                            </div>
-                            <div className="career__stepper stepper">
-                                <div className="stepper__line"></div>
-                                <div className="stepper__circle"></div>
-                            </div>
-                            <div className="career__year">1985-yil</div>
-
-
-                        </div>
-                        <div className="career__item">
-                            <div className="career__info">
-                                <div className="career__box">
-                                    Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
-                                    pyesasi,
-                                    N. Abdurahmonov rejissyorligi
-                                    asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
-                                </div>
-                            </div>
-                            <div className="career__stepper stepper">
-                                <div className="stepper__line"></div>
-                                <div className="stepper__circle"></div>
-                            </div>
-                            <div className="career__year">1985-yil</div>
-
-
-                        </div>
-
-
+                        ))}
                     </div>
-
                 </div>
             </section>
             <section className="award">
