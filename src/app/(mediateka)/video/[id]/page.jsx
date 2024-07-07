@@ -1,49 +1,49 @@
 const SingleVideo = () => {
     return (
-        <main class="main single-video">
-            <section class="hero__with-title hero__with-title">
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <div class="hero__with-title-container container">
+        <main className="main single-video">
+            <section className="hero__with-title hero__with-title">
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <div className="hero__with-title-container container">
                 </div>
             </section>
-            <section class="data">
-                <div class="data__container container page-layout">
-                    <div class="page-layout__left">
-                        <div class="data__title">
+            <section className="data">
+                <div className="data__container container page-layout">
+                    <div className="page-layout__left">
+                        <div className="data__title">
                             Margilonda respublika askiya va qizikchilik sanati markazi
                             tashkil etildi
                         </div>
-                        <div class="page-layout__statistics statistics">
-                            <div class="statistics__item">
+                        <div className="page-layout__statistics statistics">
+                            <div className="statistics__item">
                                 <img src="/icons/statistics/current.svg" alt="calendar" />
-                                <div class="statistics__text">O‘zbekiston</div>
+                                <div className="statistics__text">O‘zbekiston</div>
                             </div>
-                            <div class="statistics__item">
+                            <div className="statistics__item">
                                 <img src="/icons/statistics/calendar.svg" alt="calendar" />
-                                <div class="statistics__text">10-oktabr 2023</div>
+                                <div className="statistics__text">10-oktabr 2023</div>
                             </div>
-                            <div class="statistics__item">
+                            <div className="statistics__item">
                                 <img src="/icons/statistics/volume.svg" alt="calendar" />
-                                <div class="statistics__text">300</div>
+                                <div className="statistics__text">300</div>
                             </div>
                         </div>
-                        <div class="big-video data__banner">
-                            <img class="big-video__image bg" src="/images/big-video.jpg" alt="video" />
-                            <img class="big-video__overlay bg" src="/images/video-overlay.png" alt="video" />
-                            <img class="big-video__play-icon" src="/icons/play-icon.svg" alt="video" />
+                        <div className="big-video data__banner">
+                            <img className="big-video__image bg" src="/images/big-video.jpg" alt="video" />
+                            <img className="big-video__overlay bg" src="/images/video-overlay.png" alt="video" />
+                            <img className="big-video__play-icon" src="/icons/play-icon.svg" alt="video" />
 
-                            <div class="big-video__info">
-                                <div class="big-video__date">
+                            <div className="big-video__info">
+                                <div className="big-video__date">
                                     08.03.24 20:03
                                 </div>
-                                <div class="big-video__title">
+                                <div className="big-video__title">
                                     Askiya – yashirin fikr sehri, hozirjavob xalqimizning noyob xazinasi
                                 </div>
                             </div>
                         </div>
 
-                        <div class="data__text">
+                        <div className="data__text">
                             <p>
                                 Rossiya poytaxtining “Vnukovo-2” aeroportida davlatimiz rahbarini Rossiya Federatsiyasi
                                 Hukumati Raisining o‘rinbosari –
@@ -70,17 +70,17 @@ const SingleVideo = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="page-layout__right">
-                        <div class="page-layout__types types-menu">
-                            <div class="types-menu__title">Bo‘limlar</div>
-                            <ul class="types-menu__list">
-                                <li class="types-menu__item active">
-                                    <img class="types-menu__icon" src="/icons/starsActive.svg" />
-                                    <div class="types-menu__label">Gastrollar</div>
+                    <div className="page-layout__right">
+                        <div className="page-layout__types types-menu">
+                            <div className="types-menu__title">Bo‘limlar</div>
+                            <ul className="types-menu__list">
+                                <li className="types-menu__item active">
+                                    <img className="types-menu__icon" src="/icons/starsActive.svg" />
+                                    <div className="types-menu__label">Gastrollar</div>
                                 </li>
-                                <li class="types-menu__item active">
-                                    <img class="types-menu__icon" src="/icons/stars.svg" />
-                                    <div class="types-menu__label">Dasturlar</div>
+                                <li className="types-menu__item active">
+                                    <img className="types-menu__icon" src="/icons/stars.svg" />
+                                    <div className="types-menu__label">Dasturlar</div>
                                 </li>
                             </ul>
                         </div>

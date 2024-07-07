@@ -1,56 +1,56 @@
 const SingleAudio = () => {
     return (
-        <main class="main single-audio">
-            <section class="hero__with-title hero__with-title">
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <div class="hero__with-title-container container">
+        <main className="main single-audio">
+            <section className="hero__with-title hero__with-title">
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <div className="hero__with-title-container container">
 
                 </div>
             </section>
-            <section class="data">
-                <div class="data__container container page-layout">
-                    <div class="page-layout__left">
-                        <div class="data__title">
+            <section className="data">
+                <div className="data__container container page-layout">
+                    <div className="page-layout__left">
+                        <div className="data__title">
                             Margilonda respublika askiya va qizikchilik sanati markazi
                             tashkil etildi
                         </div>
-                        <div class="page-layout__statistics statistics">
-                            <div class="statistics__item">
+                        <div className="page-layout__statistics statistics">
+                            <div className="statistics__item">
                                 <img src="/icons/statistics/current.svg" alt="calendar" />
-                                <div class="statistics__text">O‘zbekiston</div>
+                                <div className="statistics__text">O‘zbekiston</div>
                             </div>
-                            <div class="statistics__item">
+                            <div className="statistics__item">
                                 <img src="/icons/statistics/calendar.svg" alt="calendar" />
-                                <div class="statistics__text">10-oktabr 2023</div>
+                                <div className="statistics__text">10-oktabr 2023</div>
                             </div>
-                            <div class="statistics__item">
+                            <div className="statistics__item">
                                 <img src="/icons/statistics/volume.svg" alt="calendar" />
-                                <div class="statistics__text">300</div>
+                                <div className="statistics__text">300</div>
                             </div>
                         </div>
-                        <div class="data-audioplayer audioplayer">
-                            <div class="audioplayer__image">
-                                <img class="bg" src="/images/gallery/gallery 2.jpg" alt="audioplayer" />
+                        <div className="data-audioplayer audioplayer">
+                            <div className="audioplayer__image">
+                                <img className="bg" src="/images/gallery/gallery 2.jpg" alt="audioplayer" />
                             </div>
-                            <div class="audioplayer__info">
-                                <div class="audioplayer__title">
+                            <div className="audioplayer__info">
+                                <div className="audioplayer__title">
                                     Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                                     Xamroqulov
                                 </div>
-                                <div class="audioplayer__control">
-                                    <img class="audioplayer__play-icon" src="/icons/play-icon.svg" />
-                                    <div class="audioplayer__progress">
-                                        <div class="audioplayer__time">07:34</div>
-                                        <div class="audioplayer__progress-line"></div>
-                                        <div class="audioplayer__time">09:00</div>
+                                <div className="audioplayer__control">
+                                    <img className="audioplayer__play-icon" src="/icons/play-icon.svg" />
+                                    <div className="audioplayer__progress">
+                                        <div className="audioplayer__time">07:34</div>
+                                        <div className="audioplayer__progress-line"></div>
+                                        <div className="audioplayer__time">09:00</div>
                                     </div>
-                                    <img class="audioplayer__volume-icon"
+                                    <img className="audioplayer__volume-icon"
                                         src="/icons/statistics/volume.svg" />
                                 </div>
                             </div>
                         </div>
-                        <div class="data__text">
+                        <div className="data__text">
                             <p>
                                 Rossiya poytaxtining “Vnukovo-2” aeroportida davlatimiz rahbarini Rossiya Federatsiyasi
                                 Hukumati Raisining o‘rinbosari –
@@ -77,17 +77,17 @@ const SingleAudio = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="page-layout__right">
-                        <div class="page-layout__types types-menu">
-                            <div class="types-menu__title">Bo‘limlar</div>
-                            <ul class="types-menu__list">
-                                <li class="types-menu__item active">
-                                    <img class="types-menu__icon" src="/icons/starsActive.svg" />
-                                    <div class="types-menu__label">Gastrollar</div>
+                    <div className="page-layout__right">
+                        <div className="page-layout__types types-menu">
+                            <div className="types-menu__title">Bo‘limlar</div>
+                            <ul className="types-menu__list">
+                                <li className="types-menu__item active">
+                                    <img className="types-menu__icon" src="/icons/starsActive.svg" />
+                                    <div className="types-menu__label">Gastrollar</div>
                                 </li>
-                                <li class="types-menu__item active">
-                                    <img class="types-menu__icon" src="/icons/stars.svg" />
-                                    <div class="types-menu__label">Dasturlar</div>
+                                <li className="types-menu__item active">
+                                    <img className="types-menu__icon" src="/icons/stars.svg" />
+                                    <div className="types-menu__label">Dasturlar</div>
                                 </li>
                             </ul>
                         </div>

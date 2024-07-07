@@ -2,6 +2,7 @@ import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getItems } from "../../../../utils/getItems"
 import VideoCard from "../../Cards/VideoCard/VideoCard"
 import BigVideo from "../../Cards/BigVideo/BigVideo"
+import Link from "next/link"
 
 const Retro = () => {
     const { data: videos } = useGetAllByUrlQuery('videolars')
@@ -13,40 +14,41 @@ const Retro = () => {
 
 
     return (
-        <section class="retro">
-            <div class="retro__container container">
-                <div class="retro__title section-title">
-                    <div class="section-title__title">Retro Askiyalar</div>
-                    <div class="section-title__divider"></div>
-                    <div class="section-title__all">
-                        <a
-                            class="section-title__all-text"
+        <section className="retro">
+            <div className="retro__container container">
+                <div className="retro__title section-title">
+                    <div className="section-title__title">Retro Askiyalar</div>
+                    <div className="section-title__divider"></div>
+                    <Link href={"/mediateka?type=video"} className="section-title__all">
+                        <div
+                            className="section-title__all-text"
                             href="./pages/retro/retro.html"
                         >
                             Barcha videolar
-                        </a>
+                        </div>
                         <img
-                            class="section-title__all-icon"
+                            className="section-title__all-icon"
                             src="/icons/arrowRight.svg"
                             alt="arrow-right"
                         />
                         <img
-                            class="section-title__all-icon-small"
+                            className="section-title__all-icon-small"
                             src="/icons/smallArrowRight.svg"
                             alt="arrow-right"
                         />
-                    </div>
+                    </Link>
                 </div>
-                <div class="retro__layout">
+                <div className="retro__layout">
                     <BigVideo item={bigVideoData} />
-                    <div class="retro__right">
-                        <div class="retro__items">
+
+                    <Link href={"/mediateka?type=video"} className="retro__right">
+                        <div className="retro__items">
                             {smallVideos?.map(item => <VideoCard item={item} key={item.id} />)}
                         </div>
-                        <button class="retro__button outline-button">
+                        <button className="retro__button outline-button">
                             Barcha videolar
                         </button>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </section>

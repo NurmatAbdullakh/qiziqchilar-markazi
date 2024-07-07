@@ -12,126 +12,126 @@ const Center = () => {
 
 
     return (
-        <main class="main about-center">
-            <section class="hero__with-title hero__with-title">
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <div class="hero__with-title-container container">
-                    <h1 class="hero__with-title-text">Markaz</h1>
-                    <img class="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
+        <main className="main about-center">
+            <section className="hero__with-title hero__with-title">
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <div className="hero__with-title-container container">
+                    <h1 className="hero__with-title-text">Markaz</h1>
+                    <img className="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
                 </div>
             </section>
-            <section class="about-us">
-                <img class="about-us__banner" src="/images/about-banner.jpg" alt="banner" />
-                <img class="about-us__rectangle-bottom" src="/images/white-rectangle.png" alt="banner" />
-                <div class="about-us__container container">
+            <section className="about-us">
+                <img className="about-us__banner" src="/images/about-banner.jpg" alt="banner" />
+                <img className="about-us__rectangle-bottom" src="/images/white-rectangle.png" alt="banner" />
+                <div className="about-us__container container">
 
-                    <div class="about-us__title">
-                        <h2 class="title">Biz haqimizda</h2>
+                    <div className="about-us__title">
+                        <h2 className="title">Biz haqimizda</h2>
                     </div>
-                    <div class="about-us__line"></div>
-                    <div class="about-us__text">
+                    <div className="about-us__line"></div>
+                    <div className="about-us__text">
                         <p>{centerData?.description_uz}</p>
                     </div>
 
-                    <div class="about-us__boxes">
-                        <div class="about-us__box box">
-                            <img class="box__img" src="/icons/box/icon.svg" alt="" />
-                            <h3 class="box__title">{centerData?.number_of_employees}</h3>
-                            <p class="box__text"> Xodimlar</p>
+                    <div className="about-us__boxes">
+                        <div className="about-us__box box">
+                            <img className="box__img" src="/icons/box/icon.svg" alt="" />
+                            <h3 className="box__title">{centerData?.number_of_employees}</h3>
+                            <p className="box__text"> Xodimlar</p>
                         </div>
-                        <div class="about-us__box box">
-                            <img class="box__img" src="/icons/box/icon 1.svg" alt="" />
-                            <h3 class="box__title">{centerData?.number_of_comic}</h3>
-                            <p class="box__text"> Qiziqchilar</p>
+                        <div className="about-us__box box">
+                            <img className="box__img" src="/icons/box/icon 1.svg" alt="" />
+                            <h3 className="box__title">{centerData?.number_of_comic}</h3>
+                            <p className="box__text"> Qiziqchilar</p>
                         </div>
-                        <div class="about-us__box box">
-                            <img class="box__img" src="/icons/box/icon 2.svg" alt="" />
-                            <h3 class="box__title">{centerData?.number_of_tours}</h3>
-                            <p class="box__text">Gastrollar</p>
+                        <div className="about-us__box box">
+                            <img className="box__img" src="/icons/box/icon 2.svg" alt="" />
+                            <h3 className="box__title">{centerData?.number_of_tours}</h3>
+                            <p className="box__text">Gastrollar</p>
                         </div>
-                        <div class="about-us__box box">
-                            <img class="box__img" src="/icons/box/icon 3.svg" alt="" />
-                            <h3 class="box__title">{centerData?.number_of_programs}</h3>
-                            <p class="box__text">Dasturlar</p>
+                        <div className="about-us__box box">
+                            <img className="box__img" src="/icons/box/icon 3.svg" alt="" />
+                            <h3 className="box__title">{centerData?.number_of_programs}</h3>
+                            <p className="box__text">Dasturlar</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="system">
-                <div class="system__container container">
-                    <div class="system__title section-title">
-                        <div class="section-title__title">Tashkiliy tuzulma</div>
-                        <div class="section-title__divider"></div>
+            <section className="system">
+                <div className="system__container container">
+                    <div className="system__title section-title">
+                        <div className="section-title__title">Tashkiliy tuzulma</div>
+                        <div className="section-title__divider"></div>
                     </div>
-                    <div class="system__layer-1">
-                        <div class="text">
+                    <div className="system__layer-1">
+                        <div className="text">
                             Исполнительный комитет Центрального Совета Союза Молодежи Узбекистан
                         </div>
-                        <div class="arrow">
+                        <div className="arrow">
                             <img src="/icons/systemArrow.svg" alt="arrow" />
                         </div>
                     </div>
-                    <div class="system__layer-2">
-                        <div class="text">Председатель</div>
-                        <div class="arrow">
+                    <div className="system__layer-2">
+                        <div className="text">Председатель</div>
+                        <div className="arrow">
                             <img src="/icons/systemArrow.svg" alt="arrow" />
                         </div>
                     </div>
-                    <div class="system__layer-3">
-                        <div class="text">Заместитель председателя </div>
-                        <div class="line"></div>
+                    <div className="system__layer-3">
+                        <div className="text">Заместитель председателя </div>
+                        <div className="line"></div>
                     </div>
-                    <div class="system__multi-arrow">
+                    <div className="system__multi-arrow">
                         <img src="/icons/systemArrow.svg" alt="arrow" />
                         <img src="/icons/systemArrow.svg" alt="arrow" />
                         <img src="/icons/systemArrow.svg" alt="arrow" />
                     </div>
-                    <div class="system__layer-4">
-                        <div class="text">
+                    <div className="system__layer-4">
+                        <div className="text">
                             Отдел по работе с обучающейся узбекистанской молодежью за рубежом
                         </div>
-                        <div class="text">
+                        <div className="text">
                             Отдел по работе с трудящейся узбекистанской молодежью за рубежом
                         </div>
-                        <div class="text">
+                        <div className="text">
                             Отдел по сотрудничеству с узбекскими диаспорами за рубежом
                         </div>
                     </div>
                 </div>
             </section>
             <Team onClick={setSelectedEmployee} />
-            <section class="school">
-                <div class="school__container container">
-                    <div class="school__title section-title">
-                        <div class="section-title__title">Mahorat maktablari</div>
-                        <div class="section-title__divider"></div>
+            <section className="school">
+                <div className="school__container container">
+                    <div className="school__title section-title">
+                        <div className="section-title__title">Mahorat maktablari</div>
+                        <div className="section-title__divider"></div>
                     </div>
                 </div>
-                <div class="locations__container container">
-                    <div class="locations__map">
+                <div className="locations__container container">
+                    <div className="locations__map">
 
-                        <img class="locations__map-image bg" src="/images/map.jpg" />
+                        <img className="locations__map-image bg" src="/images/map.jpg" />
 
-                        <div class="locations__tabs tabs">
-                            <div class="tabs__tab-panel">
-                                <div class="locations__items">
+                        <div className="locations__tabs tabs">
+                            <div className="tabs__tab-panel">
+                                <div className="locations__items">
 
-                                    <div class="locations__item location active">
-                                        <div class="location__title">
-                                            <img class="location__icon" src="/icons/schoolIcon.svg" />
-                                            <div class="location__text">Farg’ona Maxorat maktabi</div>
+                                    <div className="locations__item location active">
+                                        <div className="location__title">
+                                            <img className="location__icon" src="/icons/schoolIcon.svg" />
+                                            <div className="location__text">Farg’ona Maxorat maktabi</div>
                                         </div>
-                                        <div class="location__subtitle">
+                                        <div className="location__subtitle">
                                             Farg’ona viloyati, Farg’ona shaxar, Yuksalish ko’chasi 11uy
                                         </div>
                                     </div>
-                                    <div class="locations__item location">
-                                        <div class="location__title">
-                                            <img class="location__icon" src="/icons/schoolIcon.svg" />
-                                            <div class="location__text">Farg’ona Maxorat maktabi</div>
+                                    <div className="locations__item location">
+                                        <div className="location__title">
+                                            <img className="location__icon" src="/icons/schoolIcon.svg" />
+                                            <div className="location__text">Farg’ona Maxorat maktabi</div>
                                         </div>
-                                        <div class="location__subtitle">
+                                        <div className="location__subtitle">
                                             Farg’ona viloyati, Farg’ona shaxar, Yuksalish ko’chasi 11uy
                                         </div>
                                     </div>
@@ -143,42 +143,42 @@ const Center = () => {
             </section>
             {selectedEmployee && <TeamModal onClose={() => setSelectedEmployee(null)} selectedEmployee={selectedEmployee} />}
 
-            {/* <sectio class="modal">
-                <div class="modal__content ">
-                    <div class="modal__body location-modal">
-                        <div class="location-modal__header">
-                            <div class="location-modal__title">Hududiy boshqarmalar</div>
-                            <img class="location-modal__close-btn" src="/icons/close.svg" />
+            {/* <sectio className="modal">
+                <div className="modal__content ">
+                    <div className="modal__body location-modal">
+                        <div className="location-modal__header">
+                            <div className="location-modal__title">Hududiy boshqarmalar</div>
+                            <img className="location-modal__close-btn" src="/icons/close.svg" />
                         </div>
-                        <div class="location-modal__banner">
-                            <img class="bg" src="/images/gallery/gallery 8.jpg" alt="" />
+                        <div className="location-modal__banner">
+                            <img className="bg" src="/images/gallery/gallery 8.jpg" alt="" />
                         </div>
-                        <div class="location-modal__info-row">
-                            <img class="location-modal__icon" src="/icons/location-modal/mail.svg" alt="" />
+                        <div className="location-modal__info-row">
+                            <img className="location-modal__icon" src="/icons/location-modal/mail.svg" alt="" />
                             <a href="mailto:info.@askiyamarkazi.uz"
-                                class="location-modal__label">info.@askiyamarkazi.uz</a>
+                                className="location-modal__label">info.@askiyamarkazi.uz</a>
                         </div>
-                        <div class="location-modal__info-row">
-                            <img class="location-modal__icon" src="/icons/location-modal/phone.svg" alt="" />
-                            <a href="tel:+998 71 200 70 07" class="location-modal__label">+998 71 200 70 07</a>
-                            <div class="location-modal__socials">
-                                <a href="" class="location-modal__social">
-                                    <img class="" src="/icons/location-modal/telegram.svg" alt="" />
+                        <div className="location-modal__info-row">
+                            <img className="location-modal__icon" src="/icons/location-modal/phone.svg" alt="" />
+                            <a href="tel:+998 71 200 70 07" className="location-modal__label">+998 71 200 70 07</a>
+                            <div className="location-modal__socials">
+                                <a href="" className="location-modal__social">
+                                    <img className="" src="/icons/location-modal/telegram.svg" alt="" />
                                 </a>
-                                <a href="" class="location-modal__social">
-                                    <img class="" src="/icons/location-modal/instagram.svg" alt="" />
+                                <a href="" className="location-modal__social">
+                                    <img className="" src="/icons/location-modal/instagram.svg" alt="" />
                                 </a>
-                                <a href="" class="location-modal__social">
-                                    <img class="" src="/icons/location-modal/facebook.svg" alt="" />
+                                <a href="" className="location-modal__social">
+                                    <img className="" src="/icons/location-modal/facebook.svg" alt="" />
                                 </a>
                             </div>
 
                         </div>
-                        <div class="location-modal__info-row">
-                            <img class="location-modal__icon" src="/icons/location-modal/clock.svg" alt="" />
-                            <span class="location-modal__label">22:00 ga qadar ochiq</span>
+                        <div className="location-modal__info-row">
+                            <img className="location-modal__icon" src="/icons/location-modal/clock.svg" alt="" />
+                            <span className="location-modal__label">22:00 ga qadar ochiq</span>
                         </div>
-                        <div class="location-modal__text">
+                        <div className="location-modal__text">
                             Markazning moddiy-texnika bazasini mustahkamlash va ijodkorlari ijtimoiy sharoitini
                             yaxshilash maqsadida Fargʻona
                             viloyati hokimligi Markazni saqlash va uning faoliyatini qoʻllab-quvvatlash uchun mahalliy

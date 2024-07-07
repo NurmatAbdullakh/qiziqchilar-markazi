@@ -1,112 +1,116 @@
+"use client"
+import { useParams } from "next/navigation";
+import { useGetOneByUrlQuery } from "../../../api/api.service"
+import { getItem } from "../../../utils/getItem";
+import { getImageUrl } from "../../../utils/getImageUrl";
+import {
+    BlocksRenderer,
+} from "@strapi/blocks-react-renderer";
+
+
 const SingleStandupper = () => {
+    const { id } = useParams()
+    const { data } = useGetOneByUrlQuery('soz-ustalaris', id)
+    const item = getItem(data)
+
+    console.log(item);
+
     return (
 
-        <main class="main single-stand-upper">
-            <section class="hero">
-                <img class="hero__ellips" src="/images/ellips.svg" alt="ellips" />
-                <img class="hero__ellips" src="/images/ellips.svg" alt="ellips" />
-                <div class="hero__container container">
-                    <div class="hero__box">
-                        <div class="hero__image">
-                            <img class="bg" src="/images/jockers/Image.jpg" alt="stand-upper" />
-                            <img class="overlay bg" src="/images/Overlay.png" alt="stand-upper" />
+        <main className="main single-stand-upper">
+            <section className="hero">
+                <img className="hero__ellips" src="/images/ellips.svg" alt="ellips" />
+                <img className="hero__ellips" src="/images/ellips.svg" alt="ellips" />
+                <div className="hero__container container">
+                    <div className="hero__box">
+                        <div className="hero__image">
+                            <img className="bg" src={getImageUrl(item)} alt="stand-upper" />
+                            <img className="overlay bg" src="/images/Overlay.png" alt="stand-upper" />
                         </div>
-                        <div class="hero__info">
-                            <div class="hero__title">Mirzabek Xolmedov</div>
-                            <div class="hero__subtitle">Qiziqchi</div>
-                            <div class="hero__line"></div>
-                            <div class="hero__text">
-                                Mirzabek Xolmedov institutni tugallab, oʻzining shaxsiy „Mirzo teatri“ nomli teatriga
-                                asos soldi. Jamoa tarkibiga
-                                oʻzidan tashqari, talabalik yillarida tanishgan ikki nafar Oʻzbekistonlik qiziqchi
-                                Shukurillo Isroilov va Valijon
-                                Shamshiyevlarni qoʻshdi va bu jamoani yillar davomida yangilab, kengaytirib bordi. Uning
-                                teatridagi faoliyati spektaklni
-                                sahnalashtirishga qaratilgandir. Mirzabek Xolmedovning aytishicha u rus tilida rep
-                                yozishga va kuylashga harakat qilgan,
-                                lekin ushbu yoʻnalishdagi ijodi uzoqqa choʻzilmagan. Oʻzbek tilida bir qancha rep va pop
-                                janrida qoʻshiqlari mavjud.
-                                1986-yilda oʻzbek xonandasi Rustam Gʻoipov ijro etgan „Davraga tush“ qoʻshigʻi Mirzabek
-                                Xolmedov yozgan sheʼr asosida
-                                bastalangan.
+                        <div className="hero__info">
+                            <div className="hero__title">{item?.full_name_uz}</div>
+                            <div className="hero__subtitle">{item?.Kasbi}</div>
+                            <div className="hero__line"></div>
+                            <div className="hero__text">
+                                {item?.description_uz && <BlocksRenderer content={item?.description_uz} />}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="career">
-                <div class="career__container container">
-                    <div class="career__title section-title">
-                        <div class="section-title__title">Faoliyati</div>
-                        <div class="section-title__divider"></div>
+            <section className="career">
+                <div className="career__container container">
+                    <div className="career__title section-title">
+                        <div className="section-title__title">Faoliyati</div>
+                        <div className="section-title__divider"></div>
                     </div>
-                    <div class="career__items">
+                    <div className="career__items">
 
-                        <div class="career__item">
-                            <div class="career__info">
-                                <div class="career__box">
+                        <div className="career__item">
+                            <div className="career__info">
+                                <div className="career__box">
                                     Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
                                     pyesasi,
                                     N. Abdurahmonov rejissyorligi
                                     asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
                                 </div>
                             </div>
-                            <div class="career__stepper stepper">
-                                <div class="stepper__line"></div>
-                                <div class="stepper__circle"></div>
+                            <div className="career__stepper stepper">
+                                <div className="stepper__line"></div>
+                                <div className="stepper__circle"></div>
                             </div>
-                            <div class="career__year">1985-yil</div>
+                            <div className="career__year">1985-yil</div>
 
 
                         </div>
-                        <div class="career__item">
-                            <div class="career__info">
-                                <div class="career__box">
+                        <div className="career__item">
+                            <div className="career__info">
+                                <div className="career__box">
                                     Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
                                     pyesasi,
                                     N. Abdurahmonov rejissyorligi
                                     asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
                                 </div>
                             </div>
-                            <div class="career__stepper stepper">
-                                <div class="stepper__line"></div>
-                                <div class="stepper__circle"></div>
+                            <div className="career__stepper stepper">
+                                <div className="stepper__line"></div>
+                                <div className="stepper__circle"></div>
                             </div>
-                            <div class="career__year">1985-yil</div>
+                            <div className="career__year">1985-yil</div>
 
 
                         </div>
-                        <div class="career__item">
-                            <div class="career__info">
-                                <div class="career__box">
+                        <div className="career__item">
+                            <div className="career__info">
+                                <div className="career__box">
                                     Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
                                     pyesasi,
                                     N. Abdurahmonov rejissyorligi
                                     asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
                                 </div>
                             </div>
-                            <div class="career__stepper stepper">
-                                <div class="stepper__line"></div>
-                                <div class="stepper__circle"></div>
+                            <div className="career__stepper stepper">
+                                <div className="stepper__line"></div>
+                                <div className="stepper__circle"></div>
                             </div>
-                            <div class="career__year">1985-yil</div>
+                            <div className="career__year">1985-yil</div>
 
 
                         </div>
-                        <div class="career__item">
-                            <div class="career__info">
-                                <div class="career__box">
+                        <div className="career__item">
+                            <div className="career__info">
+                                <div className="career__box">
                                     Abror Hidoyatov nomidagi oʻzbek davlat drama teatrida Hamza Hakimzoda Niyoziy
                                     pyesasi,
                                     N. Abdurahmonov rejissyorligi
                                     asosida „Maysaraning nayranglari“ nomli spektaklida Hidoyatxon rolini ijro qilgan.
                                 </div>
                             </div>
-                            <div class="career__stepper stepper">
-                                <div class="stepper__line"></div>
-                                <div class="stepper__circle"></div>
+                            <div className="career__stepper stepper">
+                                <div className="stepper__line"></div>
+                                <div className="stepper__circle"></div>
                             </div>
-                            <div class="career__year">1985-yil</div>
+                            <div className="career__year">1985-yil</div>
 
 
                         </div>
@@ -116,49 +120,27 @@ const SingleStandupper = () => {
 
                 </div>
             </section>
-            <section class="award">
-                <div class="award__container container">
-                    <div class="award__title section-title">
-                        <div class="section-title__title">Yutuq va mukofotlari</div>
-                        <div class="section-title__divider"></div>
+            <section className="award">
+                <div className="award__container container">
+                    <div className="award__title section-title">
+                        <div className="section-title__title">Yutuq va mukofotlari</div>
+                        <div className="section-title__divider"></div>
                     </div>
-                    <div class="award__items">
-                        <div class="award__item award-card">
-                            <div class="award-card__body">
-                                <div class="award-card__year">1989-yil</div>
-                                <div class="award-card__title">„Yumorist-89“ tanlovi g‘olibi</div>
-                                <div class="award-card__subtitle">
-                                    „Yumorist-89“ saralash tanlovi g‘olibi (Qiziqchi, O‘zbekiston SSR)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="award__item award-card">
-                            <div class="award-card__body">
-                                <div class="award-card__year">1989-yil</div>
-                                <div class="award-card__title">„Yumorist-89“ tanlovi g‘olibi</div>
-                                <div class="award-card__subtitle">
-                                    „Yumorist-89“ saralash tanlovi g‘olibi (Qiziqchi, O‘zbekiston SSR)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="award__item award-card">
-                            <div class="award-card__body">
-                                <div class="award-card__year">1989-yil</div>
-                                <div class="award-card__title">„Yumorist-89“ tanlovi g‘olibi</div>
-                                <div class="award-card__subtitle">
-                                    „Yumorist-89“ saralash tanlovi g‘olibi (Qiziqchi, O‘zbekiston SSR)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="award__item award-card">
-                            <div class="award-card__body">
-                                <div class="award-card__year">1989-yil</div>
-                                <div class="award-card__title">„Yumorist-89“ tanlovi g‘olibi</div>
-                                <div class="award-card__subtitle">
-                                    „Yumorist-89“ saralash tanlovi g‘olibi (Qiziqchi, O‘zbekiston SSR)
-                                </div>
-                            </div>
-                        </div>
+                    <div className="award__items">
+                        {
+                            item?.achievments?.map((a) => {
+                                return (
+
+                                    <div className="award__item award-card">
+                                        <div className="award-card__body">
+                                            <div className="award-card__year">{a.Yutuq_yili.slice(0, 4)}-yil</div>
+                                            <div className="award-card__title">{a.title_uz}</div>
+                                            <div className="award-card__subtitle">{a.text_uz}</div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
 

@@ -2,74 +2,74 @@ import StanduppersCards from "./_component/StanduppersCards";
 
 const StandUppers = () => {
     return (
-        <main class="main stand-upper">
-            <section class="hero__with-title hero__with-title">
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <div class="hero__with-title-container container">
-                    <h1 class="hero__with-title-text">ASKIYACHILAR</h1>
-                    <img class="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
+        <main className="main stand-upper">
+            <section className="hero__with-title hero__with-title">
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <div className="hero__with-title-container container">
+                    <h1 className="hero__with-title-text">ASKIYACHILAR</h1>
+                    <img className="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
                 </div>
             </section>
-            <section class="data">
-                <div class="data__container container page-layout">
-                    <div class="page-layout__left">
+            <section className="data">
+                <div className="data__container container page-layout">
+                    <div columns={[1, 2, 4]} spacing='20px' className="page-layout__left">
                         <StanduppersCards />
                     </div>
-                    <div class="page-layout__right">
-                        <div class="page-layout__types filter">
-                            <div class="filter__title">Filtr</div>
-                            <div class="filter__subtitle">Askiyachilar</div>
-                            <ul class="filter__list">
+                    <div className="page-layout__right">
+                        <div className="page-layout__types filter">
+                            <div className="filter__title">Filtr</div>
+                            <div className="filter__subtitle">Askiyachilar</div>
+                            <ul className="filter__list">
                                 <li>
-                                    <label class="filter__container">Barchasi
+                                    <label className="filter__container">Barchasi
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="filter__container">Vafot etganlar
+                                    <label className="filter__container">Vafot etganlar
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="filter__container">Yangi askiyachilar
+                                    <label className="filter__container">Yangi askiyachilar
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                             </ul>
-                            <div class="filter__subtitle">Askiyachilar</div>
-                            <ul class="filter__list">
+                            <div className="filter__subtitle">Askiyachilar</div>
+                            <ul className="filter__list">
                                 <li>
-                                    <label class="filter__container">Barchasi
+                                    <label className="filter__container">Barchasi
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="filter__container">Qiziqchi
+                                    <label className="filter__container">Qiziqchi
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="filter__container">Aktyor
+                                    <label className="filter__container">Aktyor
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="filter__container">Baxshi
+                                    <label className="filter__container">Baxshi
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                                 <li>
-                                    <label class="filter__container">So‘z ustasi
+                                    <label className="filter__container">So‘z ustasi
                                         <input type="checkbox" checked="checked" />
-                                        <span class="checkmark"></span>
+                                        <span className="checkmark"></span>
                                     </label>
                                 </li>
                             </ul>
@@ -77,7 +77,7 @@ const StandUppers = () => {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
 
 
     )

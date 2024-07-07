@@ -2,6 +2,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { useGetAllByUrlQuery } from "../../../../api/api.service";
 import AudioCard from "../../Cards/AudioCard/AudioCard";
 import { getItems } from "../.././../../utils/getItems"
+import Link from "next/link";
 
 const Audios = () => {
     const { data: audios } = useGetAllByUrlQuery('audiolars')
@@ -9,26 +10,26 @@ const Audios = () => {
     const items = getItems(audios)
 
     return (
-        <section class="audio">
-            <div class="audio__container container">
-                <div class="gallery__title section-title ">
-                    <div class="section-title__title white">Audio</div>
-                    <div class="section-title__divider"></div>
-                    <div class="section-title__all">
-                        <a class="section-title__all-text white" href="#">
+        <section className="audio">
+            <div className="audio__container container">
+                <div className="gallery__title section-title ">
+                    <div className="section-title__title white">Audio</div>
+                    <div className="section-title__divider"></div>
+                    <Link href={"/mediateka?type=audio"} className="section-title__all">
+                        <div className="section-title__all-text white" href="#">
                             Barcha audiolar
-                        </a>
+                        </div>
                         <img
-                            class="section-title__all-icon white"
+                            className="section-title__all-icon white"
                             src="/icons/arrowRight.svg"
                             alt="arrow-right"
                         />
                         <img
-                            class="section-title__all-icon-small white"
+                            className="section-title__all-icon-small white"
                             src="/icons/smallArrowRight.svg"
                             alt="arrow-right"
                         />
-                    </div>
+                    </Link>
                 </div>
                 <SimpleGrid columns={[1, 2, 4]} spacing='20px' >
                     {items?.slice(0, 4)?.map((item) => {

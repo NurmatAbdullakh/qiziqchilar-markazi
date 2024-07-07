@@ -1,51 +1,51 @@
 const SingleTour = () => {
     return (
-        <main class="main single-gostrol">
-            <section class="hero__with-title hero__with-title">
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
-                <div class="hero__with-title-container container">
-                    <h1 class="hero__with-title-text">Gastroll va dasturlar</h1>
-                    <img class="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
+        <main className="main single-gostrol">
+            <section className="hero__with-title hero__with-title">
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
+                <div className="hero__with-title-container container">
+                    <h1 className="hero__with-title-text">Gastroll va dasturlar</h1>
+                    <img className="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
                 </div>
             </section>
-            <section class="data">
-                <div class="data__container container page-layout">
-                    <div class="page-layout__left">
-                        <div class="data__banner">
-                            <img class="bg" src="/images/data-banner.jpg" alt="banner" />
+            <section className="data">
+                <div className="data__container container page-layout">
+                    <div className="page-layout__left">
+                        <div className="data__banner">
+                            <img className="bg" src="/images/data-banner.jpg" alt="banner" />
                         </div>
-                        <div class="data__row row">
-                            <div class="row__right">
-                                <div class="row__title data__title">Marg’ilon darvishona</div>
-                                <div class="row__date">
-                                    <img class="row__icon" src="/icons/data-calendar.svg" alt="" />
-                                    <div class="row__time">08.03.24 23:23</div>
+                        <div className="data__row row">
+                            <div className="row__right">
+                                <div className="row__title data__title">Marg’ilon darvishona</div>
+                                <div className="row__date">
+                                    <img className="row__icon" src="/icons/data-calendar.svg" alt="" />
+                                    <div className="row__time">08.03.24 23:23</div>
                                 </div>
 
                             </div>
-                            <div class="row__left period">
-                                <div class="period__period">
-                                    <div class="period__date">
-                                        <div class="period__day">25</div>
-                                        <div class="period__month">May</div>
+                            <div className="row__left period">
+                                <div className="period__period">
+                                    <div className="period__date">
+                                        <div className="period__day">25</div>
+                                        <div className="period__month">May</div>
                                     </div>
-                                    <div class="period__line"></div>
-                                    <div class="period__date">
-                                        <div class="period__day">09</div>
-                                        <div class="period__month">Avgust</div>
+                                    <div className="period__line"></div>
+                                    <div className="period__date">
+                                        <div className="period__day">09</div>
+                                        <div className="period__month">Avgust</div>
                                     </div>
                                 </div>
-                                <div class="period__location">
-                                    <img class="period__location-icon" src="/icons/data-location.svg"
+                                <div className="period__location">
+                                    <img className="period__location-icon" src="/icons/data-location.svg"
                                         alt="location" />
-                                    <div class="period__location-text">100011, O'zbekiston, Shahar: Toshkent,
+                                    <div className="period__location-text">100011, O'zbekiston, Shahar: Toshkent,
                                         Tuman: Yunusobod, Navoiy shoh ko'chasi, 2</div>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="data__text">
+                        <div className="data__text">
                             <p>
                                 Rossiya poytaxtining “Vnukovo-2” aeroportida davlatimiz rahbarini Rossiya Federatsiyasi
                                 Hukumati Raisining o‘rinbosari –
@@ -72,65 +72,65 @@ const SingleTour = () => {
                             </p>
                         </div>
                     </div>
-                    <div class="page-layout__right">
-                        <div class="page-layout__adresses addresses-menu">
-                            <div class="addresses-menu__title sidebar-title">
+                    <div className="page-layout__right">
+                        <div className="page-layout__adresses addresses-menu">
+                            <div className="addresses-menu__title sidebar-title">
                                 Manzillar
                             </div>
-                            <ul class="addresses-menu__list">
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
+                            <ul className="addresses-menu__list">
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Istiqlol san’at saroyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Istiqlol san’at saroyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Istiqlol san’at saroyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
                                 </li>
-                                <li class="addresses-menu__item active">
-                                    <img class="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div class="addresses-menu__label">Istiqlol san’at saroyi</div>
+                                <li className="addresses-menu__item active">
+                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
+                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
-            {/* <sectio class="modal">
-                <div class="modal__content ">
-                    <div class="modal__body location-modal">
-                        <div class="location-modal__header">
-                            <div class="location-modal__title">Abdulla Qaxxor madaniyat uyi</div>
-                            <img class="location-modal__close-btn" src="/icons/close.svg" />
+            {/* <sectio className="modal">
+                <div className="modal__content ">
+                    <div className="modal__body location-modal">
+                        <div className="location-modal__header">
+                            <div className="location-modal__title">Abdulla Qaxxor madaniyat uyi</div>
+                            <img className="location-modal__close-btn" src="/icons/close.svg" />
                         </div>
-                        <div class="location-modal__subheader">
+                        <div className="location-modal__subheader">
                             16 May - 23:23
                         </div>
-                        <div class="location-modal__map">
-                            <img class="bg" src="/images/map.jpg" alt="map" />
-                            <img class="location-modal__rectangle" src="/images/white-rectangle.png" alt="" />
-                            <div class="location-modal__row">
-                                <img class="location-modal__icon" src="/icons/location.svg" alt="location" />
-                                <p class="location-modal__text">O'zbekiston, Toshkent, Uch-tepa tumani, ko'chasi FARHOD,
+                        <div className="location-modal__map">
+                            <img className="bg" src="/images/map.jpg" alt="map" />
+                            <img className="location-modal__rectangle" src="/images/white-rectangle.png" alt="" />
+                            <div className="location-modal__row">
+                                <img className="location-modal__icon" src="/icons/location.svg" alt="location" />
+                                <p className="location-modal__text">O'zbekiston, Toshkent, Uch-tepa tumani, ko'chasi FARHOD,
                                     21</p>
                             </div>
                         </div>

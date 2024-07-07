@@ -30,14 +30,14 @@ const Team = ({ onClick }) => {
 
 
     return (
-        <section class="team">
-            <div class="team__container container">
-                <div class="team__title section-title">
-                    <div class="section-title__title">Bizning jamoa</div>
-                    <div class="section-title__divider"></div>
+        <section className="team">
+            <div className="team__container container">
+                <div className="team__title section-title">
+                    <div className="section-title__title">Bizning jamoa</div>
+                    <div className="section-title__divider"></div>
                 </div>
-                <div class="team__tabs tabs big">
-                    <div class="tabs__tab-list">
+                <div className="team__tabs tabs big">
+                    <div className="tabs__tab-list">
                         {
                             tabs.map((item, index) => {
                                 const isActive = index === activeTab
@@ -46,8 +46,8 @@ const Team = ({ onClick }) => {
                                         key={item.id}
                                         onClick={() => setActiveTab(index)}
                                     >
-                                        <div class="tabs__tab-title">
-                                            <div class="tabs__tab-title-text">
+                                        <div className="tabs__tab-title">
+                                            <div className="tabs__tab-title-text">
                                                 {item.title}
                                             </div>
                                         </div>
@@ -58,15 +58,15 @@ const Team = ({ onClick }) => {
 
                     </div>
                 </div>
-                <div class="team__items">
+                <div className="team__items">
                     {bigCardData && (
-                        <div onClick={() => onClick(bigCardData)} class="team__item team-card big">
-                            <div class="team-card__img">
-                                <img class="bg" src={"https://admin.askiyachilar.uz" + bigCardData?.profil_rasmi?.data?.attributes?.url} alt="team" />
+                        <div onClick={() => onClick(bigCardData)} className="team__item team-card big">
+                            <div className="team-card__img">
+                                <img className="bg" src={"https://admin.askiyachilar.uz" + bigCardData?.profil_rasmi?.data?.attributes?.url} alt="team" />
                             </div>
-                            <div class="team-card__title">{bigCardData?.full_name_uz}</div>
-                            <div class="team-card__subtitle">{bigCardData?.Lavozimi}</div>
-                            <div class="team-card__desc">
+                            <div className="team-card__title">{bigCardData?.full_name_uz}</div>
+                            <div className="team-card__subtitle">{bigCardData?.Lavozimi}</div>
+                            <div className="team-card__desc">
                                 Markazning moddiy-texnika bazasini mustahkamlash va ijodkorlari ijtimoiy sharoitini
                                 yaxshilash maqsadida Fargʻona
                                 viloyati hokimligi Markazni saqlash va uning faoliyatini qoʻllab-quvvatlash uchun
@@ -74,17 +74,17 @@ const Team = ({ onClick }) => {
                                 milliard soʻm, 2024 yildan boshlab esa Markaz talabnomasi asosida zarur mablagʻlar
                                 ajratadi.
                             </div>
-                            <button class="team-card__btn secondary-button">Batafsil</button>
+                            <button className="team-card__btn secondary-button">Batafsil</button>
                         </div>
                     )}
                     {
                         tabs[activeTab]?.items?.slice(1)?.map((item, index) => (
-                            <div onClick={() => onClick(item)} class="team__item team-card" key={index}>
-                                <div class="team-card__img">
-                                    <img class="bg" src={"https://admin.askiyachilar.uz" + item?.profil_rasmi?.data?.attributes?.url} alt="team" />
+                            <div onClick={() => onClick(item)} className="team__item team-card" key={index}>
+                                <div className="team-card__img">
+                                    <img className="bg" src={"https://admin.askiyachilar.uz" + item?.profil_rasmi?.data?.attributes?.url} alt="team" />
                                 </div>
-                                <div class="team-card__title">{item?.full_name_uz}</div>
-                                <div class="team-card__subtitle">{item?.Lavozimi}</div>
+                                <div className="team-card__title">{item?.full_name_uz}</div>
+                                <div className="team-card__subtitle">{item?.Lavozimi}</div>
                             </div>
                         ))
                     }

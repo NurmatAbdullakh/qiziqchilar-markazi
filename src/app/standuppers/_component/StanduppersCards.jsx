@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useGetAllByUrlQuery } from "../../../api/api.service"
 import { getImageUrl } from "../../../utils/getImageUrl"
 import { getItems } from "../../../utils/getItems"
+import { SimpleGrid } from "@chakra-ui/react"
 
 const StanduppersCards = () => {
     const { data: standUppers } = useGetAllByUrlQuery('soz-ustalaris')
@@ -10,24 +11,24 @@ const StanduppersCards = () => {
     const items = getItems(standUppers) || []
 
     return (
-        <div class="data__items">
+        <SimpleGrid columns={[1, 2, 3]} spacing='20px' >
             {
                 items?.map((item) => {
-                    return (<div class="data__item jocker-card">
+                    return (<div className="data__item jocker-card">
                         <Link href={`/standuppers/${item?.id}`}>
-                            <img class="jocker-card__image bg" src={getImageUrl(item)}
+                            <img className="jocker-card__image bg" src={getImageUrl(item)}
                                 alt="jocker-card" />
-                            <div class="jocker-card__info">
-                                <div class="jocker-card__title">{item?.full_name_uz}</div>
-                                <div class="jocker-card__subtitle">{item?.Kasbi}</div>
+                            <div className="jocker-card__info">
+                                <div className="jocker-card__title">{item?.full_name_uz}</div>
+                                <div className="jocker-card__subtitle">{item?.Kasbi}</div>
                             </div>
-                            <img class="jocker-card__texture" src="/icons/jocker-card-texture.svg"
+                            <img className="jocker-card__texture" src="/icons/jocker-card-texture.svg"
                                 alt="texture" />
                         </Link>
                     </div>)
                 })
             }
-        </div>
+        </SimpleGrid>
     )
 }
 

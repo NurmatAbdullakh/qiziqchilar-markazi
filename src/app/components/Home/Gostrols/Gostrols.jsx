@@ -1,6 +1,7 @@
 import { useGetAllByUrlQuery } from "../../../../api/api.service";
 import GostrolCard from "../../Cards/GostrolCards/GostrolCard";
 import { getItems } from "../.././../../utils/getItems"
+import Link from "next/link";
 
 
 const Gostrols = () => {
@@ -10,32 +11,32 @@ const Gostrols = () => {
     const items = getItems(gostrolls) || []
 
     return (
-        <section class="gostrol">
-            <div class="gostrol__container container">
-                <div class="gostrol__title section-title">
-                    <div class="section-title__title">Gastrollar</div>
-                    <div class="section-title__divider"></div>
-                    <div class="section-title__all">
-                        <a
-                            class="section-title__all-text"
+        <section className="gostrol">
+            <div className="gostrol__container container">
+                <div className="gostrol__title section-title">
+                    <div className="section-title__title">Gastrollar</div>
+                    <div className="section-title__divider"></div>
+                    <Link href={"/events?type=gastrollar"} className="section-title__all">
+                        <div
+                            className="section-title__all-text"
                             href="./pages/gostrolls/gostrolls.html"
                         >
                             Barcha gastrollar
-                        </a>
+                        </div>
                         <img
-                            class="section-title__all-icon"
+                            className="section-title__all-icon"
                             src="/icons/arrowRight.svg"
                             alt="arrow-right"
                         />
                         <img
-                            class="section-title__all-icon-small"
+                            className="section-title__all-icon-small"
                             src="/icons/smallArrowRight.svg"
                             alt="arrow-right"
                         />
-                    </div>
+                    </Link>
                 </div>
 
-                <div class="gostrol__items">
+                <div className="gostrol__items">
                     {items?.map((item) => {
                         return <GostrolCard item={item} />
                     })}

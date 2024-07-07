@@ -11,20 +11,20 @@ import Locations from "./components/Home/Locations/Locations";
 export default function Home() {
 
   return (
-    <main class="main">
-      <section class="hero">
-        <img class="hero__bg bg" src="/images/hero.jpg" alt="banner" />
+    <main className="main">
+      <section className="hero">
+        <img className="hero__bg bg" src="/images/hero.jpg" alt="banner" />
         <img
-          class="hero__overlay bg"
+          className="hero__overlay bg"
           src="/images/Overlay.png"
           alt=""
         />
-        <div class="hero__container container">
-          <div class="hero__box">
-            <div class="hero__adress">Samarqand Madaniyat saroyi</div>
-            <div class="hero__title">G’ayrat Axmedov</div>
-            <div class="hero__subtitle">yakkaxon konserti</div>
-            <button class="hero__button">Bog‘lanish</button>
+        <div className="hero__container container">
+          <div className="hero__box">
+            <div className="hero__adress">Samarqand Madaniyat saroyi</div>
+            <div className="hero__title">G’ayrat Axmedov</div>
+            <div className="hero__subtitle">yakkaxon konserti</div>
+            <button className="hero__button">Bog‘lanish</button>
             <HeroSlider />
           </div>
         </div>
@@ -37,46 +37,46 @@ export default function Home() {
       <Retro />
       <Gallery />
       <Audios />
-      <section class="news">
-        <div class="news__container container">
-          <div class="news__title section-title ">
-            <div class="section-title__title">Yangiliklar</div>
-            <div class="section-title__divider"></div>
-            <div class="section-title__all">
-              <a class="section-title__all-text" href="./pages/news/news.html">
+      <section className="news">
+        <div className="news__container container">
+          <div className="news__title section-title ">
+            <div className="section-title__title">Yangiliklar</div>
+            <div className="section-title__divider"></div>
+            <div className="section-title__all">
+              <a className="section-title__all-text" href="./pages/news/news.html">
                 Barcha yangiliklar
               </a>
               <img
-                class="section-title__all-icon"
+                className="section-title__all-icon"
                 src="/icons/arrowRight.svg"
                 alt="arrow-right"
               />
               <img
-                class="section-title__all-icon-small"
+                className="section-title__all-icon-small"
                 src="/icons/smallArrowRight.svg"
                 alt="arrow-right"
               />
             </div>
           </div>
-          <div class="news__layout">
-            <div class="news__left ">
-              <div class="news__left-items">
-                <div class="news__item ">
-                  <div class="news-card">
-                    <div class="news-card__body">
-                      <div class="news-card__date">
+          <div className="news__layout">
+            <div className="news__left ">
+              <div className="news__left-items">
+                <div className="news__item ">
+                  <div className="news-card">
+                    <div className="news-card__body">
+                      <div className="news-card__date">
                         <img
-                          class="news-card__icon"
+                          className="news-card__icon"
                           src="/icons/calendar.svg"
                           alt="calendar"
                         />
-                        <div class=" news-card__time">08.03.24 23:23</div>
+                        <div className=" news-card__time">08.03.24 23:23</div>
                       </div>
-                      <div class="news-card__title">
+                      <div className="news-card__title">
                         Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                         Xamroqulov
                       </div>
-                      <div class="news-card__description">
+                      <div className="news-card__description">
                         O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
                         Rossiya Federatsiyasiga rasmiy tashrifning birinchi
                         manzili – Qozon shahriga bordi.
@@ -84,22 +84,22 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="news__item ">
-                  <div class="news-card">
-                    <div class="news-card__body">
-                      <div class="news-card__date">
+                <div className="news__item ">
+                  <div className="news-card">
+                    <div className="news-card__body">
+                      <div className="news-card__date">
                         <img
-                          class="news-card__icon"
+                          className="news-card__icon"
                           src="/icons/calendar.svg"
                           alt="calendar"
                         />
-                        <div class=" news-card__time">08.03.24 23:23</div>
+                        <div className=" news-card__time">08.03.24 23:23</div>
                       </div>
-                      <div class="news-card__title">
+                      <div className="news-card__title">
                         Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                         Xamroqulov
                       </div>
-                      <div class="news-card__description">
+                      <div className="news-card__description">
                         O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
                         Rossiya Federatsiyasiga rasmiy tashrifning birinchi
                         manzili – Qozon shahriga bordi.
@@ -107,22 +107,22 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="news__item ">
-                  <div class="news-card">
-                    <div class="news-card__body">
-                      <div class="news-card__date">
+                <div className="news__item ">
+                  <div className="news-card">
+                    <div className="news-card__body">
+                      <div className="news-card__date">
                         <img
-                          class="news-card__icon"
+                          className="news-card__icon"
                           src="/icons/calendar.svg"
                           alt="calendar"
                         />
-                        <div class=" news-card__time">08.03.24 23:23</div>
+                        <div className=" news-card__time">08.03.24 23:23</div>
                       </div>
-                      <div class="news-card__title">
+                      <div className="news-card__title">
                         Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                         Xamroqulov
                       </div>
-                      <div class="news-card__description">
+                      <div className="news-card__description">
                         O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
                         Rossiya Federatsiyasiga rasmiy tashrifning birinchi
                         manzili – Qozon shahriga bordi.
@@ -130,22 +130,22 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="news__item ">
-                  <div class="news-card">
-                    <div class="news-card__body">
-                      <div class="news-card__date">
+                <div className="news__item ">
+                  <div className="news-card">
+                    <div className="news-card__body">
+                      <div className="news-card__date">
                         <img
-                          class="news-card__icon"
+                          className="news-card__icon"
                           src="/icons/calendar.svg"
                           alt="calendar"
                         />
-                        <div class=" news-card__time">08.03.24 23:23</div>
+                        <div className=" news-card__time">08.03.24 23:23</div>
                       </div>
-                      <div class="news-card__title">
+                      <div className="news-card__title">
                         Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                         Xamroqulov
                       </div>
-                      <div class="news-card__description">
+                      <div className="news-card__description">
                         O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
                         Rossiya Federatsiyasiga rasmiy tashrifning birinchi
                         manzili – Qozon shahriga bordi.
@@ -155,58 +155,58 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div class="news__mid">
-              <div class="news__mid-items">
-                <div class="news__mid-item big-video">
+            <div className="news__mid">
+              <div className="news__mid-items">
+                <div className="news__mid-item big-video">
                   <img
-                    class="big-video__image bg"
+                    className="big-video__image bg"
                     src="/images/big-video.jpg"
                     alt="video"
                   />
 
-                  <div class="big-video__info">
-                    <div class="big-video__date">08.03.24 20:03</div>
-                    <div class="big-video__title">
+                  <div className="big-video__info">
+                    <div className="big-video__date">08.03.24 20:03</div>
+                    <div className="big-video__title">
                       Askiya – yashirin fikr sehri, hozirjavob xalqimizning
                       noyob xazinasi
                     </div>
                   </div>
                 </div>
-                <div class="news__mid-item big-video">
+                <div className="news__mid-item big-video">
                   <img
-                    class="big-video__image bg"
+                    className="big-video__image bg"
                     src="/images/big-video.jpg"
                     alt="video"
                   />
                   <img
-                    class="big-video__overlay bg"
+                    className="big-video__overlay bg"
                     src="/images/video-overlay.png"
                     alt="video"
                   />
 
-                  <div class="big-video__info">
-                    <div class="big-video__date">08.03.24 20:03</div>
-                    <div class="big-video__title">
+                  <div className="big-video__info">
+                    <div className="big-video__date">08.03.24 20:03</div>
+                    <div className="big-video__title">
                       Askiya – yashirin fikr sehri, hozirjavob xalqimizning
                       noyob xazinasi
                     </div>
                   </div>
                 </div>
-                <div class="news__mid-item big-video">
+                <div className="news__mid-item big-video">
                   <img
-                    class="big-video__image bg"
+                    className="big-video__image bg"
                     src="/images/big-video.jpg"
                     alt="video"
                   />
                   <img
-                    class="big-video__overlay bg"
+                    className="big-video__overlay bg"
                     src="/images/video-overlay.png"
                     alt="video"
                   />
 
-                  <div class="big-video__info">
-                    <div class="big-video__date">08.03.24 20:03</div>
-                    <div class="big-video__title">
+                  <div className="big-video__info">
+                    <div className="big-video__date">08.03.24 20:03</div>
+                    <div className="big-video__title">
                       Askiya – yashirin fikr sehri, hozirjavob xalqimizning
                       noyob xazinasi
                     </div>
@@ -214,36 +214,36 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div class="news__right ">
-              <div class="news__right-items">
-                <div class="news__right-item">
-                  <div class="news__item news-card">
+            <div className="news__right ">
+              <div className="news__right-items">
+                <div className="news__right-item">
+                  <div className="news__item news-card">
                     <img
-                      class="news-card__texture"
+                      className="news-card__texture"
                       src="/icons/news-card-texture.svg"
                       alt="texture"
                     />
-                    <div class="news-card__image">
+                    <div className="news-card__image">
                       <img
-                        class="news-card__bg bg"
+                        className="news-card__bg bg"
                         src="/images/video.jpg"
                         alt="video"
                       />
                     </div>
-                    <div class="news-card__body">
-                      <div class="news-card__date">
+                    <div className="news-card__body">
+                      <div className="news-card__date">
                         <img
-                          class="news-card__icon"
+                          className="news-card__icon"
                           src="/icons/calendar.svg"
                           alt="calendar"
                         />
-                        <div class=" news-card__time">08.03.24 23:23</div>
+                        <div className=" news-card__time">08.03.24 23:23</div>
                       </div>
-                      <div class="news-card__title">
+                      <div className="news-card__title">
                         Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                         Xamroqulov
                       </div>
-                      <div class="news-card__description">
+                      <div className="news-card__description">
                         O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
                         Rossiya Federatsiyasiga rasmiy tashrifning birinchi
                         manzili – Qozon shahriga bordi.
@@ -251,34 +251,34 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="news__right-item">
-                  <div class="news__item news-card">
+                <div className="news__right-item">
+                  <div className="news__item news-card">
                     <img
-                      class="news-card__texture"
+                      className="news-card__texture"
                       src="/icons/news-card-texture.svg"
                       alt="texture"
                     />
-                    <div class="news-card__image">
+                    <div className="news-card__image">
                       <img
-                        class="news-card__bg bg"
+                        className="news-card__bg bg"
                         src="/images/video.jpg"
                         alt="video"
                       />
                     </div>
-                    <div class="news-card__body">
-                      <div class="news-card__date">
+                    <div className="news-card__body">
+                      <div className="news-card__date">
                         <img
-                          class="news-card__icon"
+                          className="news-card__icon"
                           src="/icons/calendar.svg"
                           alt="calendar"
                         />
-                        <div class=" news-card__time">08.03.24 23:23</div>
+                        <div className=" news-card__time">08.03.24 23:23</div>
                       </div>
-                      <div class="news-card__title">
+                      <div className="news-card__title">
                         Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
                         Xamroqulov
                       </div>
-                      <div class="news-card__description">
+                      <div className="news-card__description">
                         O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
                         Rossiya Federatsiyasiga rasmiy tashrifning birinchi
                         manzili – Qozon shahriga bordi.
@@ -291,263 +291,263 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section class="partners">
-        <div class="partners__container container">
-          <div class="partners__title">
-            <div class="section-title__title">Hamkorlar</div>
+      <section className="partners">
+        <div className="partners__container container">
+          <div className="partners__title">
+            <div className="section-title__title">Hamkorlar</div>
           </div>
         </div>
-        <div class="partners__content">
-          <div class="partners__items">
-            <div class="partners__item">
-              <div class="partners__logo">
+        <div className="partners__content">
+          <div className="partners__items">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner3.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner4.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner3.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner4.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner3.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner4.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
           </div>
-          <div class="partners__items">
-            <div class="partners__item">
-              <div class="partners__logo">
+          <div className="partners__items">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner3.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner4.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner3.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner4.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner3.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner4.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner1.png"
                   alt="partner"
                 />
               </div>
             </div>
-            <div class="partners__item">
-              <div class="partners__logo">
+            <div className="partners__item">
+              <div className="partners__logo">
                 <img
-                  class="partners__image bg"
+                  className="partners__image bg"
                   src="/images/partner2.png"
                   alt="partner"
                 />

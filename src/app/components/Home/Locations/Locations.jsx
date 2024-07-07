@@ -27,28 +27,28 @@ const Locations = () => {
     ]
 
     return (
-        <section class="locations">
-            <div class="locations__container container">
-                <div class="locations__title section-title">
-                    <div class="section-title__title">Manzillar</div>
-                    <div class="section-title__divider"></div>
+        <section className="locations">
+            <div className="locations__container container">
+                <div className="locations__title section-title">
+                    <div className="section-title__title">Manzillar</div>
+                    <div className="section-title__divider"></div>
                 </div>
 
-                <div class="locations__map">
+                <div className="locations__map">
                     <img
-                        class="locations__map-image bg"
+                        className="locations__map-image bg"
                         src="/images/map.jpg"
                     />
 
-                    <div class="locations__tabs tabs">
-                        <div class="tabs__tab-list">
+                    <div className="locations__tabs tabs">
+                        <div className="tabs__tab-list">
                             {
                                 tabs.map((item) => {
                                     const isActive = item.id === activeTab
 
                                     return (
                                         <div class={`tabs__tab-item ${isActive ? 'active' : ''}`} onClick={() => setActiveTab(item.id)}>
-                                            <div class="tabs__tab-title">{item.title}</div>
+                                            <div className="tabs__tab-title">{item.title}</div>
                                         </div>
                                     )
                                 })
@@ -56,8 +56,8 @@ const Locations = () => {
 
 
                         </div>
-                        <div class="tabs__tab-panel">
-                            <div class="locations__items">
+                        <div className="tabs__tab-panel">
+                            <div className="locations__items">
                                 {tabs[activeTab]?.items?.map((item, i) => <LocationCard key={item.id} item={item} isActive={!i} />)}
                             </div>
                         </div>
