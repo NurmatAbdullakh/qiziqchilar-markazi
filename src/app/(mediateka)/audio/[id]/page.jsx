@@ -1,19 +1,29 @@
+"use client";
+import { useParams } from "next/navigation";
+import { useGetOneByUrlQuery } from "../../../../api/api.service";
+import {
+    BlocksRenderer,
+} from "@strapi/blocks-react-renderer";
+
 const SingleAudio = () => {
+    const { id } = useParams()
+    const { data } = useGetOneByUrlQuery('audiolars', id)
+    const item = data?.data
+
+    console.log(item);
     return (
         <main className="main single-audio">
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <div className="hero__with-title-container container">
-
                 </div>
             </section>
             <section className="data">
                 <div className="data__container container page-layout">
                     <div className="page-layout__left">
                         <div className="data__title">
-                            Margilonda respublika askiya va qizikchilik sanati markazi
-                            tashkil etildi
+                            {item?.title_uz}
                         </div>
                         <div className="page-layout__statistics statistics">
                             <div className="statistics__item">
@@ -26,7 +36,7 @@ const SingleAudio = () => {
                             </div>
                             <div className="statistics__item">
                                 <img src="/icons/statistics/volume.svg" alt="calendar" />
-                                <div className="statistics__text">300</div>
+                                <div className="statistics__text">{item?.number_views}</div>
                             </div>
                         </div>
                         <div className="data-audioplayer audioplayer">
@@ -51,30 +61,7 @@ const SingleAudio = () => {
                             </div>
                         </div>
                         <div className="data__text">
-                            <p>
-                                Rossiya poytaxtining “Vnukovo-2” aeroportida davlatimiz rahbarini Rossiya Federatsiyasi
-                                Hukumati Raisining o‘rinbosari –
-                                sanoat va savdo vaziri Denis Manturov va boshqa rasmiy shaxslar kutib oldi.
-                            </p>
-                            <p>
-                                Oliy martabali mehmon sharafiga O‘zbekiston va Rossiya davlat bayroqlari ko‘tarildi,
-                                faxriy qorovul saf tortdi.
-                                Tantanali kutib olish marosimi bo‘ldi.
-                            </p>
-                            <p>
-                                Tashrif dasturiga muvofiq, 6 oktyabr kuni ikki mamlakat yetakchilari tor va
-                                kengaytirilgan tarkibda muzokara
-                                o‘tkazadilar. O‘zbekiston bilan Rossiya o‘rtasidagi keng qamrovli strategik sheriklik va
-                                ittifoqchilik munosabatlarini
-                                yanada mustahkamlash masalalari muhokama qilinadi.
-                            </p>
-                            <p>
-                                Siyosiy, savdo-iqtisodiy, investitsiyaviy, transport-kommunikatsiyaviy,
-                                madaniy-gumanitar va boshqa ustuvor
-                                yo‘nalishlarda har tomonlama hamkorlikning holati va istiqbollarini ko‘rib chiqish
-                                rejalashtirilgan. Mintaqaviy va
-                                xalqaro kun tartibidagi dolzarb masalalar yuzasidan fikr almashiladi.
-                            </p>
+                            {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
                         </div>
                     </div>
                     <div className="page-layout__right">
