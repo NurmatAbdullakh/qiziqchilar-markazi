@@ -1,6 +1,12 @@
 import Link from "next/link"
+import { useGetAllByUrlQuery } from "../../../../api/api.service"
+import { getItems } from "../../../../utils/getItems"
 
 const News = () => {
+    const { data: news } = useGetAllByUrlQuery('news')
+
+    const items = getItems(news) || []
+    console.log(items);
     return (
         <section className="news">
             <div className="news__container container">

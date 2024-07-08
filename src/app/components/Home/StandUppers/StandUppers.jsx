@@ -18,7 +18,6 @@ const StandUppers = () => {
                     <Link href={"/standuppers"} className="section-title__all">
                         <div
                             className="section-title__all-text"
-                            href="./pages/stand-upper/stand-upper.html"
                         >
                             Barcha so`z ustalari
                         </div>
