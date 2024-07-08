@@ -58,7 +58,7 @@ export default function HeroSlider({ onChange }) {
                         <SwiperSlide key={index}>
                             <Box boxSize={'full'}>
                                 <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src={getImageUrl(item)} alt="slider" />
-                                <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src={"/images/overlay.png"} className='overlay' transform={"rotate(180deg)"} alt="overlay" />
+                                <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src="/images/Overlay.png" className='overlay' transform={"rotate(180deg)"} alt="overlay" />
                                 <Box pos={"absolute"} bottom={0} left={0} p={4}>
                                     <Text className='title' color={"white"} mb={2} fontWeight={700} fontSize={"md"}>{item.title_uz}</Text>
                                     <Text className='subtitle' textAlign={"left"} color={"#9C9C9F"} fontWeight={500} fontSize={"md"}>{item.updatedAt?.slice(0, 10)}</Text>
