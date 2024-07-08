@@ -105,7 +105,6 @@ const BurgerMenu = ({ isOpen, onClose }) => {
                     >
                         Bog‘lanish
                     </Button>
-
                 </DrawerBody>
             </DrawerContent>
         </Drawer >
