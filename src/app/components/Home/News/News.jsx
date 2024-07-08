@@ -1,12 +1,19 @@
 import Link from "next/link"
 import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getItems } from "../../../../utils/getItems"
+import { BlocksRenderer } from "@strapi/blocks-react-renderer"
+import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const News = () => {
-    const { data: news } = useGetAllByUrlQuery('news')
+    const { data: news } = useGetAllByUrlQuery('news123')
 
     const items = getItems(news) || []
-    console.log(items);
+
+    const leftItems = items?.slice(0, 4)
+    const midBigItem = items?.[4]
+    const midSmallItems = items?.slice(5, 7)
+    const rightItems = items?.slice(7, 9)
+
     return (
         <section className="news">
             <div className="news__container container">
@@ -32,231 +39,111 @@ const News = () => {
                 <div className="news__layout">
                     <div className="news__left ">
                         <div className="news__left-items">
-                            <div className="news__item ">
-                                <div className="news-card">
-                                    <div className="news-card__body">
-                                        <div className="news-card__date">
-                                            <img
-                                                className="news-card__icon"
-                                                src="/icons/calendar.svg"
-                                                alt="calendar"
-                                            />
-                                            <div className=" news-card__time">08.03.24 23:23</div>
-                                        </div>
-                                        <div className="news-card__title">
-                                            Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                            Xamroqulov
-                                        </div>
-                                        <div className="news-card__description">
-                                            O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
-                                            Rossiya Federatsiyasiga rasmiy tashrifning birinchi
-                                            manzili – Qozon shahriga bordi.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="news__item ">
-                                <div className="news-card">
-                                    <div className="news-card__body">
-                                        <div className="news-card__date">
-                                            <img
-                                                className="news-card__icon"
-                                                src="/icons/calendar.svg"
-                                                alt="calendar"
-                                            />
-                                            <div className=" news-card__time">08.03.24 23:23</div>
-                                        </div>
-                                        <div className="news-card__title">
-                                            Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                            Xamroqulov
-                                        </div>
-                                        <div className="news-card__description">
-                                            O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
-                                            Rossiya Federatsiyasiga rasmiy tashrifning birinchi
-                                            manzili – Qozon shahriga bordi.
+                            {leftItems?.map((item, index) => (
+                                <Link href={`/news/${item?.id}`} className="news__item ">
+                                    <div className="news-card">
+                                        <div className="news-card__body">
+                                            <div className="news-card__date">
+                                                <img
+                                                    className="news-card__icon"
+                                                    src="/icons/calendar.svg"
+                                                    alt="calendar"
+                                                />
+                                                <div className=" news-card__time">{item?.publishedAt?.slice(0, 10)}</div>
+                                            </div>
+                                            <div className="news-card__title">
+                                                {item?.title_uz}
+                                            </div>
+                                            <div className="news-card__description">
+                                                {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="news__item ">
-                                <div className="news-card">
-                                    <div className="news-card__body">
-                                        <div className="news-card__date">
-                                            <img
-                                                className="news-card__icon"
-                                                src="/icons/calendar.svg"
-                                                alt="calendar"
-                                            />
-                                            <div className=" news-card__time">08.03.24 23:23</div>
-                                        </div>
-                                        <div className="news-card__title">
-                                            Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                            Xamroqulov
-                                        </div>
-                                        <div className="news-card__description">
-                                            O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
-                                            Rossiya Federatsiyasiga rasmiy tashrifning birinchi
-                                            manzili – Qozon shahriga bordi.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="news__item ">
-                                <div className="news-card">
-                                    <div className="news-card__body">
-                                        <div className="news-card__date">
-                                            <img
-                                                className="news-card__icon"
-                                                src="/icons/calendar.svg"
-                                                alt="calendar"
-                                            />
-                                            <div className=" news-card__time">08.03.24 23:23</div>
-                                        </div>
-                                        <div className="news-card__title">
-                                            Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                            Xamroqulov
-                                        </div>
-                                        <div className="news-card__description">
-                                            O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
-                                            Rossiya Federatsiyasiga rasmiy tashrifning birinchi
-                                            manzili – Qozon shahriga bordi.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                     <div className="news__mid">
                         <div className="news__mid-items">
-                            <div className="news__mid-item big-video">
+                            <Link href={`/news/${midBigItem?.id}`} className="news__mid-item big-video">
                                 <img
                                     className="big-video__image bg"
-                                    src="/images/big-video.jpg"
+                                    src={getImageUrl(midBigItem)}
                                     alt="video"
                                 />
 
                                 <div className="big-video__info">
-                                    <div className="big-video__date">08.03.24 20:03</div>
+                                    <div className="big-video__date">{midBigItem?.publishedAt?.slice(0, 10)}</div>
                                     <div className="big-video__title">
-                                        Askiya – yashirin fikr sehri, hozirjavob xalqimizning
-                                        noyob xazinasi
+                                        {midBigItem?.title_uz}
                                     </div>
                                 </div>
-                            </div>
-                            <div className="news__mid-item big-video">
-                                <img
-                                    className="big-video__image bg"
-                                    src="/images/big-video.jpg"
-                                    alt="video"
-                                />
-                                <img
-                                    className="big-video__overlay bg"
-                                    src="/images/video-overlay.png"
-                                    alt="video"
-                                />
+                            </Link>
+                            {
+                                midSmallItems?.map((item, index) => (
+                                    <Link href={`/news/${item?.id}`} className="news__mid-item big-video">
+                                        <img
+                                            className="big-video__image bg"
+                                            src={getImageUrl(item)}
+                                            alt="video"
+                                        />
+                                        <img
+                                            className="big-video__overlay bg"
+                                            src="/images/video-overlay.png"
+                                            alt="video"
+                                        />
 
-                                <div className="big-video__info">
-                                    <div className="big-video__date">08.03.24 20:03</div>
-                                    <div className="big-video__title">
-                                        Askiya – yashirin fikr sehri, hozirjavob xalqimizning
-                                        noyob xazinasi
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="news__mid-item big-video">
-                                <img
-                                    className="big-video__image bg"
-                                    src="/images/big-video.jpg"
-                                    alt="video"
-                                />
-                                <img
-                                    className="big-video__overlay bg"
-                                    src="/images/video-overlay.png"
-                                    alt="video"
-                                />
-
-                                <div className="big-video__info">
-                                    <div className="big-video__date">08.03.24 20:03</div>
-                                    <div className="big-video__title">
-                                        Askiya – yashirin fikr sehri, hozirjavob xalqimizning
-                                        noyob xazinasi
-                                    </div>
-                                </div>
-                            </div>
+                                        <div className="big-video__info">
+                                            <div className="big-video__date">
+                                                {item?.publishedAt?.slice(0, 10)}
+                                            </div>
+                                            <div className="big-video__title">
+                                                {item?.title_uz}
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="news__right ">
                         <div className="news__right-items">
-                            <div className="news__right-item">
-                                <div className="news__item news-card">
-                                    <img
-                                        className="news-card__texture"
-                                        src="/icons/news-card-texture.svg"
-                                        alt="texture"
-                                    />
-                                    <div className="news-card__image">
-                                        <img
-                                            className="news-card__bg bg"
-                                            src="/images/video.jpg"
-                                            alt="video"
-                                        />
-                                    </div>
-                                    <div className="news-card__body">
-                                        <div className="news-card__date">
+                            {
+                                rightItems?.map((item, index) => (
+                                    <Link href={`/news/${item?.id}`} className="news__right-item">
+                                        <div className="news__item news-card">
                                             <img
-                                                className="news-card__icon"
-                                                src="/icons/calendar.svg"
-                                                alt="calendar"
+                                                className="news-card__texture"
+                                                src="/icons/news-card-texture.svg"
+                                                alt="texture"
                                             />
-                                            <div className=" news-card__time">08.03.24 23:23</div>
+                                            <div className="news-card__image">
+                                                <img
+                                                    className="news-card__bg bg"
+                                                    src={getImageUrl(item)}
+                                                    alt="video"
+                                                />
+                                            </div>
+                                            <div className="news-card__body">
+                                                <div className="news-card__date">
+                                                    <img
+                                                        className="news-card__icon"
+                                                        src="/icons/calendar.svg"
+                                                        alt="calendar"
+                                                    />
+                                                    <div className=" news-card__time">{item?.publishedAt?.slice(0, 10)}</div>
+                                                </div>
+                                                <div className="news-card__title">
+                                                    {item?.title_uz}
+                                                </div>
+                                                <div className="news-card__description">
+                                                    {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="news-card__title">
-                                            Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                            Xamroqulov
-                                        </div>
-                                        <div className="news-card__description">
-                                            O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
-                                            Rossiya Federatsiyasiga rasmiy tashrifning birinchi
-                                            manzili – Qozon shahriga bordi.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="news__right-item">
-                                <div className="news__item news-card">
-                                    <img
-                                        className="news-card__texture"
-                                        src="/icons/news-card-texture.svg"
-                                        alt="texture"
-                                    />
-                                    <div className="news-card__image">
-                                        <img
-                                            className="news-card__bg bg"
-                                            src="/images/video.jpg"
-                                            alt="video"
-                                        />
-                                    </div>
-                                    <div className="news-card__body">
-                                        <div className="news-card__date">
-                                            <img
-                                                className="news-card__icon"
-                                                src="/icons/calendar.svg"
-                                                alt="calendar"
-                                            />
-                                            <div className=" news-card__time">08.03.24 23:23</div>
-                                        </div>
-                                        <div className="news-card__title">
-                                            Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                            Xamroqulov
-                                        </div>
-                                        <div className="news-card__description">
-                                            O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev
-                                            Rossiya Federatsiyasiga rasmiy tashrifning birinchi
-                                            manzili – Qozon shahriga bordi.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </Link>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
