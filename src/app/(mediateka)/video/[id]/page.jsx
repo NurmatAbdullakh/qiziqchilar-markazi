@@ -4,8 +4,14 @@ import { useGetOneByUrlQuery } from "../../../../api/api.service";
 import {
     BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
+import { getImageUrl } from "../../../../utils/getImageUrl";
+import { useDisclosure } from "@chakra-ui/react";
+import VideoModal from "../../../components/VideoModal/VideoModal";
 
 const SingleVideo = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+
     const { id } = useParams()
     const { data } = useGetOneByUrlQuery('videolars', id)
     const item = data?.data
@@ -39,9 +45,11 @@ const SingleVideo = () => {
                             </div>
                         </div>
                         <div className="big-video data__banner">
-                            <img className="big-video__image bg" src="/images/big-video.jpg" alt="video" />
+                            <img className="big-video__image bg" src={getImageUrl(item)} alt="video" />
                             <img className="big-video__overlay bg" src="/images/video-overlay.png" alt="video" />
-                            <img className="big-video__play-icon" src="/icons/play-icon.svg" alt="video" />
+                            <div className="big-video__play-icon">
+                                <img onClick={onOpen} src="/icons/play-icon.svg" alt="video" />
+                            </div>
 
                             <div className="big-video__info">
                                 <div className="big-video__date">
@@ -74,6 +82,7 @@ const SingleVideo = () => {
                     </div>
                 </div>
             </section>
+            <VideoModal date={item?.publishedAt} videoLink={item?.video_linki} title={item?.title_uz} isOpen={isOpen} onClose={onClose} />
         </main>
     )
 }

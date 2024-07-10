@@ -11,7 +11,7 @@ const SingleNews = () => {
     const item = data?.data
 
 
-    return <main class="main">
+    return <main class="main single-news">
         <section class="hero__with-title hero__with-title">
             <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
             <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />

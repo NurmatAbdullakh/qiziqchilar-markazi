@@ -10,6 +10,7 @@ export const getImageUrl = (
       item?.images?.[0]?.url ||
       item?.profil_rasmi?.data?.attributes?.url ||
       item?.cover_rasmi?.data?.attributes?.url ||
+      item?.cover_rasmi?.url ||
       "")
   );
 };

@@ -3,7 +3,7 @@ import { Box, Img, Text } from '@chakra-ui/react';
 import { useCallback, useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { useGetAllByUrlQuery } from '../../../api/api.service';
 import { getImageUrl } from '../../../utils/getImageUrl';
 import { getItems } from '../../../utils/getItems';
@@ -14,16 +14,29 @@ export default function HeroSlider({ onChange }) {
 
     const swiperRef = useRef(null);
 
-    const handlePrev = useCallback(() => {
-        if (!swiperRef.current) return;
-        swiperRef.current?.swiper.slidePrev();
-    }, []);
 
-    const handleNext = useCallback(() => {
-        if (!swiperRef.current) return;
-        swiperRef.current?.swiper.slideNext();
-    }, []);
+    const NavButtons = () => {
+        const swiper = useSwiper();
 
+        const handlePrev = useCallback(() => {
+            if (!swiperRef.current) return;
+            swiper.slidePrev();
+        }, []);
+
+        const handleNext = useCallback(() => {
+            if (!swiperRef.current) return;
+            swiper.slideNext();
+        }, []);
+
+        return <div className="swiper__buttons">
+            <button className='main-button' onClick={handlePrev}>
+                <img src="/icons/navArrowLeft.svg" alt="left" />
+            </button>
+            <button onClick={handleNext}>
+                <img src="/icons/navArrowRight.svg" alt="right" />
+            </button>
+        </div>
+    }
 
     return (
         <>
@@ -36,12 +49,12 @@ export default function HeroSlider({ onChange }) {
                 className="heroSwiper"
                 breakpoints={{
                     768: {
-                        slidesPerView: 2.5,
+                        slidesPerView: 3,
                         spaceBetween: 20,
                         centeredSlides: false
                     },
                     992: {
-                        slidesPerView: 3.6,
+                        slidesPerView: 4,
                         spaceBetween: 20,
                         centeredSlides: false
                     },
@@ -67,14 +80,7 @@ export default function HeroSlider({ onChange }) {
                         </SwiperSlide>
                     ))
                 }
-                <div className="swiper__buttons">
-                    <button className='main-button' onClick={handlePrev}>
-                        <img src="/icons/navArrowLeft.svg" alt="left" />
-                    </button>
-                    <button onClick={handleNext}>
-                        <img src="/icons/navArrowRight.svg" alt="right" />
-                    </button>
-                </div>
+                <NavButtons />
             </Swiper >
         </>
     );

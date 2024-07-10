@@ -72,6 +72,11 @@
 				// .video-card__play-icon
 
 				&__play-icon {
+					border-radius: 50%;
+					transition: all 0.3s ease;
+					&:hover{
+						box-shadow: 0 0 0 2px white;
+					}
 				}
 
 				// .video-card__body

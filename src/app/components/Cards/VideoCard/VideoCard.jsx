@@ -10,11 +10,12 @@ const VideoCard = ({ item }) => {
                     src={getImageUrl(item)}
                     alt="video"
                 />
-                <img
-                    className="video-card__play-icon"
-                    src="/icons/play-icon.svg"
-                    alt="video"
-                />
+                <div className="video-card__play-icon">
+                    <img
+                        src="/icons/play-icon.svg"
+                        alt="video"
+                    />
+                </div>
             </div>
             <div className="video-card__body">
                 <div className="video-card__date">

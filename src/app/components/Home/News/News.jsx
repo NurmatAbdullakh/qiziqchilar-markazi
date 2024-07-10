@@ -4,7 +4,7 @@ import { getItems } from "../../../../utils/getItems"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
-const News = () => {
+const News = ({ withoutTitle }) => {
     const { data: news } = useGetAllByUrlQuery('news123')
 
     const items = getItems(news) || []
@@ -17,7 +17,7 @@ const News = () => {
     return (
         <section className="news">
             <div className="news__container container">
-                <div className="news__title section-title ">
+                {withoutTitle && <div className="news__title section-title ">
                     <div className="section-title__title">Yangiliklar</div>
                     <div className="section-title__divider"></div>
                     <Link href="/news" className="section-title__all">
@@ -35,7 +35,7 @@ const News = () => {
                             alt="arrow-right"
                         />
                     </Link>
-                </div>
+                </div>}
                 <div className="news__layout">
                     <div className="news__left ">
                         <div className="news__left-items">
