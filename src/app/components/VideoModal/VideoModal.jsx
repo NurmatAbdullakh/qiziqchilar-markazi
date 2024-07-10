@@ -38,6 +38,7 @@ const VideoModal = ({ videoLink, title, date, isOpen, onClose }) => {
                     <ReactPlayer
                         url={videoLink}
                         width="100%"
+                        controls
                     />
                 </ModalBody>
 
