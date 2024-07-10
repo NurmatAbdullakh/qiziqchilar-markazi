@@ -1,11 +1,12 @@
 import Link from "next/link"
+import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const BigVideo = ({ item }) => {
     return (
         <Link href={`/video/${item?.id}`} className="retro__left big-video">
             <img
                 className="big-video__image bg"
-                src="/images/big-video.jpg"
+                src={getImageUrl(item)}
                 alt="video"
             />
             <img
