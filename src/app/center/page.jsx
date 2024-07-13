@@ -4,6 +4,7 @@ import { useGetAllByUrlQuery } from "../../api/api.service";
 import { getItems } from "../../utils/getItems";
 import Team from "./_components/Team/Team";
 import TeamModal from "./_components/TeamModal/TeamModal";
+import Locations from "./_components/Locations/Locations";
 
 const Center = () => {
     const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
@@ -109,36 +110,7 @@ const Center = () => {
                     </div>
                 </div>
                 <div className="locations__container container">
-                    <div className="locations__map">
-
-                        <img className="locations__map-image bg" src="/images/map.jpg" />
-
-                        <div className="locations__tabs tabs">
-                            <div className="tabs__tab-panel">
-                                <div className="locations__items">
-
-                                    <div className="locations__item location active">
-                                        <div className="location__title">
-                                            <img className="location__icon" src="/icons/schoolIcon.svg" />
-                                            <div className="location__text">Farg’ona Maxorat maktabi</div>
-                                        </div>
-                                        <div className="location__subtitle">
-                                            Farg’ona viloyati, Farg’ona shaxar, Yuksalish ko’chasi 11uy
-                                        </div>
-                                    </div>
-                                    <div className="locations__item location">
-                                        <div className="location__title">
-                                            <img className="location__icon" src="/icons/schoolIcon.svg" />
-                                            <div className="location__text">Farg’ona Maxorat maktabi</div>
-                                        </div>
-                                        <div className="location__subtitle">
-                                            Farg’ona viloyati, Farg’ona shaxar, Yuksalish ko’chasi 11uy
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Locations />
                 </div>
             </section>
             {selectedEmployee && <TeamModal onClose={() => setSelectedEmployee(null)} selectedEmployee={selectedEmployee} />}
