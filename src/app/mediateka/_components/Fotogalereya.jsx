@@ -12,7 +12,7 @@ const Fotogalereya = () => {
                         <img className="bg" src="/images/video-overlay.png" alt="video" />
                     </div>
                     <div className="gallery-card__count">
-                        9sta rasm
+                        9 ta rasm
                     </div>
                     <div className="gallery-card__info">
                         <div className="gallery-card__date">
