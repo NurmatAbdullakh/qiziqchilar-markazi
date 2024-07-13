@@ -8,7 +8,7 @@ const ProgramCards = () => {
 
     const items = getItems(programs) || [];
     return items?.map((item, i) => {
-        return <ProgramCard item={item} index={i} />;
+        return <ProgramCard key={item.id} item={item} index={i} />;
     });
 }
 export default ProgramCards

@@ -14,7 +14,7 @@ const StanduppersCards = () => {
         <SimpleGrid columns={[1, 2, 3]} spacing='20px' >
             {
                 items?.map((item) => {
-                    return (<div className="data__item jocker-card">
+                    return (<div key={item?.id} className="data__item jocker-card">
                         <Link href={`/standuppers/${item?.id}`}>
                             <img className="jocker-card__image bg" src={getImageUrl(item)}
                                 alt="jocker-card" />

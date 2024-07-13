@@ -35,7 +35,7 @@ const Gallery = () => {
                     </Link>
                 </div>
                 <div class="gallery__items">
-                    {items?.map(item => <GalleryCard item={item} />)}
+                    {items?.map(item => <GalleryCard key={item.id} item={item} />)}
                 </div>
             </div>
         </section>

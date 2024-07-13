@@ -8,7 +8,7 @@ const GostrolCards = () => {
 
   const items = getItems(gostrolls) || [];
   return items?.map((item) => {
-    return <GostrolCard item={item} />;
+    return <GostrolCard key={item.id} item={item} />;
   });
 };
 

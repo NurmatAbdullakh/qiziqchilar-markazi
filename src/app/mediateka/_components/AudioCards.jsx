@@ -12,7 +12,7 @@ const AudioCards = () => {
         <>
             <SimpleGrid mb={'30px'} columns={[1, 2, 3]} spacing='20px' >
                 {items?.map((item) => {
-                    return <AudioCard item={item} />
+                    return <AudioCard key={item.id} item={item} />
                 })}
             </SimpleGrid>
             <div className="data__more-button ">

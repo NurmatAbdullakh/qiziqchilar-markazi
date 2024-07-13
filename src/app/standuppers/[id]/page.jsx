@@ -46,7 +46,7 @@ const SingleStandupper = () => {
                     <div className="career__items">
                         {item?.faoliyati?.map((item, index) => (
 
-                            <div className="career__item">
+                            <div key={index} className="career__item">
                                 <div className="career__info">
                                     <div className="career__box">
                                         <div className="career__title">{item?.description_uz}</div>
@@ -73,7 +73,7 @@ const SingleStandupper = () => {
                             item?.achievments?.map((a) => {
                                 return (
 
-                                    <div className="award__item award-card">
+                                    <div key={a.id} className="award__item award-card">
                                         <div className="award-card__body">
                                             <div className="award-card__year">{a.Yutuq_yili.slice(0, 4)}-yil</div>
                                             <div className="award-card__title">{a.title_uz}</div>

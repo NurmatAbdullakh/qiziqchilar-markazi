@@ -38,7 +38,7 @@ const Gostrols = () => {
 
                 <div className="gostrol__items">
                     {items?.map((item) => {
-                        return <GostrolCard item={item} />
+                        return <GostrolCard key={item.id} item={item} />
                     })}
                 </div>
             </div>

@@ -67,8 +67,8 @@ export default function HeroSlider({ onChange }) {
                 loop
             >
                 {
-                    items?.map((item, index) => (
-                        <SwiperSlide key={index}>
+                    items?.map((item) => (
+                        <SwiperSlide key={item.id}>
                             <Box boxSize={'full'}>
                                 <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src={getImageUrl(item)} alt="slider" />
                                 <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src="/images/Overlay.png" className='overlay' transform={"rotate(180deg)"} alt="overlay" />

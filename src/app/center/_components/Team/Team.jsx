@@ -79,7 +79,7 @@ const Team = ({ onClick }) => {
                     )}
                     {
                         tabs[activeTab]?.items?.slice(1)?.map((item, index) => (
-                            <div onClick={() => onClick(item)} className="team__item team-card" key={index}>
+                            <div onClick={() => onClick(item)} className="team__item team-card" key={item.id}>
                                 <div className="team-card__img">
                                     <img className="bg" src={"https://admin.askiyachilar.uz" + item?.profil_rasmi?.data?.attributes?.url} alt="team" />
                                 </div>

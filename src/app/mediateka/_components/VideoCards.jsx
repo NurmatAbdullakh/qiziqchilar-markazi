@@ -14,7 +14,7 @@ const VideoCards = () => {
                 {items?.map((item) => {
 
                     return (
-                        <Link href={`/video/${item?.id}`} className="data__item video-card">
+                        <Link key={item?.id} href={`/video/${item?.id}`} className="data__item video-card">
                             <div className="video-card__image">
                                 <img className="video-card__bg bg" src={getImageUrl(item)} alt="video" />
                                 <img className="video-card__play-icon" src="/icons/play-icon.svg"

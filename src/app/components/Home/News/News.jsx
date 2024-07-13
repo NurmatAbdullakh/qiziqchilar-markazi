@@ -40,7 +40,7 @@ const News = ({ withoutTitle }) => {
                     <div className="news__left ">
                         <div className="news__left-items">
                             {leftItems?.map((item, index) => (
-                                <Link href={`/news/${item?.id}`} className="news__item ">
+                                <Link href={`/news/${item?.id}`} key={item.id} className="news__item ">
                                     <div className="news-card">
                                         <div className="news-card__body">
                                             <div className="news-card__date">
@@ -81,7 +81,7 @@ const News = ({ withoutTitle }) => {
                             </Link>
                             {
                                 midSmallItems?.map((item, index) => (
-                                    <Link href={`/news/${item?.id}`} className="news__mid-item big-video">
+                                    <Link key={item.id} href={`/news/${item?.id}`} className="news__mid-item big-video">
                                         <img
                                             className="big-video__image bg"
                                             src={getImageUrl(item)}
@@ -110,7 +110,7 @@ const News = ({ withoutTitle }) => {
                         <div className="news__right-items">
                             {
                                 rightItems?.map((item, index) => (
-                                    <Link href={`/news/${item?.id}`} className="news__right-item">
+                                    <Link key={item.id} href={`/news/${item?.id}`} className="news__right-item">
                                         <div className="news__item news-card">
                                             <img
                                                 className="news-card__texture"

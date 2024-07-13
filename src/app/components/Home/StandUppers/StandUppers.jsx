@@ -36,7 +36,7 @@ const StandUppers = () => {
                 <div className="jockers__items">
                     {
                         items?.map((item) => {
-                            return <StandUpperCard item={item} />
+                            return <StandUpperCard key={item.id} item={item} />
                         })
                     }
                 </div>
