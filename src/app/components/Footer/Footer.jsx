@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="footer__container container">
                 <div className="footer__top">
                     <div className="footer__logo">
-                        <img src="/images/Logo.png" alt="logo" />
+                        <img src="/images/Logo.svg" alt="logo" />
                     </div>
                     <div className="footer__menu menu">
                         <nav className="menu">

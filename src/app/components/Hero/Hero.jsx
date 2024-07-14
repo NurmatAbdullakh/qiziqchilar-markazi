@@ -64,7 +64,7 @@ const Hero = () => {
             <div className="hero__container container">
                 <div className="hero__box">
                     <div className="hero__adress">{currentData?.address_uz}</div>
-                    <div className="hero__title">{currentData?.title_uz} {currentData?.id}</div>
+                    <div className="hero__title">{currentData?.title_uz}</div>
                     <div className="hero__subtitle">{currentData?.text_uz}</div>
                     <Link href={currentData?.Link || ""} className="hero__button">Batafsil</Link>
                     <Swiper
@@ -106,7 +106,7 @@ const Hero = () => {
                                     <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src={getImageUrl(item)} alt="slider" />
                                     <Img pos={"absolute"} boxSize={"full"} top={0} left={0} src="/images/Overlay.png" className='overlay' transform={"rotate(180deg)"} alt="overlay" />
                                     <Box pos={"absolute"} bottom={0} left={0} p={4}>
-                                        <Text className='title' color={"white"} mb={2} fontWeight={700} fontSize={"md"}>{item.title_uz} {item.id}</Text>
+                                        <Text className='title' color={"white"} mb={2} fontWeight={700} fontSize={"md"}>{item.title_uz}</Text>
                                         <Text className='subtitle' textAlign={"left"} color={"#9C9C9F"} fontWeight={500} fontSize={"md"}>{item.updatedAt?.slice(0, 10)}</Text>
                                     </Box>
                                 </Box>

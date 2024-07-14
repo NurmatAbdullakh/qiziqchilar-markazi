@@ -20,7 +20,9 @@ const BurgerMenu = ({ isOpen, onClose }) => {
             <DrawerContent>
                 <DrawerHeader >
                     <Flex alignItems={"center"} justifyContent={"space-between"}>
-                        <img src="/icons/burgerLogo.svg" alt="logo" />
+                        <Box w={"120px"}>
+                            <img src="/images/Logo.svg" alt="logo" />
+                        </Box>
                         <DrawerCloseButton
                             pos={"static"}
                             borderRadius="8px"
