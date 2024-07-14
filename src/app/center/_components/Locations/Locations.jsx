@@ -39,7 +39,6 @@ const Locations = () => {
     }, []);
 
     const handlePlacemarkClick = (item) => {
-        console.log("click");
     };
 
     const handlePlacemarkMouseEnter = () => {

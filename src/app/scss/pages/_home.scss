@@ -617,13 +617,13 @@
 		}
         &__mid-items {
             height: 100%;
+            display: none;
             @media (min-width: 900px) {
                 display: grid;
                 gap: 20px;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: 1fr 170px;
                 &:not(:first-child){
-                    
                     display: none;
                 }
             }

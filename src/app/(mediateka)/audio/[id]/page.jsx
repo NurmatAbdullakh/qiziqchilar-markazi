@@ -4,6 +4,8 @@ import { useGetOneByUrlQuery } from "../../../../api/api.service";
 import {
     BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
+import AudioPLayer from "../../../components/AudioPlayer/AudioPlayer";
+import { getImageUrl } from "../../../../utils/getImageUrl";
 
 const SingleAudio = () => {
     const { id } = useParams()
@@ -38,27 +40,12 @@ const SingleAudio = () => {
                                 <div className="statistics__text">{item?.number_views}</div>
                             </div>
                         </div>
-                        <div className="data-audioplayer audioplayer">
-                            <div className="audioplayer__image">
-                                <img className="bg" src="/images/gallery/gallery 2.jpg" alt="audioplayer" />
-                            </div>
-                            <div className="audioplayer__info">
-                                <div className="audioplayer__title">
-                                    Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                    Xamroqulov
-                                </div>
-                                <div className="audioplayer__control">
-                                    <img className="audioplayer__play-icon" src="/icons/play-icon.svg" />
-                                    <div className="audioplayer__progress">
-                                        <div className="audioplayer__time">07:34</div>
-                                        <div className="audioplayer__progress-line"></div>
-                                        <div className="audioplayer__time">09:00</div>
-                                    </div>
-                                    <img className="audioplayer__volume-icon"
-                                        src="/icons/statistics/volume.svg" />
-                                </div>
-                            </div>
-                        </div>
+                        {item?.audio_file?.url &&
+                            <AudioPLayer
+                                imageUrl={getImageUrl(item)}
+                                title={item?.title_uz}
+                                src={"https://admin.askiyachilar.uz" + item?.audio_file?.url}
+                            />}
                         <div className="data__text">
                             {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
                         </div>
