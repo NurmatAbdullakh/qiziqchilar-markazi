@@ -8,7 +8,9 @@ import { useDisclosure } from "@chakra-ui/react"
 const Gallery = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const { data: photos } = useGetAllByUrlQuery('rasmlars')
+    const { data: photos } = useGetAllByUrlQuery('rasmlars', {
+        "filters[asosiy_sahifa][$eq]": true
+    })
 
 
     const items = getItems(photos)?.slice(0, 11)

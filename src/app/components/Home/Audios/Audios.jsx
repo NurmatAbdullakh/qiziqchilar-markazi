@@ -5,7 +5,9 @@ import { getItems } from "../.././../../utils/getItems"
 import Link from "next/link";
 
 const Audios = () => {
-    const { data: audios } = useGetAllByUrlQuery('audiolars')
+    const { data: audios } = useGetAllByUrlQuery('audiolars', {
+        "filters[asosiy_sahifa][$eq]": true
+    })
 
     const items = getItems(audios)
 

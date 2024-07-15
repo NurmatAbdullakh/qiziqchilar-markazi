@@ -5,7 +5,9 @@ import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const News = ({ withoutTitle }) => {
-    const { data: news } = useGetAllByUrlQuery('news123')
+    const { data: news } = useGetAllByUrlQuery('news123', {
+        "filters[asosiy_sahifa][$eq]": true
+    })
 
     const items = getItems(news) || []
 

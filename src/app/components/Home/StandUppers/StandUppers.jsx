@@ -5,10 +5,12 @@ import Link from "next/link"
 
 
 const StandUppers = () => {
-    const { data: standUppers } = useGetAllByUrlQuery('soz-ustalaris')
+    const { data: standUppers } = useGetAllByUrlQuery('soz-ustalaris', {
+        "filters[asosiy_sahifa][$eq]": true
+    })
 
     const items = getItems(standUppers) || []
-
+    console.log(items);
     return (
         <section className="jockers main">
             <div className="jockers__container container">

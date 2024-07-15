@@ -12,7 +12,15 @@ export const ApiService = {
         limit: 10,
       },
     }
-  ) => request.get(`${url}`, { params }),
+  ) => request.get(`${url}`, { params:{
+      images: "*",
+      populate: "*",
+      pagination: {
+        start: 0,
+        limit: 10,
+    },
+    ...params
+    }}),
   getOne: (
     url,
     id,
@@ -23,10 +31,10 @@ export const ApiService = {
   ) => request.get(`/${url}/${id}`, { params }),
 };
 
-export const useGetAllByUrlQuery = (url) =>
+export const useGetAllByUrlQuery = (url, params) =>
   useQuery({
     queryKey: [url],
-    queryFn: () => ApiService.get(url),
+    queryFn: () => ApiService.get(url, params),
     retry: 0,
   });
 

@@ -5,7 +5,9 @@ import BigVideo from "../../Cards/BigVideo/BigVideo"
 import Link from "next/link"
 
 const Retro = () => {
-    const { data: videos } = useGetAllByUrlQuery('videolars')
+    const { data: videos } = useGetAllByUrlQuery('videolars', {
+        "filters[asosiy_sahifa][$eq]": true
+    })
     const items = getItems(videos)
 
     const bigVideoData = items?.[0]

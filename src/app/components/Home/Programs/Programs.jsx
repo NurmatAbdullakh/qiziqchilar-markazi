@@ -5,7 +5,9 @@ import Link from "next/link";
 
 
 const Programs = () => {
-  const { data: programs } = useGetAllByUrlQuery('dasturlars')
+  const { data: programs } = useGetAllByUrlQuery('dasturlars', {
+    "filters[asosiy_sahifa][$eq]": true
+  })
 
   const items = getItems(programs) || []
 
