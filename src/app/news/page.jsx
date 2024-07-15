@@ -12,7 +12,7 @@ const News = () => {
                     <img className="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
                 </div>
             </section>
-            <NewsItems withoutTitle />
+            <NewsItems withoutTitle withoutLink />
         </main>
 
 

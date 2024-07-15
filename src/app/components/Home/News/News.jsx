@@ -4,7 +4,7 @@ import { getItems } from "../../../../utils/getItems"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
-const News = ({ withoutTitle }) => {
+const News = ({ withoutTitle, withoutLink }) => {
     const { data: news } = useGetAllByUrlQuery('news123', {
         "filters[asosiy_sahifa][$eq]": true
     })
@@ -22,7 +22,7 @@ const News = ({ withoutTitle }) => {
                 {withoutTitle && <div className="news__title section-title ">
                     <div className="section-title__title">Yangiliklar</div>
                     <div className="section-title__divider"></div>
-                    <Link href="/news" className="section-title__all">
+                    {withoutLink && <Link href="/news" className="section-title__all">
                         <div className="section-title__all-text">
                             Barcha yangiliklar
                         </div>
@@ -36,7 +36,7 @@ const News = ({ withoutTitle }) => {
                             src="/icons/smallArrowRight.svg"
                             alt="arrow-right"
                         />
-                    </Link>
+                    </Link>}
                 </div>}
                 <div className="news__layout">
                     <div className="news__left ">
