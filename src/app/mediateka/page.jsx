@@ -1,7 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import TabSearchParams from "../components/TabSearchParams/TabSearchParams";
-import { SimpleGrid } from "@chakra-ui/react";
 import AudioCards from "./_components/AudioCards";
 import VideoCards from "./_components/VideoCards";
 import Fotogalereya from "./_components/Fotogalereya";
@@ -48,107 +47,6 @@ const Mediateka = () => {
                                 },
                             ]
                         } />
-                        <div className="page-layout__news sidebar-news">
-                            <div className="sidebar-news__title sidebar-title">
-                                Yangiliklar
-                            </div>
-                            <div className="news__left-items">
-                                <div className="news__item ">
-                                    <div className="news-card">
-                                        <div className="news-card__body">
-                                            <div className="news-card__date">
-                                                <img className="news-card__icon" src="/icons/calendar.svg"
-                                                    alt="calendar" />
-                                                <div className=" news-card__time">
-                                                    08.03.24 23:23
-                                                </div>
-                                            </div>
-                                            <div className="news-card__title">
-                                                Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                                Xamroqulov
-                                            </div>
-                                            <div className="news-card__description">
-                                                O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev Rossiya
-                                                Federatsiyasiga rasmiy tashrifning birinchi manzili –
-                                                Qozon shahriga bordi.
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="news__item ">
-                                    <div className="news-card">
-                                        <div className="news-card__body">
-                                            <div className="news-card__date">
-                                                <img className="news-card__icon" src="/icons/calendar.svg"
-                                                    alt="calendar" />
-                                                <div className=" news-card__time">
-                                                    08.03.24 23:23
-                                                </div>
-                                            </div>
-                                            <div className="news-card__title">
-                                                Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                                Xamroqulov
-                                            </div>
-                                            <div className="news-card__description">
-                                                O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev Rossiya
-                                                Federatsiyasiga rasmiy tashrifning birinchi manzili –
-                                                Qozon shahriga bordi.
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="news__item ">
-                                    <div className="news-card">
-                                        <div className="news-card__body">
-                                            <div className="news-card__date">
-                                                <img className="news-card__icon" src="/icons/calendar.svg"
-                                                    alt="calendar" />
-                                                <div className=" news-card__time">
-                                                    08.03.24 23:23
-                                                </div>
-                                            </div>
-                                            <div className="news-card__title">
-                                                Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                                Xamroqulov
-                                            </div>
-                                            <div className="news-card__description">
-                                                O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev Rossiya
-                                                Federatsiyasiga rasmiy tashrifning birinchi manzili –
-                                                Qozon shahriga bordi.
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="news__item ">
-                                    <div className="news-card">
-                                        <div className="news-card__body">
-                                            <div className="news-card__date">
-                                                <img className="news-card__icon" src="/icons/calendar.svg"
-                                                    alt="calendar" />
-                                                <div className=" news-card__time">
-                                                    08.03.24 23:23
-                                                </div>
-                                            </div>
-                                            <div className="news-card__title">
-                                                Qo’qon askiyachilari- Muhiddin Darveshev va Rustam
-                                                Xamroqulov
-                                            </div>
-                                            <div className="news-card__description">
-                                                O‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev Rossiya
-                                                Federatsiyasiga rasmiy tashrifning birinchi manzili –
-                                                Qozon shahriga bordi.
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </section>

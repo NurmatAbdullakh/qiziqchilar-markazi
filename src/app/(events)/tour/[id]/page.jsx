@@ -69,43 +69,8 @@ const SingleTour = () => {
                     </div>
                     <div className="page-layout__right">
                         <div className="page-layout__adresses addresses-menu">
-                            <div className="addresses-menu__title sidebar-title">
-                                Manzillar
-                            </div>
-                            <ul className="addresses-menu__list">
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Abdulla Kaxxor madaniyat uyi</div>
-                                </li>
-                                <li className="addresses-menu__item active">
-                                    <img className="addresses-menu__icon" src="/icons/skyssraper.svg" />
-                                    <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
-                                </li>
-                            </ul>
+
+
                         </div>
                     </div>
                 </div>

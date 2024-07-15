@@ -1057,6 +1057,14 @@
                     @extend  %sm;
                     color: #6B6B70;
                     cursor: default;
+                     text-overflow: ellipsis;
+                  overflow: hidden;     
+                  height: 1.2em; 
+                  white-space: nowrap;
+                  width: 250px;  
+                  @media (max-width: 500px) {
+                        width: 100px;
+                  }
                 }
             }
             

@@ -62,19 +62,7 @@ const SingleAudio = () => {
                         </div>
                     </div>
                     <div className="page-layout__right">
-                        <div className="page-layout__types types-menu">
-                            <div className="types-menu__title">Bo‘limlar</div>
-                            <ul className="types-menu__list">
-                                <li className="types-menu__item active">
-                                    <img className="types-menu__icon" src="/icons/starsActive.svg" />
-                                    <div className="types-menu__label">Gastrollar</div>
-                                </li>
-                                <li className="types-menu__item active">
-                                    <img className="types-menu__icon" src="/icons/stars.svg" />
-                                    <div className="types-menu__label">Dasturlar</div>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </section>
