@@ -3,7 +3,7 @@ import { useParams } from "next/navigation";
 import { useGetOneByUrlQuery } from "../../../api/api.service";
 import { getImageUrl } from "../../../utils/getImageUrl";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-
+import BredCrumbs from "../../components/BredCrumbs";
 const SingleNews = () => {
 
     const { id } = useParams()
@@ -12,11 +12,22 @@ const SingleNews = () => {
 
 
     return <main class="main single-news">
+        <BredCrumbs items={
+            [{
+                title: "Yangiliklar",
+                link: "/news",
+            }
+                ,
+            {
+                title: item?.title_uz,
+            }
+            ]
+        }
+        />
         <section class="hero__with-title hero__with-title">
             <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
             <img class="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
             <div class="hero__with-title-container container">
-                <h1 class="hero__with-title-text">Yangiliklar</h1>
             </div>
         </section>
         <section class="data">

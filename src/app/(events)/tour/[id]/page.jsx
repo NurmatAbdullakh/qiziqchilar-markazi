@@ -7,6 +7,7 @@ import { getImageUrl } from "../../../../utils/getImageUrl";
 import {
     BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
+import BredCrumbs from "../../../components/BredCrumbs";
 
 const SingleTour = () => {
     const { id } = useParams()
@@ -15,6 +16,10 @@ const SingleTour = () => {
 
     return (
         <main className="main single-gostrol">
+            <BredCrumbs items={[
+                { title: "Gastroll va dasturlar", link: "/events?type=gastrollar" },
+                { title: item?.gastrol_nomi_uz, link: item?.gastrol_nomi_uz }
+            ]} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />

@@ -8,6 +8,7 @@ import Locations from "./_components/Locations/Locations";
 import { getImageUrl } from "../../utils/getImageUrl";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/react";
+import BredCrumbs from "../components/BredCrumbs";
 
 const Center = () => {
     const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
@@ -15,10 +16,16 @@ const Center = () => {
     const [selectedLocation, setSelectedLocation] = useState(null)
     const centerData = aboutData?.data?.data?.attributes
 
-
+    const bredCrumbs = [
+        {
+            title: "Markaz",
+            link: "/center"
+        }
+    ]
 
     return (
         <main className="main about-center">
+            <BredCrumbs items={bredCrumbs} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />

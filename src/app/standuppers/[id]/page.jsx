@@ -6,6 +6,7 @@ import { getImageUrl } from "../../../utils/getImageUrl";
 import {
     BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
+import BredCrumbs from "../../components/BredCrumbs";
 
 
 const SingleStandupper = () => {
@@ -14,9 +15,22 @@ const SingleStandupper = () => {
     const item = getItem(data)
 
 
+    const bredCrumbs = [
+        {
+            title: "So'z ustalaris",
+            link: "/standuppers"
+        },
+        {
+            title: item?.full_name_uz,
+            link: item?.full_name_uz
+        }
+    ]
+
+
     return (
 
         <main className="main single-stand-upper">
+            <BredCrumbs items={bredCrumbs} />
             <section className="hero">
                 <img className="hero__ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__ellips" src="/images/ellips.svg" alt="ellips" />

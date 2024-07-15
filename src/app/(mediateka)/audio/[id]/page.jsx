@@ -6,6 +6,7 @@ import {
 } from "@strapi/blocks-react-renderer";
 import AudioPLayer from "../../../components/AudioPlayer/AudioPlayer";
 import { getImageUrl } from "../../../../utils/getImageUrl";
+import BredCrumbs from "../../../components/BredCrumbs";
 
 const SingleAudio = () => {
     const { id } = useParams()
@@ -14,6 +15,16 @@ const SingleAudio = () => {
 
     return (
         <main className="main single-audio">
+            <BredCrumbs items={[
+                {
+                    title: "Audio",
+                    link: "/mediateka?type=audio"
+                },
+                {
+                    title: item?.title_uz,
+                    link: item?.title_uz
+                }
+            ]} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />

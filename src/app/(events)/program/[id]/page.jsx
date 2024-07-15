@@ -4,6 +4,7 @@ import { useParams } from "next/navigation"
 import { useGetOneByUrlQuery } from "../../../../api/api.service"
 import { getItem } from "../../../../utils/getItem"
 import { getImageUrl } from "../../../../utils/getImageUrl"
+import BredCrumbs from "../../../components/BredCrumbs"
 
 const SingleProgram = () => {
 
@@ -11,8 +12,13 @@ const SingleProgram = () => {
     const { data } = useGetOneByUrlQuery('dasturlars', id)
     const item = getItem(data)
 
+
     return (
         <main className="main single-program">
+            <BredCrumbs items={[
+                { title: "Dasturlar", link: "/events?type=dasturlar" },
+                { title: item?.nomi_uz, link: item?.nomi_uz }
+            ]} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />

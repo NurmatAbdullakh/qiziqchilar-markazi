@@ -7,6 +7,7 @@ import {
 import { getImageUrl } from "../../../../utils/getImageUrl";
 import { useDisclosure } from "@chakra-ui/react";
 import VideoModal from "../../../components/VideoModal/VideoModal";
+import BredCrumbs from "../../../components/BredCrumbs";
 
 const SingleVideo = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -18,6 +19,17 @@ const SingleVideo = () => {
 
     return (
         <main className="main single-video">
+            <BredCrumbs items={[
+                {
+                    title: "Video",
+                    link: "/mediateka?type=video"
+                }
+                ,
+                {
+                    title: item?.title_uz,
+                    link: item?.title_uz
+                }
+            ]} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
@@ -66,19 +78,7 @@ const SingleVideo = () => {
                         </div>
                     </div>
                     <div className="page-layout__right">
-                        <div className="page-layout__types types-menu">
-                            <div className="types-menu__title">Bo‘limlar</div>
-                            <ul className="types-menu__list">
-                                <li className="types-menu__item active">
-                                    <img className="types-menu__icon" src="/icons/starsActive.svg" />
-                                    <div className="types-menu__label">Gastrollar</div>
-                                </li>
-                                <li className="types-menu__item active">
-                                    <img className="types-menu__icon" src="/icons/stars.svg" />
-                                    <div className="types-menu__label">Dasturlar</div>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </section>
