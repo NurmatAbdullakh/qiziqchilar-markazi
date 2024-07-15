@@ -13,7 +13,7 @@ const customPlacemarkIcon = {
     iconImageOffsetHovered: [-20, -40]
 };
 
-const Locations = () => {
+const Locations = ({ onIconClick }) => {
     const [activeTab, setActiveTab] = useState(0);
     const [activeItem, setActiveItem] = useState(null);
 
@@ -39,6 +39,7 @@ const Locations = () => {
     }, []);
 
     const handlePlacemarkClick = (item) => {
+        onIconClick(item);
     };
 
     const handlePlacemarkMouseEnter = () => {

@@ -16,12 +16,12 @@ const Team = ({ onClick }) => {
         {
             id: 1,
             title: 'Xodimlar',
-            items: []
+            items: items?.filter(i => i.lavozim_turi === "xodim")
         },
         {
             id: 2,
             title: 'San’at maktabi direktorlari',
-            items: []
+            items: items?.filter(i => i.lavozim_turi === "maktab_direktori")
         },
     ]
 

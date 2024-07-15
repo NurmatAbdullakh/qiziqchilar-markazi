@@ -5,11 +5,16 @@ import { getItems } from "../../utils/getItems";
 import Team from "./_components/Team/Team";
 import TeamModal from "./_components/TeamModal/TeamModal";
 import Locations from "./_components/Locations/Locations";
+import { getImageUrl } from "../../utils/getImageUrl";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/react";
 
 const Center = () => {
     const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
     const [selectedEmployee, setSelectedEmployee] = useState(null)
+    const [selectedLocation, setSelectedLocation] = useState(null)
     const centerData = aboutData?.data?.data?.attributes
+
 
 
     return (
@@ -110,57 +115,55 @@ const Center = () => {
                     </div>
                 </div>
                 <div className="locations__container container">
-                    <Locations />
+                    <Locations onIconClick={setSelectedLocation} />
                 </div>
             </section>
             {selectedEmployee && <TeamModal onClose={() => setSelectedEmployee(null)} selectedEmployee={selectedEmployee} />}
-
-            {/* <sectio className="modal">
-                <div className="modal__content ">
-                    <div className="modal__body location-modal">
-                        <div className="location-modal__header">
-                            <div className="location-modal__title">Hududiy boshqarmalar</div>
-                            <img className="location-modal__close-btn" src="/icons/close.svg" />
-                        </div>
-                        <div className="location-modal__banner">
-                            <img className="bg" src="/images/gallery/gallery 8.jpg" alt="" />
-                        </div>
-                        <div className="location-modal__info-row">
-                            <img className="location-modal__icon" src="/icons/location-modal/mail.svg" alt="" />
-                            <a href="mailto:info.@askiyamarkazi.uz"
-                                className="location-modal__label">info.@askiyamarkazi.uz</a>
-                        </div>
-                        <div className="location-modal__info-row">
-                            <img className="location-modal__icon" src="/icons/location-modal/phone.svg" alt="" />
-                            <a href="tel:+998 71 200 70 07" className="location-modal__label">+998 71 200 70 07</a>
-                            <div className="location-modal__socials">
-                                <a href="" className="location-modal__social">
-                                    <img className="" src="/icons/location-modal/telegram.svg" alt="" />
-                                </a>
-                                <a href="" className="location-modal__social">
-                                    <img className="" src="/icons/location-modal/instagram.svg" alt="" />
-                                </a>
-                                <a href="" className="location-modal__social">
-                                    <img className="" src="/icons/location-modal/facebook.svg" alt="" />
-                                </a>
+            {selectedLocation &&
+                <Modal isOpen={!!selectedLocation} onClose={() => setSelectedLocation(null)}>
+                    <ModalOverlay />
+                    <ModalContent maxW={"600px"} bg="transparent" onClose={() => setSelectedLocation(null)}>
+                        <div className="modal__content ">
+                            <div className="modal__body location-modal">
+                                <div className="location-modal__header">
+                                    <div className="location-modal__title">{selectedLocation?.maktab_nomi}</div>
+                                    <img onClick={() => setSelectedLocation(null)} className="location-modal__close-btn" src="/icons/close.svg" />
+                                </div>
+                                <div className="location-modal__banner">
+                                    <img className="bg" src={getImageUrl(selectedLocation)} alt="" />
+                                </div>
+                                <div className="location-modal__info-row">
+                                    <img className="location-modal__icon" src="/icons/location-modal/mail.svg" alt="" />
+                                    <a href={`mailto:${selectedLocation?.email_manzili}`}
+                                        className="location-modal__label">{selectedLocation?.email_manzili}</a>
+                                </div>
+                                <div className="location-modal__info-row">
+                                    <img className="location-modal__icon" src="/icons/location-modal/phone.svg" alt="" />
+                                    <a href={`tel:${selectedLocation?.telefon_raqami}`} className="location-modal__label">{selectedLocation?.telefon_raqami}</a>
+                                    {/* <div className="location-modal__socials">
+                                        <a href="" className="location-modal__social">
+                                            <img className="" src="/icons/location-modal/telegram.svg" alt="" />
+                                        </a>
+                                        <a href="" className="location-modal__social">
+                                            <img className="" src="/icons/location-modal/instagram.svg" alt="" />
+                                        </a>
+                                        <a href="" className="location-modal__social">
+                                            <img className="" src="/icons/location-modal/facebook.svg" alt="" />
+                                        </a>
+                                    </div> */}
+                                </div>
+                                <div className="location-modal__info-row">
+                                    <img className="location-modal__icon" src="/icons/location-modal/clock.svg" alt="" />
+                                    <span className="location-modal__label">{selectedLocation?.yopilish_vaqti?.slice(0, 5)} ga qadar ochiq</span>
+                                </div>
+                                <div className="location-modal__text">
+                                    {selectedLocation?.description_uz && <BlocksRenderer content={selectedLocation?.description_uz} />}
+                                </div>
                             </div>
-
                         </div>
-                        <div className="location-modal__info-row">
-                            <img className="location-modal__icon" src="/icons/location-modal/clock.svg" alt="" />
-                            <span className="location-modal__label">22:00 ga qadar ochiq</span>
-                        </div>
-                        <div className="location-modal__text">
-                            Markazning moddiy-texnika bazasini mustahkamlash va ijodkorlari ijtimoiy sharoitini
-                            yaxshilash maqsadida Fargʻona
-                            viloyati hokimligi Markazni saqlash va uning faoliyatini qoʻllab-quvvatlash uchun mahalliy
-                            byudjetdan 2023 yilda 2,3
-                            milliard soʻm, 2024 yildan boshlab esa Markaz talabnomasi asosida zarur mablagʻlar ajratadi.
-                        </div>
-                    </div>
-                </div>
-            </sectio> */}
-        </main>
+                    </ModalContent>
+                </Modal>}
+        </main >
 
 
     )

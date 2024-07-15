@@ -39,17 +39,15 @@ const Locations = () => {
     }, []);
 
     const handlePlacemarkClick = (item) => {
-        console.log("click");
+        console.log("Placemark clicked:", item);
     };
 
     const handlePlacemarkMouseEnter = () => {
-
         customPlacemarkIcon.iconImageSize = customPlacemarkIcon.iconImageSizeHovered;
         customPlacemarkIcon.iconImageOffset = customPlacemarkIcon.iconImageOffsetHovered;
     };
 
     const handlePlacemarkMouseLeave = () => {
-
         customPlacemarkIcon.iconImageSize = [30, 30];
         customPlacemarkIcon.iconImageOffset = [-15, -30];
     };
@@ -94,6 +92,7 @@ const Locations = () => {
                             width="100%"
                             height="100%"
                             style={{ width: '100%', height: '100%' }}
+                            behaviors={['drag', 'dblClickZoom']}
                         >
                             {activeItem && (
                                 <Placemark
@@ -109,7 +108,11 @@ const Locations = () => {
                     <div className="locations__tabs tabs">
                         <div className="tabs__tab-list">
                             {tabs.map((item) => (
-                                <div className={`tabs__tab-item ${item.id === activeTab ? 'active' : ''}`} key={item.id} onClick={() => setActiveTab(item.id)}>
+                                <div
+                                    className={`tabs__tab-item ${item.id === activeTab ? 'active' : ''}`}
+                                    key={item.id}
+                                    onClick={() => setActiveTab(item.id)}
+                                >
                                     <div className="tabs__tab-title">{item.title}</div>
                                 </div>
                             ))}
@@ -117,7 +120,12 @@ const Locations = () => {
                         <div className="tabs__tab-panel">
                             <div className="locations__items">
                                 {tabs[activeTab]?.items?.map((item, i) => (
-                                    <LocationCard key={item.id} item={item} isActive={activeItem?.id === item.id} onClick={() => setActiveItem(item)} />
+                                    <LocationCard
+                                        key={item.id}
+                                        item={item}
+                                        isActive={activeItem?.id === item.id}
+                                        onClick={() => setActiveItem(item)}
+                                    />
                                 ))}
                             </div>
                         </div>

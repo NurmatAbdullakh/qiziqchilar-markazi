@@ -2,8 +2,12 @@ import Link from "next/link"
 import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getItems } from "../../../../utils/getItems"
 import GalleryCard from "../../Cards/GalleryCard/GalleryCard"
+import GalleryModal from "./GalleryModal"
+import { useDisclosure } from "@chakra-ui/react"
 
 const Gallery = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     const { data: photos } = useGetAllByUrlQuery('rasmlars')
 
 
@@ -35,9 +39,10 @@ const Gallery = () => {
                     </Link>
                 </div>
                 <div class="gallery__items">
-                    {items?.map(item => <GalleryCard key={item.id} item={item} />)}
+                    {items?.map(item => <GalleryCard onClick={onOpen} key={item.id} item={item} />)}
                 </div>
             </div>
+            <GalleryModal isOpen={isOpen} onClose={onClose} />
         </section>
     )
 }

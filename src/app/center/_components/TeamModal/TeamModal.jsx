@@ -1,5 +1,6 @@
 
 const TeamModal = ({ onClose, selectedEmployee }) => {
+    console.log(selectedEmployee);
     return (<sectio className="modal">
         <div className="modal__content ">
             <div className="modal__body team-modal">
@@ -8,18 +9,25 @@ const TeamModal = ({ onClose, selectedEmployee }) => {
                     <img onClick={onClose} className="team-modal__close-btn" src="/icons/close.svg" />
                 </div>
                 <div className="team-modal__work">
-                    <div className="team-modal__work-time">
-                        <div className="team-modal__days">Dushanba - Juma</div>
-                        <div className="team-modal__dot"></div>
-                        <div className="team-modal__time">09:00 - 18:00</div>
-                    </div>
+                    {
+                        selectedEmployee?.Qabul_kunlari?.map((item) => {
+                            return (
+                                <div className="team-modal__work-time">
+                                    <div div className="team-modal__days">{item?.Qabul_kunlari}</div>
+                                    {/* <div className="team-modal__dot"></div> */}
+                                    <div className="team-modal__time">
+                                        {item?.qabul_boshlanish_vaqti?.slice(0, 5)} - {item?.qabul_tugash_vaqti?.slice(0, 5)}</div>
+                                </div>
+                            )
+                        })
+                    }
                     <div className="team-modal__work-place">
                         Toshkent shahar boshqarmasi
                     </div>
                 </div>
                 <div className="team-modal__location">
                     <img className="team-modal__location-icon" src="/icons/location.svg" />
-                    <div className="team-modal__location-text">{selectedEmployee?.qabul_manzili}</div>
+                    <div className="team-modal__location-text">{selectedEmployee?.qabul_manzili_uz}</div>
                 </div>
                 <div className="team-modal__phone">
                     <img className="team-modal__phone-icon" src="/icons/phone.svg" />
@@ -36,7 +44,7 @@ const TeamModal = ({ onClose, selectedEmployee }) => {
                 </div>
             </div>
         </div>
-    </sectio>)
+    </sectio >)
 }
 
 export default TeamModal

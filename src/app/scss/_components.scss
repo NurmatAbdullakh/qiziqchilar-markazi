@@ -1322,7 +1322,9 @@
 		&__work-time {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 6px;
+            width: 180px;
 		}
 
 		// .team-modal__days
