@@ -10,7 +10,6 @@ const StandUppers = () => {
     })
 
     const items = getItems(standUppers) || []
-    console.log(items);
     return (
         <section className="jockers main">
             <div className="jockers__container container">

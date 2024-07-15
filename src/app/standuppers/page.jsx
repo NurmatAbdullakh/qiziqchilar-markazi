@@ -17,7 +17,7 @@ const StandUppers = () => {
                         <StanduppersCards />
                     </div>
                     <div className="page-layout__right">
-                        <div className="page-layout__types filter">
+                        {/* <div className="page-layout__types filter">
                             <div className="filter__title">Filtr</div>
                             <div className="filter__subtitle">Askiyachilar</div>
                             <ul className="filter__list">
@@ -73,7 +73,7 @@ const StandUppers = () => {
                                     </label>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
