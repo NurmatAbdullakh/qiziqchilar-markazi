@@ -49,12 +49,12 @@ const News = () => {
                         <form ref={form} onSubmit={onSubmit} className="form__body">
                             <div className="form__name">
                                 <label for="name" className="form__label">To‘liq ismingiz</label>
-                                <input required name="name" className="form__input" />
+                                <input placeholder="To’liq ismingizni kiring" required name="name" className="form__input" />
                             </div>
                             <div className="form__row">
                                 <div className="form__phone">
                                     <label for="phone" className="form__label">Telefon raqamingiz</label>
-                                    <input required type="number" name="phone" className="form__input" />
+                                    <input required placeholder="+998 ... .. .." type="number" name="phone" className="form__input" />
                                 </div>
                                 <div className="form__school">
                                     <label for="school" className="form__label">Maxorat maktabi</label>
@@ -62,13 +62,13 @@ const News = () => {
                                 </div>
                             </div>
                             <div className="form__message">
-                                <label for="message" className="form__label">Maxorat maktabi</label>
-                                <textarea name="message" className="form__textarea"></textarea>
+                                <label for="message" className="form__label">Xabaringizni kiriting</label>
+                                <textarea placeholder="Xabaringizni to’liq yozib yuboring" name="message" className="form__textarea"></textarea>
                             </div>
                             <div className="form__row">
                                 <div className="form__accept">
+                                    <Checkbox required colorScheme='orange' size={"lg"} name="accept" />
                                     <label className="form-checkbox__container">
-                                        <Checkbox required colorScheme='orange' size={"lg"} name="accept" >Checkbox</Checkbox>
                                         <a href="#">Foydalanish shartlari </a>
                                         <span>va</span> <a href="#"> maxfiylik siyosati</a>
                                         <span>bilan tanishib chiqdim</span>
