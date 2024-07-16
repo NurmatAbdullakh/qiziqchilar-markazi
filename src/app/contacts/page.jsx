@@ -1,4 +1,36 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { useCreateArizalarMutation } from "../../api/api.service";
+import { Checkbox, useToast } from '@chakra-ui/react'
+
 const News = () => {
+    const { mutate, isSuccess, isPending } = useCreateArizalarMutation();
+    const form = useRef();
+    const toast = useToast()
+
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+        console.log("submit", data);
+        mutate(data);
+    }
+    useEffect(() => {
+        if (isSuccess) {
+            toast({
+                title: 'Ariza qabul qilindi',
+                status: 'success',
+                duration: 4500,
+                isClosable: true,
+            })
+            form.current.reset();
+        }
+
+    })
+
+
+
     return (
         <main className="main contacts">
             <section className="hero__with-title hero__with-title">
@@ -14,19 +46,19 @@ const News = () => {
                     <div className="contact__form form">
                         <div className="form__header">Qayta aloqa</div>
 
-                        <form className="form__body">
+                        <form ref={form} onSubmit={onSubmit} className="form__body">
                             <div className="form__name">
                                 <label for="name" className="form__label">To‘liq ismingiz</label>
-                                <input name="name" className="form__input" />
+                                <input required name="name" className="form__input" />
                             </div>
                             <div className="form__row">
                                 <div className="form__phone">
                                     <label for="phone" className="form__label">Telefon raqamingiz</label>
-                                    <input name="phone" className="form__input" />
+                                    <input required type="number" name="phone" className="form__input" />
                                 </div>
                                 <div className="form__school">
                                     <label for="school" className="form__label">Maxorat maktabi</label>
-                                    <input name="school" className="form__input" />
+                                    <input required name="school" className="form__input" />
                                 </div>
                             </div>
                             <div className="form__message">
@@ -36,14 +68,13 @@ const News = () => {
                             <div className="form__row">
                                 <div className="form__accept">
                                     <label className="form-checkbox__container">
+                                        <Checkbox required colorScheme='orange' size={"lg"} name="accept" >Checkbox</Checkbox>
                                         <a href="#">Foydalanish shartlari </a>
                                         <span>va</span> <a href="#"> maxfiylik siyosati</a>
                                         <span>bilan tanishib chiqdim</span>
-                                        <input type="checkbox" checked="checked" />
-                                        <span className="checkmark"></span>
                                     </label>
                                 </div>
-                                <button>Yuborish</button>
+                                <button type="submit" disabled={isPending}>Yuborish</button>
                             </div>
                         </form>
                     </div>

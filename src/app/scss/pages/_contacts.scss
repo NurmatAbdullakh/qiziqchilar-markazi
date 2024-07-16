@@ -99,6 +99,14 @@
                 @extend %main_button;
                 border-radius: 0;
                 background: #F59C2F;
+                &:hover{
+                    background: #F59C2F;
+                    box-shadow:  0px 8px 16px rgba(0, 0, 0, 0.24);
+                }
+                &:active{
+                    background: #F59C2F;
+                    box-shadow:  0px 8px 16px rgba(0, 0, 0, 0.24);
+                }
             }
 
             // .form__body

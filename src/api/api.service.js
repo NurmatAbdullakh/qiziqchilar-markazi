@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { request } from "./request";
 
 export const ApiService = {
@@ -29,7 +29,18 @@ export const ApiService = {
       populate: "*",
     }
   ) => request.get(`/${url}/${id}`, { params }),
+  
+  createArizalar: (data) => {
+    return request.post("/arizalars", {data})
+  },
 };
+
+export const useCreateArizalarMutation = () =>
+  useMutation({
+    mutationKey: ["arizalar"],
+    mutationFn: (data) => {console.log("queryFn"); return ApiService.createArizalar(data)},
+    retry: 0,
+  });
 
 export const useGetAllByUrlQuery = (url, params) =>
   useQuery({
