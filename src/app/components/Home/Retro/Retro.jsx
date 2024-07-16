@@ -3,8 +3,14 @@ import { getItems } from "../../../../utils/getItems"
 import VideoCard from "../../Cards/VideoCard/VideoCard"
 import BigVideo from "../../Cards/BigVideo/BigVideo"
 import Link from "next/link"
+import VideoModal from "../../VideoModal/VideoModal"
+import { useDisclosure } from "@chakra-ui/react"
+import { useState } from "react"
 
 const Retro = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [item, setItem] = useState(null)
+
     const { data: videos } = useGetAllByUrlQuery('videolars', {
         "filters[asosiy_sahifa][$eq]": true
     })
@@ -43,16 +49,19 @@ const Retro = () => {
                 <div className="retro__layout">
                     <BigVideo item={bigVideoData} />
 
-                    <Link href={"/mediateka?type=video"} className="retro__right">
+                    <div className="retro__right">
                         <div className="retro__items">
-                            {smallVideos?.map(item => <VideoCard item={item} key={item.id} />)}
+                            {smallVideos?.map(item => <VideoCard onClick={() => { setItem(item); onOpen() }} item={item} key={item.id} />)}
                         </div>
-                        <button className="retro__button outline-button">
-                            Barcha videolar
-                        </button>
-                    </Link>
+                        <Link href={"/mediateka?type=video"}>
+                            <button className="retro__button outline-button">
+                                Barcha videolar
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
+            <VideoModal date={item?.publishedAt} videoLink={item?.video_linki} title={item?.title_uz} isOpen={isOpen} onClose={onClose} />
         </section>
     )
 }
