@@ -14,6 +14,7 @@ export const getImageUrl = (
       item?.profil_rasmi?.data?.attributes?.url ||
       item?.cover_rasmi?.data?.attributes?.url ||
       item?.cover_rasmi?.url ||
+      item?.attributes?.url ||
       "")
   );
 };

@@ -44,7 +44,7 @@ const Gallery = () => {
                     {items?.map(item => <GalleryCard onClick={onOpen} key={item.id} item={item} />)}
                 </div>
             </div>
-            <GalleryModal isOpen={isOpen} onClose={onClose} />
+            <GalleryModal items={items} isOpen={isOpen} onClose={onClose} />
         </section>
     )
 }

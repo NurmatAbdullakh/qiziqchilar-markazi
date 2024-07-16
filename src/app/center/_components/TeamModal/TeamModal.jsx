@@ -1,6 +1,5 @@
 
 const TeamModal = ({ onClose, selectedEmployee }) => {
-    console.log(selectedEmployee);
     return (<sectio className="modal">
         <div className="modal__content ">
             <div className="modal__body team-modal">
