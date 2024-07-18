@@ -246,6 +246,7 @@
       background: white;
       box-shadow: 0px 2px 12px 0px rgba(8, 8, 16, 0.20);
       border-radius: 12px;
+      
 
 		// .gostrol-card__period
 		&__period {
@@ -1037,12 +1038,14 @@
 		&__list {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 6px;
 		}
 
 		// .bredcrumbs__item
 
 		&__item {
+            flex: 0 0 auto;
             display: flex;
             align-items: center;
             gap: 4px;

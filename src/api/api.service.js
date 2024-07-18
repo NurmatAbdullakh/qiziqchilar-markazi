@@ -4,14 +4,7 @@ import { request } from "./request";
 export const ApiService = {
   get: (
     url,
-    params = {
-      images: "*",
-      populate: "*",
-      pagination: {
-        start: 0,
-        limit: 10,
-      },
-    }
+    params = {}
   ) => request.get(`${url}`, { params:{
       images: "*",
       populate: "*",

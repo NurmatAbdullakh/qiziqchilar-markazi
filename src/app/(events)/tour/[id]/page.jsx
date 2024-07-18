@@ -1,18 +1,27 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useGetOneByUrlQuery } from "../../../../api/api.service";
+import { useGetAllByUrlQuery, useGetOneByUrlQuery } from "../../../../api/api.service";
 import { getItem } from "../../../../utils/getItem";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 import {
     BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
 import BredCrumbs from "../../../components/BredCrumbs";
+import { Text } from "@chakra-ui/react";
+import { getItems } from "../../../../utils/getItems";
+import GostrolCard from "../../../components/Cards/GostrolCards/GostrolCard";
 
 const SingleTour = () => {
     const { id } = useParams()
     const { data } = useGetOneByUrlQuery('gastrollars', id)
     const item = getItem(data)
+
+    const { data: gostrolls } = useGetAllByUrlQuery('gastrollars')
+
+
+    const items = getItems(gostrolls) || []
+    console.log(items);
 
     return (
         <main className="main single-gostrol">
@@ -24,7 +33,6 @@ const SingleTour = () => {
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
                 <div className="hero__with-title-container container">
-                    <h1 className="hero__with-title-text">Gastroll va dasturlar</h1>
                     <img className="hero__with-title-img" src="/images/titles/markaz.svg" alt="markaz" />
                 </div>
             </section>
@@ -68,10 +76,15 @@ const SingleTour = () => {
                         </div>
                     </div>
                     <div className="page-layout__right">
-                        <div className="page-layout__adresses addresses-menu">
-
-
+                        <Text fontSize={"28px"} fontWeight={600} mb={6}>Gastrollar</Text>
+                        <div className="page-layout__right-items">
+                            {
+                                items?.map((item) => {
+                                    return <GostrolCard key={item.id} item={item} />
+                                })
+                            }
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -97,7 +110,7 @@ const SingleTour = () => {
                     </div>
                 </div>
             </sectio> */}
-        </main>
+        </main >
     )
 }
 
