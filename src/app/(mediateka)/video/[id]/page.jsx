@@ -9,10 +9,11 @@ import { Text, useDisclosure } from "@chakra-ui/react";
 import VideoModal from "../../../components/VideoModal/VideoModal";
 import BredCrumbs from "../../../components/BredCrumbs";
 import { getItems } from "../../../../utils/getItems";
-import VideoCard from "../../../components/Cards/VideoCard/VideoCard";
 import Link from "next/link";
+import { useState } from "react";
 
 const SingleVideo = () => {
+    const [currentVideo, setCurrentVideo] = useState(null)
     const { isOpen, onOpen, onClose } = useDisclosure()
 
 
@@ -22,6 +23,16 @@ const SingleVideo = () => {
 
     const { data: videos } = useGetAllByUrlQuery('videolars')
     const items = getItems(videos)
+
+    const openVideoModal = (video) => {
+        onOpen()
+        setCurrentVideo(video)
+    }
+
+    const handleClose = () => {
+        onClose()
+        setCurrentVideo(item)
+    }
 
     return (
         <main className="main  single-video">
@@ -71,10 +82,10 @@ const SingleVideo = () => {
 
                             <div className="big-video__info">
                                 <div className="big-video__date">
-                                    {item?.video_tegi}
+                                    {item?.publishedAt?.slice(0, 10)}
                                 </div>
                                 <div className="big-video__title">
-                                    Askiya – yashirin fikr sehri, hozirjavob xalqimizning noyob xazinasi
+                                    {item?.title_uz}
                                 </div>
                             </div>
                         </div>
@@ -113,7 +124,7 @@ const SingleVideo = () => {
                     </div>
                 </div>
             </section>
-            <VideoModal date={item?.publishedAt} videoLink={item?.video_linki} title={item?.title_uz} isOpen={isOpen} onClose={onClose} />
+            <VideoModal date={currentVideo?.publishedAt} videoLink={currentVideo?.video_linki} title={currentVideo?.title_uz} isOpen={isOpen} onClose={handleClose} />
         </main>
     )
 }
