@@ -1,16 +1,23 @@
 "use client"
 
 import { useParams } from "next/navigation"
-import { useGetOneByUrlQuery } from "../../../../api/api.service"
+import { useGetAllByUrlQuery, useGetOneByUrlQuery } from "../../../../api/api.service"
 import { getItem } from "../../../../utils/getItem"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 import BredCrumbs from "../../../components/BredCrumbs"
+import { Text } from "@chakra-ui/react"
+import { getItems } from "../../../../utils/getItems"
+import ProgramCards from "../../../events/_components/ProgramCards"
 
 const SingleProgram = () => {
 
     const { id } = useParams()
     const { data } = useGetOneByUrlQuery('dasturlars', id)
     const item = getItem(data)
+
+    const { data: programs } = useGetAllByUrlQuery('dasturlars')
+
+    const items = getItems(programs) || []
 
 
     return (
@@ -62,7 +69,9 @@ const SingleProgram = () => {
                         </div>
                     </div>
                     <div className="page-layout__right">
-                        <div className="page-layout__adresses addresses-menu">
+                        <Text fontSize={"28px"} fontWeight={"600"} mb={6}>Tavsiya etamiz</Text>
+                        <ProgramCards item={item} />
+                        {/* <div className="page-layout__adresses addresses-menu">
                             <div className="addresses-menu__title sidebar-title">
                                 Manzillar
                             </div>
@@ -100,7 +109,7 @@ const SingleProgram = () => {
                                     <div className="addresses-menu__label">Istiqlol san’at saroyi</div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

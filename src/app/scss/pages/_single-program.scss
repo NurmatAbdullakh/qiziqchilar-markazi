@@ -21,9 +21,11 @@
 	
 			}
 			&__right {
+				.program__item.program-card{
+					margin-bottom: 20px;
+				}
 				@media (max-width:768px){
 					grid-template-columns: 1fr ;
-					grid-row: 1/2;
 				}
 			}
 	
