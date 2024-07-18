@@ -1,17 +1,25 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useGetOneByUrlQuery } from "../../../../api/api.service";
+import { useGetAllByUrlQuery, useGetOneByUrlQuery } from "../../../../api/api.service";
 import {
     BlocksRenderer,
 } from "@strapi/blocks-react-renderer";
 import AudioPLayer from "../../../components/AudioPlayer/AudioPlayer";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 import BredCrumbs from "../../../components/BredCrumbs";
+import { getAutomaticTypeDirectiveNames } from "typescript";
+import AudioCard from "../../../components/Cards/AudioCard/AudioCard";
+import { getItems } from "../../../../utils/getItems";
+import { Text } from "@chakra-ui/react";
 
 const SingleAudio = () => {
     const { id } = useParams()
     const { data } = useGetOneByUrlQuery('audiolars', id)
     const item = data?.data
+
+    const { data: audios } = useGetAllByUrlQuery('audiolars')
+
+    const items = getItems(audios)
 
     return (
         <main className="main single-audio">
@@ -62,7 +70,19 @@ const SingleAudio = () => {
                         </div>
                     </div>
                     <div className="page-layout__right">
-
+                        <div className="page-layout__right-items">
+                            <Text fontSize={"28px"} fontWeight={600} mb={6}>Tavsiya etamiz</Text>
+                            {
+                                items?.map((item) => {
+                                    return (
+                                        <AudioCard
+                                            key={item.id}
+                                            item={item}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </section>
