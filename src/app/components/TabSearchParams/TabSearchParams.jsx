@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "../../../navigation";
 import { usePathname, useSearchParams } from "next/navigation";
 
 const TabSearchParams = ({ tabs = [] }) => {
@@ -16,7 +16,7 @@ const TabSearchParams = ({ tabs = [] }) => {
                         const isActive = type === tab.value
                         return (
                             <Link
-                                href={`${pathname}?type=${tab.value}`}
+                                href={`?type=${tab.value}`}
                                 key={index}
                                 className={`types-menu__item ${isActive && "active"}`}
                                 replace

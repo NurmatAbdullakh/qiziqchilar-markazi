@@ -1,6 +1,6 @@
 "use client";
 import { Box, Img, Text } from '@chakra-ui/react';
-import { useCallback, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
@@ -37,6 +37,7 @@ export default function HeroSlider({ onChange }) {
             </button>
         </div>
     }
+
 
     return (
         <>

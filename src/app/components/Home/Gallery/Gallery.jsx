@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link } from "../../../../navigation"
 import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getItems } from "../../../../utils/getItems"
 import GalleryCard from "../../Cards/GalleryCard/GalleryCard"

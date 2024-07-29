@@ -10,7 +10,7 @@ import {
     Text,
     Button,
 } from '@chakra-ui/react'
-import Link from 'next/link'
+import { Link } from '../../../navigation'
 
 const BurgerMenu = ({ isOpen, onClose }) => {
 

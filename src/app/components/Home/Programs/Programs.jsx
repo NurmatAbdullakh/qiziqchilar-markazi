@@ -1,7 +1,7 @@
 import { useGetAllByUrlQuery } from "../../../../api/api.service";
 import ProgramCard from "../../Cards/ProgramCard/ProgramCard";
 import { getItems } from "../.././../../utils/getItems"
-import Link from "next/link";
+import { Link } from "../../../../navigation";
 
 
 const Programs = () => {

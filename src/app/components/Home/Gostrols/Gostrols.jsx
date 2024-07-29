@@ -1,7 +1,7 @@
 import { useGetAllByUrlQuery } from "../../../../api/api.service";
 import GostrolCard from "../../Cards/GostrolCards/GostrolCard";
 import { getItems } from "../.././../../utils/getItems"
-import Link from "next/link";
+import { Link } from "../../../../navigation";
 
 
 const Gostrols = () => {

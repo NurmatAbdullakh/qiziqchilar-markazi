@@ -1,7 +1,7 @@
 import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import StandUpperCard from "../../Cards/StandUpperCard/StandUpperCard"
 import { getItems } from "../.././../../utils/getItems"
-import Link from "next/link"
+import { Link } from "../../../../navigation"
 
 
 const StandUppers = () => {

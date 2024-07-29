@@ -2,7 +2,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { useGetAllByUrlQuery } from "../../../../api/api.service";
 import AudioCard from "../../Cards/AudioCard/AudioCard";
 import { getItems } from "../.././../../utils/getItems"
-import Link from "next/link";
+import { Link } from "../../../../navigation";
 
 const Audios = () => {
     const { data: audios } = useGetAllByUrlQuery('audiolars', {

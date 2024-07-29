@@ -1,6 +1,6 @@
 "use client";
-import Link from "next/link";
-import { useState, useRef } from "react";
+import { Link } from "../../../navigation";
+import { useState, useRef, useEffect } from "react";
 import { Box, Img, Text } from '@chakra-ui/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -40,6 +40,14 @@ const Hero = () => {
                 updateCurrentData();
             }
         };
+
+        useEffect(() => {
+            if (swiperRef.current) {
+                swiper.slidePrev();
+            }
+        }, []);
+
+
 
         return (
             <div className="swiper__buttons">

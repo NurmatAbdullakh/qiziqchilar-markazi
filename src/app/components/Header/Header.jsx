@@ -1,7 +1,8 @@
 "use client"
 import { useDisclosure } from "@chakra-ui/react"
-import Link from "next/link"
 import BurgerMenu from "../BurgerMenu/BurgerMenu"
+import { Link } from '../../../navigation';
+
 
 const Header = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
