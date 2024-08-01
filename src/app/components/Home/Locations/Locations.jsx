@@ -53,6 +53,8 @@ const Locations = () => {
     };
 
     const { data: schools } = useGetAllByUrlQuery('mahorat-maktablaris');
+    const { data: programs } = useGetAllByUrlQuery('dasturlars');
+    const { data: gostrolls } = useGetAllByUrlQuery('gastrollars');
 
     const tabs = [
         {
@@ -63,12 +65,12 @@ const Locations = () => {
         {
             id: 1,
             title: "Tadbirlar",
-            items: []
+            items: getItems(programs)
         },
         {
             id: 2,
             title: "Gostrollar",
-            items: []
+            items: getItems(gostrolls)
         },
     ];
 

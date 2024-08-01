@@ -1,4 +1,5 @@
 const LocationCard = ({ item, isActive, onClick }) => {
+    console.log(item);
 
     return (
         <div onClick={onClick} class={`location__item location ${isActive ? 'active' : ''} `}>
@@ -7,7 +8,7 @@ const LocationCard = ({ item, isActive, onClick }) => {
                     className="location__icon"
                     src="/icons/schoolIcon.svg"
                 />
-                <div className="location__text">{item?.maktab_nomi}</div>
+                <div className="location__text">{item?.maktab_nomi || item?.nomi_uz || item?.gastrol_nomi_uz}</div>
             </div>
             <div className="location__subtitle">
                 {item?.manzil_uz}
