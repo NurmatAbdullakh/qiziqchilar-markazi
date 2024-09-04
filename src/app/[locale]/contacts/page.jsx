@@ -13,7 +13,6 @@ const News = () => {
         e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
-        console.log("submit", data);
         mutate(data);
     }
     useEffect(() => {

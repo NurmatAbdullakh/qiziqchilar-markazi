@@ -2,18 +2,18 @@ import { useMutation, useQuery } from "@tanstack/react-query";
 import { request } from "./request";
 
 export const ApiService = {
-  get: (
-    url,
-    params = {}
-  ) => request.get(`${url}`, { params:{
-      images: "*",
-      populate: "*",
-      pagination: {
-        start: 0,
-        limit: 10,
-    },
-    ...params
-    }}),
+  get: (url, params = {}) =>
+    request.get(`${url}`, {
+      params: {
+        images: "*",
+        populate: "*",
+        pagination: {
+          start: 0,
+          limit: 10,
+        },
+        ...params,
+      },
+    }),
   getOne: (
     url,
     id,
@@ -22,16 +22,18 @@ export const ApiService = {
       populate: "*",
     }
   ) => request.get(`/${url}/${id}`, { params }),
-  
+
   createArizalar: (data) => {
-    return request.post("/arizalars", {data})
+    return request.post("/arizalars", { data });
   },
 };
 
 export const useCreateArizalarMutation = () =>
   useMutation({
     mutationKey: ["arizalar"],
-    mutationFn: (data) => {console.log("queryFn"); return ApiService.createArizalar(data)},
+    mutationFn: (data) => {
+      return ApiService.createArizalar(data);
+    },
     retry: 0,
   });
 

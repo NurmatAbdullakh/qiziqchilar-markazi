@@ -1,5 +1,4 @@
 const LocationCard = ({ item, isActive, onClick }) => {
-    console.log(item);
 
     return (
         <div onClick={onClick} class={`location__item location ${isActive ? 'active' : ''} `}>
