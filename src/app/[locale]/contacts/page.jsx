@@ -83,22 +83,22 @@ const News = () => {
                             <img className="link-box__rectangle" src="/images/white-rectangle.png" alt="" />
                             <div className="link-box__row">
                                 <img className="link-box__icon" src="/icons/location.svg" alt="location" />
-                                <p className="link-box__text">Ташкент, ул. Амира Темура, 3</p>
+                                <p className="link-box__text">Marg‘ilon shahar Mustaqillik ko‘chasi 470-A uy.</p>
                             </div>
                         </div>
                         <a href="mailto:info@askiyamarkazi.uz">
                             <div className="contact__address link-box">
                                 <div className="link-box__row">
                                     <img className="link-box__icon" src="/icons/location.svg" alt="location" />
-                                    <p className="link-box__text">info.@askiyamarkazi.uz</p>
+                                    <p className="link-box__text">askiyaqiziqchilikmarkazi@gmail.com</p>
                                 </div>
                             </div>
                         </a>
-                        <a href="tel:+998 71 200 70 07">
+                        <a href="tel:+998907787790">
                             <div className="contact__address link-box">
                                 <div className="link-box__row">
                                     <img className="link-box__icon" src="/icons/location.svg" alt="location" />
-                                    <p className="link-box__text">+998 71 200 70 07</p>
+                                    <p className="link-box__text">+998 90 778 77 90</p>
                                 </div>
                             </div>
                         </a>
