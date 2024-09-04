@@ -33,26 +33,6 @@ const Footer = () => {
                                     <a href="#" className="menu__link">Mediateka</a>
                                 </li>
                             </ul>
-                            <ul className="menu__list">
-                                <li className="menu__item label">
-                                    <a href="#" className="menu__link">Markaz</a>
-                                </li>
-                                <li className="menu__item">
-                                    <a href="#" className="menu__link">Askiyachilar</a>
-                                </li>
-                                <li className="menu__item">
-                                    <a href="#" className="menu__link">Gastroll</a>
-                                </li>
-                                <li className="menu__item">
-                                    <a href="#" className="menu__link">Dasturlar</a>
-                                </li>
-                                <li className="menu__item">
-                                    <a href="#" className="menu__link">Yangiliklar</a>
-                                </li>
-                                <li className="menu__item">
-                                    <a href="#" className="menu__link">Mediateka</a>
-                                </li>
-                            </ul>
                         </nav>
                     </div>
 

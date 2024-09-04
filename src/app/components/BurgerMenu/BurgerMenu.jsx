@@ -56,7 +56,7 @@ const BurgerMenu = ({ isOpen, onClose }) => {
                             borderBottom="1px solid #EAECF0"
                         >
                             <Text fontWeight={600}>
-                                Askiyachilar
+                                So'z ustalari
                             </Text>
                         </Box>
                         <Box
