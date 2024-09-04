@@ -43,6 +43,7 @@ const Hero = () => {
 
         useEffect(() => {
             if (swiperRef.current) {
+
                 swiper.slidePrev();
             }
         }, []);
