@@ -3,10 +3,10 @@
 import {
     Menu, MenuButton, MenuItem, MenuList, useDisclosure
 } from "@chakra-ui/react";
-import { Link, useRouter } from '../../../navigation';
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { Link, useRouter } from "../../../navigation";
 
 
 const Header = () => {
@@ -16,6 +16,9 @@ const Header = () => {
 
     const pathname = usePathname();
     const locales = ["en", "ru", "uz"];
+
+    console.log(router.locale);
+
 
     return (
         <header className="header">
@@ -57,7 +60,7 @@ const Header = () => {
                         <MenuButton >
                             <div className="header__lang-select">
                                 <img src="/icons/earth.svg" alt="earth" />
-                                <div className="lang">UZ</div>
+                                <div className="lang">{router.locale}</div>
                                 <img src="/icons/arrowDown.svg" alt="arrow-down" />
                                 <div />
                             </div>
@@ -66,7 +69,7 @@ const Header = () => {
                             {
                                 locales.map((locale, index) => {
                                     return (
-                                        <MenuItem key={index} onClick={() => router.replace(`?locale=${locale}`)}>
+                                        <MenuItem key={index} onClick={() => router.replace("/", { locale })}>
                                             {locale}
                                         </MenuItem>
                                     )
