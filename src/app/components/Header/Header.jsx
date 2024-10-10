@@ -4,9 +4,13 @@ import {
     Menu, MenuButton, MenuItem, MenuList, useDisclosure
 } from "@chakra-ui/react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
-import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { Link, useRouter } from "../../../navigation";
+import {
+    locales,
+    usePathname,
+    useRouter,
+    Link
+} from "../../../i18n.config";
 
 
 const Header = () => {
@@ -15,7 +19,6 @@ const Header = () => {
     const t = useTranslations();
 
     const pathname = usePathname();
-    const locales = ["en", "ru", "uz"];
 
     console.log(router.locale);
 
@@ -69,7 +72,7 @@ const Header = () => {
                             {
                                 locales.map((locale, index) => {
                                     return (
-                                        <MenuItem key={index} onClick={() => router.replace("/", { locale })}>
+                                        <MenuItem key={index} onClick={() => router.replace(pathname, { locale })}>
                                             {locale}
                                         </MenuItem>
                                     )
