@@ -1,11 +1,21 @@
 "use client"
-import { useDisclosure } from "@chakra-ui/react"
-import BurgerMenu from "../BurgerMenu/BurgerMenu"
-import { Link } from '../../../navigation';
+
+import {
+    Menu, MenuButton, MenuItem, MenuList, useDisclosure
+} from "@chakra-ui/react";
+import { Link, useRouter } from '../../../navigation';
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 
 const Header = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const router = useRouter();
+    const t = useTranslations();
+
+    const pathname = usePathname();
+    const locales = ["en", "ru", "uz"];
 
     return (
         <header className="header">
@@ -43,21 +53,36 @@ const Header = () => {
                     </nav>
                 </div>
                 <div className="header__services">
-                    <div className="header__lang-select">
-                        <img src="/icons/earth.svg" alt="earth" />
-                        <div className="lang">UZ</div>
-                        <img src="/icons/arrowDown.svg" alt="arrow-down" />
-                        <div />
-                        <Link href="/contacts">
-                            <button className="header__button">
-                                Bog‘lanish
-                            </button>
-                        </Link>
-                    </div>
+                    <Menu>
+                        <MenuButton >
+                            <div className="header__lang-select">
+                                <img src="/icons/earth.svg" alt="earth" />
+                                <div className="lang">UZ</div>
+                                <img src="/icons/arrowDown.svg" alt="arrow-down" />
+                                <div />
+                            </div>
+                        </MenuButton>
+                        <MenuList>
+                            {
+                                locales.map((locale, index) => {
+                                    return (
+                                        <MenuItem key={index} onClick={() => router.replace(`?locale=${locale}`)}>
+                                            {locale}
+                                        </MenuItem>
+                                    )
+                                })
+                            }
+                        </MenuList>
+                    </Menu>
+                    <Link href="/contacts">
+                        <button className="header__button">
+                            {t("contact")}
+                        </button>
+                    </Link>
                 </div>
             </div>
             <BurgerMenu isOpen={isOpen} onClose={onClose} />
-        </header>
+        </header >
     )
 }
 
