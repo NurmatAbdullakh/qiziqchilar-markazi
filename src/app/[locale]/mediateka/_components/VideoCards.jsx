@@ -1,7 +1,7 @@
 "use client";
 import { SimpleGrid, useDisclosure } from "@chakra-ui/react";
-import { useGetAllByUrlQuery } from "../../../../api/api.service"
-import { getItems } from "../../../../utils/getItems"
+import { useGetInfiniteQuery } from "../../../../api/api.service"
+import { getItemsInfinite } from "../../../../utils/getItems"
 import { Link } from "../../../../navigation";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 import VideoModal from "../../../components/VideoModal/VideoModal";
@@ -9,8 +9,10 @@ import { useState } from "react";
 
 const VideoCards = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const { data: videos } = useGetAllByUrlQuery('videolars')
-    const items = getItems(videos)
+    const { data: videos, hasNextPage, fetchNextPage } = useGetInfiniteQuery('videolars')
+
+    const items = getItemsInfinite(videos?.pages?.flatMap((page) => page?.list)) || [];
+
     const [currentVideo, setCurrentVideo] = useState(null)
 
     const openVideoModal = (video) => {
@@ -48,12 +50,12 @@ const VideoCards = () => {
                     )
                 })}
             </SimpleGrid>
-            <div className="data__more-button ">
+            {hasNextPage && <div onClick={() => fetchNextPage()} className="data__more-button ">
                 <button className="secondary-button">
                     Ko’proq yuklash
                     <img src="/icons/Download.svg" alt=" arrow " />
                 </button>
-            </div>
+            </div>}
             <VideoModal date={currentVideo?.publishedAt} videoLink={currentVideo?.video_linki} title={currentVideo?.title_uz} isOpen={isOpen} onClose={onClose} />
         </>
 

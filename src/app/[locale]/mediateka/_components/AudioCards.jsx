@@ -1,12 +1,12 @@
 import { SimpleGrid } from "@chakra-ui/react"
-import { useGetAllByUrlQuery } from "../../../../api/api.service"
-import { getItems } from "../../../../utils/getItems"
+import { useGetInfiniteQuery } from "../../../../api/api.service"
+import { getItemsInfinite } from "../../../../utils/getItems"
 import AudioCard from "../../../components/Cards/AudioCard/AudioCard"
 
 const AudioCards = () => {
-    const { data: audios } = useGetAllByUrlQuery('audiolars')
+    const { data: audios, hasNextPage, fetchNextPage } = useGetInfiniteQuery('audiolars')
 
-    const items = getItems(audios)
+    const items = getItemsInfinite(audios?.pages?.flatMap((page) => page?.list)) || []
 
     return (
         <>
@@ -15,12 +15,12 @@ const AudioCards = () => {
                     return <AudioCard key={item.id} item={item} />
                 })}
             </SimpleGrid>
-            <div className="data__more-button ">
+            {hasNextPage && <div onClick={() => fetchNextPage()} className="data__more-button ">
                 <button className="secondary-button">
                     Ko’proq yuklash
                     <img src="/icons/Download.svg" alt=" arrow " />
                 </button>
-            </div>
+            </div>}
         </>
 
     )

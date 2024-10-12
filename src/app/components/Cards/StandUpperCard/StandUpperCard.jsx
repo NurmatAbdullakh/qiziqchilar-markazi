@@ -4,8 +4,6 @@ import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const StandUpperCard = ({ item }) => {
     const { locale } = useParams()
-    console.log(item);
-
 
     return (
         <div className="jockers__item jocker-card">
