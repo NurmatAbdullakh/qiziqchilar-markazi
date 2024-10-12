@@ -1,7 +1,9 @@
+import { useParams } from "next/navigation"
 import { Link } from "../../../../navigation"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const BigVideo = ({ item }) => {
+    const { locale } = useParams()
     return (
         <Link href={`/video/${item?.id}`} className="retro__left big-video">
             <img
@@ -23,7 +25,7 @@ const BigVideo = ({ item }) => {
             <div className="big-video__info">
                 <div className="big-video__date">{item?.updatedAt?.slice(0, 10)}</div>
                 <div className="big-video__title">
-                    {item?.title_uz}
+                    {item?.[`title_${locale}`]}
                 </div>
             </div>
         </Link>

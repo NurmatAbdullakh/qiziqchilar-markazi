@@ -6,8 +6,10 @@ import { Link } from "../../../../navigation"
 import VideoModal from "../../VideoModal/VideoModal"
 import { useDisclosure } from "@chakra-ui/react"
 import { useState } from "react"
+import { useParams } from "next/navigation"
 
 const Retro = () => {
+    const { locale } = useParams()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [item, setItem] = useState(null)
 
@@ -61,7 +63,7 @@ const Retro = () => {
                     </div>
                 </div>
             </div>
-            <VideoModal date={item?.publishedAt} videoLink={item?.video_linki} title={item?.title_uz} isOpen={isOpen} onClose={onClose} />
+            <VideoModal date={item?.publishedAt} videoLink={item?.video_linki} title={item?.[`title_${locale}`]} isOpen={isOpen} onClose={onClose} />
         </section>
     )
 }

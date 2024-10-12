@@ -11,6 +11,7 @@ import {
     useRouter,
     Link
 } from "../../../i18n.config";
+import { useParams, useSearchParams } from "next/navigation";
 
 
 const Header = () => {
@@ -18,9 +19,13 @@ const Header = () => {
     const router = useRouter();
     const t = useTranslations();
 
-    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const params = Object.fromEntries(searchParams.entries());
 
-    console.log(router.locale);
+    const pathname = usePathname();
+    const { locale } = useParams()
+
+
 
 
     return (
@@ -63,21 +68,32 @@ const Header = () => {
                         <MenuButton >
                             <div className="header__lang-select">
                                 <img src="/icons/earth.svg" alt="earth" />
-                                <div className="lang">{router.locale}</div>
+                                <div className="lang">{locale}</div>
                                 <img src="/icons/arrowDown.svg" alt="arrow-down" />
                                 <div />
                             </div>
                         </MenuButton>
                         <MenuList>
-                            {
-                                locales.map((locale, index) => {
-                                    return (
-                                        <MenuItem key={index} onClick={() => router.replace(pathname, { locale })}>
-                                            {locale}
-                                        </MenuItem>
-                                    )
-                                })
-                            }
+                            {locales.map((locale, index) => {
+                                return (
+                                    <MenuItem
+                                        key={index}
+                                        onClick={() => {
+                                            // params to a string lik query
+                                            const query = Object.keys(params).reduce((acc, key) => {
+                                                acc[key] = params[key].toString();
+                                                return acc;
+                                            }, {});
+
+
+
+                                            router.replace(`${pathname}?${new URLSearchParams(query).toString()}`, { locale });
+                                        }}
+                                    >
+                                        {locale}
+                                    </MenuItem>
+                                );
+                            })}
                         </MenuList>
                     </Menu>
                     <Link href="/contacts">

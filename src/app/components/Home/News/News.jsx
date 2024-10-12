@@ -3,8 +3,10 @@ import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getItems } from "../../../../utils/getItems"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 import { getImageUrl } from "../../../../utils/getImageUrl"
+import { useParams } from "next/navigation"
 
 const News = ({ withoutTitle, withoutLink }) => {
+    const { locale } = useParams()
     const { data: news } = useGetAllByUrlQuery('news123', {
         "filters[asosiy_sahifa][$eq]": true
     })
@@ -54,10 +56,10 @@ const News = ({ withoutTitle, withoutLink }) => {
                                                 <div className=" news-card__time">{item?.publishedAt?.slice(0, 10)}</div>
                                             </div>
                                             <div className="news-card__title">
-                                                {item?.title_uz}
+                                                {item?.[`title_${locale}`]}
                                             </div>
                                             <div className="news-card__description">
-                                                {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                                                {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                                             </div>
                                         </div>
                                     </div>
@@ -77,7 +79,7 @@ const News = ({ withoutTitle, withoutLink }) => {
                                 <div className="big-video__info">
                                     <div className="big-video__date">{midBigItem?.publishedAt?.slice(0, 10)}</div>
                                     <div className="big-video__title">
-                                        {midBigItem?.title_uz}
+                                        {midBigItem?.[`title_${locale}`]}
                                     </div>
                                 </div>
                             </Link>
@@ -100,7 +102,7 @@ const News = ({ withoutTitle, withoutLink }) => {
                                                 {item?.publishedAt?.slice(0, 10)}
                                             </div>
                                             <div className="big-video__title">
-                                                {item?.title_uz}
+                                                {item?.[`title_${locale}`]}
                                             </div>
                                         </div>
                                     </Link>
@@ -136,10 +138,10 @@ const News = ({ withoutTitle, withoutLink }) => {
                                                     <div className=" news-card__time">{item?.publishedAt?.slice(0, 10)}</div>
                                                 </div>
                                                 <div className="news-card__title">
-                                                    {item?.title_uz}
+                                                    {item?.[`title_${locale}`]}
                                                 </div>
                                                 <div className="news-card__description">
-                                                    {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                                                    {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                                                 </div>
                                             </div>
                                         </div>

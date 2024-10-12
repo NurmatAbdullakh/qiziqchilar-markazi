@@ -4,8 +4,10 @@ import { useGetAllByUrlQuery } from "../../../../api/api.service"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 import { getItems } from "../../../../utils/getItems"
 import { SimpleGrid } from "@chakra-ui/react"
+import { useParams } from "next/navigation"
 
 const StanduppersCards = () => {
+    const { locale } = useParams()
     const { data: standUppers } = useGetAllByUrlQuery('soz-ustalaris')
 
     const items = getItems(standUppers) || []
@@ -19,7 +21,7 @@ const StanduppersCards = () => {
                             <img className="jocker-card__image bg" src={getImageUrl(item)}
                                 alt="jocker-card" />
                             <div className="jocker-card__info">
-                                <div className="jocker-card__title">{item?.full_name_uz}</div>
+                                <div className="jocker-card__title">{item?.[`full_name_${locale}`]}</div>
                                 <div className="jocker-card__subtitle">{item?.Kasbi}</div>
                             </div>
                             <img className="jocker-card__texture" src="/icons/jocker-card-texture.svg"

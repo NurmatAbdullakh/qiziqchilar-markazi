@@ -1,7 +1,11 @@
+import { useParams } from "next/navigation"
 import { Link } from "../../../../navigation"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const StandUpperCard = ({ item }) => {
+    const { locale } = useParams()
+    console.log(item);
+
 
     return (
         <div className="jockers__item jocker-card">
@@ -12,7 +16,7 @@ const StandUpperCard = ({ item }) => {
                     alt="jocker-card"
                 />
                 <div className="jocker-card__info">
-                    <div className="jocker-card__title">{item?.full_name_uz}</div>
+                    <div className="jocker-card__title">{item?.[`full_name_${locale}`]}</div>
                     <div className="jocker-card__subtitle">{item?.Kasbi}</div>
                 </div>
                 <img

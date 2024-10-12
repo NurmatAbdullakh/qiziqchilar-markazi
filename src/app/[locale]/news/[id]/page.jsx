@@ -11,7 +11,7 @@ const SingleNews = () => {
 
     const items = getItems(news) || []
 
-    const { id } = useParams()
+    const { id, locale } = useParams()
     const { data } = useGetOneByUrlQuery('news123', id)
     const item = data?.data
 
@@ -24,7 +24,7 @@ const SingleNews = () => {
             }
                 ,
             {
-                title: item?.title_uz,
+                title: item?.[`title_${locale}`],
             }
             ]
         }
@@ -39,7 +39,7 @@ const SingleNews = () => {
             <div class="data__container container page-layout">
                 <div class="page-layout__left">
                     <div class="data__title">
-                        {item?.title_uz}
+                        {item?.[`title_${locale}`]}
                     </div>
                     <div class="page-layout__statistics statistics">
                         <div class="statistics__item">
@@ -62,7 +62,7 @@ const SingleNews = () => {
                     </div>
 
                     <div class="data__text">
-                        {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                        {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                     </div>
                 </div>
                 <div class="page-layout__right">
@@ -85,10 +85,10 @@ const SingleNews = () => {
                                                         </div>
                                                     </div>
                                                     <div class="news-card__title">
-                                                        {item?.title_uz}
+                                                        {item?.[`title_${locale}`]}
                                                     </div>
                                                     <div class="news-card__description">
-                                                        {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                                                        {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                                                     </div>
 
                                                 </div>

@@ -12,7 +12,7 @@ import { getItems } from "../../../../../utils/getItems";
 import { Text } from "@chakra-ui/react";
 
 const SingleAudio = () => {
-    const { id } = useParams()
+    const { id, locale } = useParams()
     const { data } = useGetOneByUrlQuery('audiolars', id)
     const item = data?.data
 
@@ -28,8 +28,8 @@ const SingleAudio = () => {
                     link: "/mediateka?type=audio"
                 },
                 {
-                    title: item?.title_uz,
-                    link: item?.title_uz
+                    title: item?.[`title_${locale}`],
+                    link: item?.[`title_${locale}`]
                 }
             ]} />
             <section className="hero__with-title hero__with-title">
@@ -42,7 +42,7 @@ const SingleAudio = () => {
                 <div className="data__container container page-layout">
                     <div className="page-layout__left">
                         <div className="data__title">
-                            {item?.title_uz}
+                            {item?.[`title_${locale}`]}
                         </div>
                         <div className="page-layout__statistics statistics">
                             <div className="statistics__item">
@@ -61,11 +61,11 @@ const SingleAudio = () => {
                         {item?.audio_file?.url &&
                             <AudioPLayer
                                 imageUrl={getImageUrl(item)}
-                                title={item?.title_uz}
+                                title={item?.[`title_${locale}`]}
                                 src={"https://admin.askiyachilar.uz" + item?.audio_file?.url}
                             />}
                         <div className="data__text">
-                            {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                            {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                         </div>
                     </div>
                     <div className="page-layout__right">

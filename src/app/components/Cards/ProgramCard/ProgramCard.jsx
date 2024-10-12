@@ -1,8 +1,11 @@
+import { useParams } from "next/navigation";
 import { Link } from "../../../../navigation";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 
 
 const ProgramCard = ({ item, index }) => {
+    const { locale } = useParams()
+
     const coverImage = (index) => {
         if (!index) {
             '/images/covers/Image.png'
@@ -33,7 +36,7 @@ const ProgramCard = ({ item, index }) => {
             />
             <div className="program-card__info">
                 <div className="program-card__title">
-                    {item?.nomi_uz}
+                    {item?.[`nomi_${locale}`]}
                 </div>
                 <div className="program-card__date">
                     <div className="program-card__day">{item?.boshlanish_vaqti.slice(8)}</div>

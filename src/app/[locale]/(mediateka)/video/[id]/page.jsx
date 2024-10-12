@@ -17,7 +17,7 @@ const SingleVideo = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
 
-    const { id } = useParams()
+    const { id, locale } = useParams()
     const { data } = useGetOneByUrlQuery('videolars', id)
     const item = data?.data
 
@@ -43,8 +43,8 @@ const SingleVideo = () => {
                 }
                 ,
                 {
-                    title: item?.title_uz,
-                    link: item?.title_uz
+                    title: item?.[`title_${locale}`],
+                    link: item?.[`title_${locale}`]
                 }
             ]} />
             <section className="hero__with-title hero__with-title">
@@ -57,7 +57,7 @@ const SingleVideo = () => {
                 <div className="data__container container page-layout">
                     <div className="page-layout__left">
                         <div className="data__title">
-                            {item?.title_uz}
+                            {item?.[`title_${locale}`]}
                         </div>
                         <div className="page-layout__statistics statistics">
                             <div className="statistics__item">
@@ -85,13 +85,13 @@ const SingleVideo = () => {
                                     {item?.publishedAt?.slice(0, 10)}
                                 </div>
                                 <div className="big-video__title">
-                                    {item?.title_uz}
+                                    {item?.[`title_${locale}`]}
                                 </div>
                             </div>
                         </div>
 
                         <div className="data__text">
-                            {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                            {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                         </div>
                     </div>
                     <div className="page-layout__right">
@@ -114,7 +114,7 @@ const SingleVideo = () => {
                                                 </div>
                                             </div>
                                             <div className="video-card__title">
-                                                {item?.title_uz}
+                                                {item?.[`title_${locale}`]}
                                             </div>
                                         </div>
                                     </Link>
@@ -124,7 +124,7 @@ const SingleVideo = () => {
                     </div>
                 </div>
             </section>
-            <VideoModal date={currentVideo?.publishedAt} videoLink={currentVideo?.video_linki} title={currentVideo?.title_uz} isOpen={isOpen} onClose={handleClose} />
+            <VideoModal date={currentVideo?.publishedAt} videoLink={currentVideo?.video_linki} title={currentVideo?.[`title_${locale}`]} isOpen={isOpen} onClose={handleClose} />
         </main>
     )
 }

@@ -1,6 +1,8 @@
+import { useParams } from "next/navigation"
 import { Link } from "../../../../navigation"
 
 const GostrolCard = ({ item }) => {
+    const { locale } = useParams()
 
     return (
         <Link href={`/tour/${item.id}`} className="gostrol__item gostrol-card">
@@ -21,7 +23,7 @@ const GostrolCard = ({ item }) => {
                 </div>
             </div>
 
-            <div className="gostrol-card__title">{item.gastrol_nomi_uz}</div>
+            <div className="gostrol-card__title">{item?.[`gastrol_nomi_${locale}`]}</div>
             <div className="gostrol-card__address">
                 <img src="/icons/location.svg" alt="location" />
                 <div className="gostrol-card__address-text">

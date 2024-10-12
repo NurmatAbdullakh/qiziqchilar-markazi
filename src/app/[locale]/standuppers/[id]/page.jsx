@@ -10,6 +10,7 @@ import BredCrumbs from "../../../components/BredCrumbs";
 
 
 const SingleStandupper = () => {
+    const { locale } = useParams()
     const { id } = useParams()
     const { data } = useGetOneByUrlQuery('soz-ustalaris', id)
     const item = getItem(data)
@@ -21,8 +22,8 @@ const SingleStandupper = () => {
             link: "/standuppers"
         },
         {
-            title: item?.full_name_uz,
-            link: item?.full_name_uz
+            title: item?.[`full_name_${locale}`],
+            link: item?.[`full_name_${locale}`]
         }
     ]
 
@@ -41,11 +42,11 @@ const SingleStandupper = () => {
                             <img className="overlay bg" src="/images/Overlay.png" alt="stand-upper" />
                         </div>
                         <div className="hero__info">
-                            <div className="hero__title">{item?.full_name_uz}</div>
+                            <div className="hero__title">{item?.[`full_name_${locale}`]}</div>
                             <div className="hero__subtitle">{item?.Kasbi}</div>
                             <div className="hero__line"></div>
                             <div className="hero__text">
-                                {item?.description_uz && <BlocksRenderer content={item?.description_uz} />}
+                                {item?.[`description_${locale}`] && <BlocksRenderer content={item?.[`description_${locale}`]} />}
                             </div>
                         </div>
                     </div>
@@ -63,7 +64,7 @@ const SingleStandupper = () => {
                             <div key={index} className="career__item">
                                 <div className="career__info">
                                     <div className="career__box">
-                                        <div className="career__title">{item?.description_uz}</div>
+                                        <div className="career__title">{item?.[`description_${locale}`]}</div>
                                     </div>
                                 </div>
                                 <div className="career__stepper stepper">
@@ -90,8 +91,8 @@ const SingleStandupper = () => {
                                     <div key={a.id} className="award__item award-card">
                                         <div className="award-card__body">
                                             <div className="award-card__year">{a.Yutuq_yili.slice(0, 4)}-yil</div>
-                                            <div className="award-card__title">{a.title_uz}</div>
-                                            <div className="award-card__subtitle">{a.text_uz}</div>
+                                            <div className="award-card__title">{a?.[`title_${locale}`]}</div>
+                                            <div className="award-card__subtitle">{a?.[`text_${locale}`]}</div>
                                         </div>
                                     </div>
                                 )

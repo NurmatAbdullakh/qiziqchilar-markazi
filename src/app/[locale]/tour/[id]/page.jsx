@@ -13,7 +13,7 @@ import { getItems } from "../../../../utils/getItems";
 import GostrolCard from "../../../components/Cards/GostrolCards/GostrolCard";
 
 const SingleTour = () => {
-    const { id } = useParams()
+    const { id, locale } = useParams()
     const { data } = useGetOneByUrlQuery('gastrollars', id)
     const item = getItem(data)
 
@@ -26,7 +26,7 @@ const SingleTour = () => {
         <main className="main single-gostrol">
             <BredCrumbs items={[
                 { title: "Gastroll va dasturlar", link: "/events?type=gastrollar" },
-                { title: item?.gastrol_nomi_uz, link: item?.gastrol_nomi_uz }
+                { title: item?.[`gastrol_nomi_${locale}`], link: item?.[`gastrol_nomi_${locale}`] }
             ]} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
@@ -43,7 +43,7 @@ const SingleTour = () => {
                         </div>
                         <div className="data__row row">
                             <div className="row__right">
-                                <div className="row__title data__title">{item?.gastrol_nomi_uz}</div>
+                                <div className="row__title data__title">{item?.[`gastrol_nomi_${locale}`]}</div>
                                 <div className="row__date">
                                     <img className="row__icon" src="/icons/data-calendar.svg" alt="" />
                                     <div className="row__time">{item?.publishedAt?.slice(0, 10)}</div>
@@ -65,13 +65,13 @@ const SingleTour = () => {
                                 <div className="period__location">
                                     <img className="period__location-icon" src="/icons/data-location.svg"
                                         alt="location" />
-                                    <div className="period__location-text">{item?.Joylashuv_manzili_uz}</div>
+                                    <div className="period__location-text">{item?.[`Joylashuv_manzili_${locale}`]}</div>
                                 </div>
                             </div>
 
                         </div>
                         <div className="data__text">
-                            {item?.text_uz && <BlocksRenderer content={item?.text_uz} />}
+                            {item?.[`text_${locale}`] && <BlocksRenderer content={item?.[`text_${locale}`]} />}
                         </div>
                     </div>
                     <div className="page-layout__right">

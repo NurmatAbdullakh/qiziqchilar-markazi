@@ -1,8 +1,10 @@
+import { useParams } from "next/navigation";
 import { Link } from "../../../../navigation";
 import { getImageUrl } from "../../../../utils/getImageUrl";
 import AudioPlayer from "./SmallAudioPlayer";
 
 const AudioCard = ({ item }) => {
+    const { locale } = useParams()
     return (
         <div className="audio__item audio-card">
             <img
@@ -31,7 +33,7 @@ const AudioCard = ({ item }) => {
                         <div className="audio-card__time">{item?.createdAt?.slice(0, 10)}</div>
                     </div>
                     <div className="audio-card__title">
-                        {item.title_uz}
+                        {item?.[`title_${locale}`]}
                     </div>
                 </div>
             </Link>

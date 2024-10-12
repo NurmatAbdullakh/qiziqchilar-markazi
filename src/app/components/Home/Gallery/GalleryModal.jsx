@@ -1,12 +1,9 @@
 import {
     Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalFooter,
     ModalBody,
     ModalCloseButton,
-    useDisclosure,
+    ModalContent,
+    ModalOverlay
 } from '@chakra-ui/react'
 import Slider from "./Slider"
 

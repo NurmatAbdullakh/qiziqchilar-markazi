@@ -1,7 +1,9 @@
+import { useParams } from "next/navigation"
 import { Link } from "../../../../navigation"
 import { getImageUrl } from "../../../../utils/getImageUrl"
 
 const VideoCard = ({ item, onClick }) => {
+    const { locale } = useParams()
     return (
         <div className="retro__item video-card">
             <div className="video-card__image">
@@ -28,7 +30,7 @@ const VideoCard = ({ item, onClick }) => {
                         <div className=" video-card__time">{item?.updatedAt?.slice(0, 10)}</div>
                     </div>
                     <div className="video-card__title">
-                        {item?.title_uz}
+                        {item?.[`title_${locale}`]}
                     </div>
                 </div>
             </Link>

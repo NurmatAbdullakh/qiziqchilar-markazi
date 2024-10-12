@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useGetAllByUrlQuery } from "../../../../../api/api.service"
 import { getItems } from "../../../../../utils/getItems"
+import { useParams } from "next/navigation"
 
 const Team = ({ onClick }) => {
+    const { locale } = useParams()
     const [activeTab, setActiveTab] = useState(0)
     const { data: staffs } = useGetAllByUrlQuery('xodimlars')
     const items = getItems(staffs)
@@ -64,7 +66,7 @@ const Team = ({ onClick }) => {
                             <div className="team-card__img">
                                 <img className="bg" src={"https://admin.askiyachilar.uz" + bigCardData?.profil_rasmi?.data?.attributes?.url} alt="team" />
                             </div>
-                            <div className="team-card__title">{bigCardData?.full_name_uz}</div>
+                            <div className="team-card__title">{bigCardData?.[`full_name_${locale}`]}</div>
                             <div className="team-card__subtitle">{bigCardData?.Lavozimi}</div>
                             <div className="team-card__desc">
                                 Markazning moddiy-texnika bazasini mustahkamlash va ijodkorlari ijtimoiy sharoitini
@@ -83,7 +85,7 @@ const Team = ({ onClick }) => {
                                 <div className="team-card__img">
                                     <img className="bg" src={"https://admin.askiyachilar.uz" + item?.profil_rasmi?.data?.attributes?.url} alt="team" />
                                 </div>
-                                <div className="team-card__title">{item?.full_name_uz}</div>
+                                <div className="team-card__title">{item?.[`full_name_${locale}`]}</div>
                                 <div className="team-card__subtitle">{item?.Lavozimi}</div>
                             </div>
                         ))

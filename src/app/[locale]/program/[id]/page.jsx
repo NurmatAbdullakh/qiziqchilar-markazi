@@ -11,7 +11,7 @@ import ProgramCards from "../../events/_components/ProgramCards"
 
 const SingleProgram = () => {
 
-    const { id } = useParams()
+    const { id, locale } = useParams()
     const { data } = useGetOneByUrlQuery('dasturlars', id)
     const item = getItem(data)
 
@@ -24,7 +24,7 @@ const SingleProgram = () => {
         <main className="main single-program">
             <BredCrumbs items={[
                 { title: "Dasturlar", link: "/events?type=dasturlar" },
-                { title: item?.nomi_uz, link: item?.nomi_uz }
+                { title: item?.[`nomi_${locale}`], link: item?.[`nomi_${locale}`] }
             ]} />
             <section className="hero__with-title hero__with-title">
                 <img className="hero__with-title-ellips" src="/images/ellips.svg" alt="ellips" />
@@ -42,7 +42,7 @@ const SingleProgram = () => {
                         </div>
                         <div className="data__row row">
                             <div className="row__right">
-                                <div className="row__title data__title">{item?.nomi_uz}</div>
+                                <div className="row__title data__title">{item?.[`nomi_${locale}`]}</div>
                                 <div className="row__date">
                                     <img className="row__icon" src="/icons/data-calendar.svg" alt="" />
                                     <div className="row__time">{item?.publishedAt?.slice(0, 10)}</div>
@@ -65,7 +65,7 @@ const SingleProgram = () => {
 
                         </div>
                         <div className="data__text">
-                            {item?.description_uz}
+                            {item?.[`description_${locale}`]}
                         </div>
                     </div>
                     <div className="page-layout__right">

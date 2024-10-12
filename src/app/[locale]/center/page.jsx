@@ -8,8 +8,10 @@ import { getImageUrl } from "../../../utils/getImageUrl";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/react";
 import BredCrumbs from "../../components/BredCrumbs";
+import { useParams } from "next/navigation";
 
 const Center = () => {
+    const { locale } = useParams()
     const { data: aboutData } = useGetAllByUrlQuery('markaz-haqida')
     const [selectedEmployee, setSelectedEmployee] = useState(null)
     const [selectedLocation, setSelectedLocation] = useState(null)
@@ -43,7 +45,7 @@ const Center = () => {
                     </div>
                     <div className="about-us__line"></div>
                     <div className="about-us__text">
-                        <p>{centerData?.description_uz}</p>
+                        <p>{centerData?.[`description_${locale}`]}</p>
                     </div>
 
                     <div className="about-us__boxes">
@@ -163,7 +165,7 @@ const Center = () => {
                                     <span className="location-modal__label">{selectedLocation?.yopilish_vaqti?.slice(0, 5)} ga qadar ochiq</span>
                                 </div>
                                 <div className="location-modal__text">
-                                    {selectedLocation?.description_uz && <BlocksRenderer content={selectedLocation?.description_uz} />}
+                                    {selectedLocation?.[`description_${locale}`] && <BlocksRenderer content={selectedLocation?.[`description_${locale}`]} />}
                                 </div>
                             </div>
                         </div>
